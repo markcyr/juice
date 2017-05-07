@@ -3,12 +3,13 @@ Rails.application.routes.draw do
    resources :users, only: [:new, :edit, :show]
 
    resources :recipes do
-     resources :reviews, only[:new, :create, :edit]
+     resources :reviews, only: [:new, :create, :edit]
    end
 
-   resources :ingredients, only[:show]
-   
-   resources :ingredients_recipes, only[]
+   resources :ingredients
+  #  resources :ingredients, only: [:show]
+
+   resources :ingredients_recipes
   # get 'users/index'
   #
   # get 'users/show'

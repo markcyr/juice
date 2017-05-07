@@ -1,0 +1,130 @@
+<h1>Listing ingredients</h1>
+
+<table  border="black" align="center">
+  <thead>
+    <tr>
+      <th>	name	</th>
+  <th>	unit	</th>
+  <th>	image	</th>
+  <th>	water_g	</th>
+  <th>	energ_kcal	</th>
+  <th>	protein_g	</th>
+  <th>	lipid_tot_g	</th>
+  <th>	ash_g	</th>
+  <th>	carbohydrt_g	</th>
+  <th>	fiber_td_g	</th>
+  <th>	sugar_tot_g	</th>
+  <th>	calcium_mg	</th>
+  <th>	iron_mg	</th>
+  <th>	magnesium_mg	</th>
+  <th>	phosphorus_mg	</th>
+  <th>	potassium_mg	</th>
+  <th>	sodium_mg	</th>
+  <th>	zinc_mg	</th>
+  <th>	copper_mg	</th>
+  <th>	manganese_mg	</th>
+  <th>	selenium_ug	</th>
+  <th>	vit_c_mg	</th>
+  <th>	thiamin_mg	</th>
+  <th>	riboflavin_mg	</th>
+  <th>	niacin_mg	</th>
+  <th>	panto_acid_mg	</th>
+  <th>	vit_b6_mg	</th>
+  <th>	folate_tot_ug	</th>
+  <th>	folic_acid_ug	</th>
+  <th>	food_folate_ug	</th>
+  <th>	folate_dfe_ug	</th>
+  <th>	choline_tot_mg	</th>
+  <th>	vit_b12_ug	</th>
+  <th>	vit_a_iu	</th>
+  <th>	vit_a_rae	</th>
+  <th>	retinol_ug	</th>
+  <th>	alpha_carot_ug	</th>
+  <th>	beta_carot_ug	</th>
+  <th>	beta_crypt_ug	</th>
+  <th>	lycopene_ug	</th>
+  <th>	lut_zea_ug	</th>
+  <th>	vit_e_mg	</th>
+  <th>	vit_d_ug	</th>
+  <th>	vit_d_iu	</th>
+  <th>	vit_k_ug	</th>
+  <th>	fa_sat_g	</th>
+  <th>	fa_mono_g	</th>
+  <th>	fa_poly_g	</th>
+  <th>	gmwt_1	</th>
+  <th>	gmwt_desc1	</th>
+  <th>	gmwt_2	</th>
+  <th>	gmwt_desc2	</th>
+  <th>	gmwt_3	</th>
+  <th>	gmwt_desc3	</th>
+  <th>	gmwt_4	</th>
+  <th>	gmwt_desc4	</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr align="center">
+<td> <%=	ingredient.name	%> </td>
+<td> <%=	ingredient.unit	%> </td>
+<td> <%=	ingredient.image	%> </td>
+<td> <%=	ingredient.water_g	%> </td>
+<td> <%=	ingredient.energ_kcal	%> </td>
+<td> <%=	ingredient.protein_g	%> </td>
+<td> <%=	ingredient.lipid_tot_g	%> </td>
+<td> <%=	ingredient.ash_g	%> </td>
+<td> <%=	ingredient.carbohydrt_g	%> </td>
+<td> <%=	ingredient.fiber_td_g	%> </td>
+<td> <%=	ingredient.sugar_tot_g	%> </td>
+<td> <%=	ingredient.calcium_mg	%> </td>
+<td> <%=	ingredient.iron_mg	%> </td>
+<td> <%=	ingredient.magnesium_mg	%> </td>
+<td> <%=	ingredient.phosphorus_mg	%> </td>
+<td> <%=	ingredient.potassium_mg	%> </td>
+<td> <%=	ingredient.sodium_mg	%> </td>
+<td> <%=	ingredient.zinc_mg	%> </td>
+<td> <%=	ingredient.copper_mg	%> </td>
+<td> <%=	ingredient.manganese_mg	%> </td>
+<td> <%=	ingredient.selenium_ug	%> </td>
+<td> <%=	ingredient.vit_c_mg	%></td>
+<td> <%=	ingredient.thiamin_mg	%> </td>
+<td> <%=	ingredient.riboflavin_mg	%> </td>
+<td> <%=	ingredient.niacin_mg	%> </td>
+<td> <%=	ingredient.panto_acid_mg	%> </td>
+<td> <%=	ingredient.vit_b6_mg	%> </td>
+<td> <%=	ingredient.folate_tot_ug	%> </td>
+<td> <%=	ingredient.folic_acid_ug	%> </td>
+<td> <%=	ingredient.food_folate_ug	%> </td>
+<td> <%=	ingredient.folate_dfe_ug	%> </td>
+<td> <%=	ingredient.choline_tot_mg	%> </td>
+<td> <%=	ingredient.vit_b12_ug	%> </td>
+<td> <%=	ingredient.vit_a_iu	%> </td>
+<td> <%=	ingredient.vit_a_rae	%> </td>
+<td> <%=	ingredient.retinol_ug	%> </td>
+<td> <%=	ingredient.alpha_carot_ug	%> </td>
+<td> <%=	ingredient.beta_carot_ug	%> </td>
+<td> <%=	ingredient.beta_crypt_ug	%> </td>
+<td> <%=	ingredient.lycopene_ug	%> </td>
+<td> <%=	ingredient.lut_zea_ug	%> </td>
+<td> <%=	ingredient.vit_e_mg	%> </td>
+<td> <%=	ingredient.vit_d_ug	%> </td>
+<td> <%=	ingredient.vit_d_iu	%> </td>
+<td> <%=	ingredient.vit_k_ug	%> </td>
+<td> <%=	ingredient.fa_sat_g	%> </td>
+<td> <%=	ingredient.fa_mono_g	%> </td>
+<td> <%=	ingredient.fa_poly_g	%> </td>
+<td> <%=	ingredient.gmwt_1	%> </td>
+<td> <%=	ingredient.gmwt_desc1	%> </td>
+<td> <%=	ingredient.gmwt_2	%> </td>
+<td> <%=	ingredient.gmwt_desc2	%> </td>
+<td> <%=	ingredient.gmwt_3	%> </td>
+<td> <%=	ingredient.gmwt_desc3	%> </td>
+<td> <%=	ingredient.gmwt_4	%> </td>
+<td> <%=	ingredient.gmwt_desc4	%> </td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
