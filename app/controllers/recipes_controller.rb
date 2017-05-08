@@ -10,4 +10,6 @@ class RecipesController < ApplicationController
     @recipe.ingredients_recipes.build
   end
 
+  def index
+  end
 end
