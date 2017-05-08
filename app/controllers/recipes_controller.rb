@@ -28,4 +28,6 @@ private
 
   end
 
+  def index
+  end
 end
