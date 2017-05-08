@@ -74,4 +74,38 @@ csv.each do |row|
   puts "#{t.name}, #{t.gmwt_desc1} saved"
 end
 
-puts "There are now #{t.count} rows in the ingredients table"
+
+
+
+User.create(user_name: 'Swapna', email: 'swapna@gmail.com', crypted_password: 'password')
+User.create(user_name: 'Paul', email: 'paul@gmail.com', crypted_password: 'password')
+User.create(user_name: 'Azadeh', email: 'azadeh@gmail.com', crypted_password: 'password')
+User.create(user_name: 'Mark', email: 'mark@gmail.com', crypted_password: 'password')
+
+
+
+
+Recipe.create(name: 'AppleCarrotGinger', user_id:1)
+Recipe.create(name: 'BeetSpinach', user_id:2)
+Recipe.create(name: 'KaleCarrotAppleGinger', user_id:3)
+Recipe.create(name: 'CeleryCucumberAppleGingerLemon' ,user_id:4)
+
+
+
+IngredientsRecipe.create(recipe_id:1, ingredient_id:30, quantity:30)
+IngredientsRecipe.create(recipe_id:1,  ingredient_id:2, quantity:30)
+IngredientsRecipe.create(recipe_id:1,  ingredient_id:66, quantity:30)
+
+IngredientsRecipe.create(recipe_id:2,  ingredient_id:17, quantity:30)
+IngredientsRecipe.create(recipe_id:2,  ingredient_id:151, quantity:30)
+
+IngredientsRecipe.create(recipe_id:3,  ingredient_id:74, quantity:30)
+IngredientsRecipe.create(recipe_id:3,  ingredient_id:30, quantity:30)
+IngredientsRecipe.create(recipe_id:3,  ingredient_id:3, quantity:30)
+IngredientsRecipe.create(recipe_id:3, ingredient_id:66, quantity:30)
+
+IngredientsRecipe.create(recipe_id:4,  ingredient_id:36, quantity:30)
+IngredientsRecipe.create(recipe_id:4,  ingredient_id:54, quantity:30)
+IngredientsRecipe.create(recipe_id:4,  ingredient_id:3, quantity:30)
+IngredientsRecipe.create(recipe_id:4,  ingredient_id:66, quantity:30)
+IngredientsRecipe.create(recipe_id:4,  ingredient_id:82, quantity:30)
