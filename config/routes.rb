@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   # get 'sessions/new'
+  root 'home#index'
+  get 'home/index'
+
    resources :users, only: [:new, :edit, :show]
 
    resources :recipes do
      resources :reviews, only: [:new, :create, :edit]
    end
 
-   resources :ingredients, only: [:show]
+
+   resources :ingredients
+  #  resources :ingredients, only: [:show]
+
 
    resources :ingredients_recipes
   # get 'users/index'

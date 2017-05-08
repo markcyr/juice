@@ -1,5 +1,6 @@
 class IngredientsRecipesController < ApplicationController
 
+
   # def new
   #   @ingredient_recipe = IngredientsRecipe.new
   # end
@@ -8,5 +9,6 @@ class IngredientsRecipesController < ApplicationController
   #   @ingredient_recipe = IngredientsRecipe.new
   #   # @ingredient_recipe.recipe
   # end
+
 
 end
