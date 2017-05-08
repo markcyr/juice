@@ -19,4 +19,5 @@ private
     params.require(:recipe).[permit :name, :image, :user_id]
 
   end
+
 end
