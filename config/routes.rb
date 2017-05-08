@@ -9,8 +9,10 @@ Rails.application.routes.draw do
      resources :reviews, only: [:new, :create, :edit]
    end
 
+
    resources :ingredients
   #  resources :ingredients, only: [:show]
+
 
    resources :ingredients_recipes
   # get 'users/index'

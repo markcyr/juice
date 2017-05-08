@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
 
 
-  def index
+  def new
+    @recipe = Recipe.new
+    @recipe.ingredients.build
+  end
+  
+    def index
     @recipes = Recipe.all
     @search = Recipe.search(params[:q])
     @recipes = @search.result
@@ -15,7 +20,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-
+    @recipe.ingredients_recipes.build
   end
 private
   def recipe_params
