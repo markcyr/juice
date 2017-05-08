@@ -1,15 +1,14 @@
 class IngredientsRecipesController < ApplicationController
-  def index
-  end
 
-  def show
-  end
 
-  def new
-  end
-
-  def edit
-  end
+  # def new
+  #   @ingredient_recipe = IngredientsRecipe.new
+  # end
+  #
+  # def create
+  #   @ingredient_recipe = IngredientsRecipe.new
+  #   # @ingredient_recipe.recipe
+  # end
 
 
 end
