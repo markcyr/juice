@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.ingredients.build
   end
-  
+
     def index
     @recipes = Recipe.all
     @search = Recipe.search(params[:q])
@@ -28,6 +28,4 @@ private
 
   end
 
-  def index
-  end
 end
