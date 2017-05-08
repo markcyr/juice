@@ -15,12 +15,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new()
-    @recipe.user = current_user
-  end
-private
-  def recipe_params
-    params.require(:recipe).permit (:name, :image, :user_id)
 
   end
+private
+  # def recipe_params params.require(:recipe).permit (:name, :image, :user_id)
+  #
+  # end
 
 end
