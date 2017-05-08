@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   # get 'sessions/new'
+  root 'home#index'
+  get 'home/index'
+
    resources :users, only: [:new, :edit, :show]
 
    resources :recipes do
