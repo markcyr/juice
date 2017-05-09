@@ -1,0 +1,36 @@
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+  <p>Oops - there were problems with your submission. Please fix the following:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
+  <div class="field">
+     <%= f.label :user_name %><br />
+     <%= f.text_field :user_name %>
+  </div>
+
+  <div class="field">
+     <%= f.label :email %><br />
+     <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+     <%= f.label :password %><br />
+     <%= f.password_field :password %>
+  </div>
+  <div class="field">
+     <%= f.label :password_confirmation %><br />
+     <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+     <%= f.submit "Save" %>
+  </div>
+
+<% end %>

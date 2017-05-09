@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
-   resources :users, only: [:new, :edit, :show]
+   resources :users, only: [:new, :edit, :show, :create]
+  #  resources :users, only: [:new, :edit, :show :create]
 
    resources :recipes do
      resources :reviews, only: [:new, :create, :edit]
    end
-
+   resources :sessions
 
    resources :ingredients
   #  resources :ingredients, only: [:show]
