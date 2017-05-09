@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
     def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(:created_at)
     @search = Recipe.search(params[:q])
     @recipes = @search.result
   end
