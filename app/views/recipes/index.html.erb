@@ -9,13 +9,11 @@
   <div class"actions">
     <%= f.submit "Search" %></div>
 
-<h1>View Juicé: my recipes</h1>
+<h1>View recipes</h1>
 <% @recipes.each do |recipe| %>
 <p>
   <%= recipe.name %><br>
-  <%= link_to "Recipe","/recipes/#{recipe.id}" %>
-
-
+  <%= link_to "Recipe Details","/recipes/#{recipe.id}" %>
 
 </p>
 <% end %>

@@ -1,0 +1,8 @@
+<div class="nested_fields">
+
+  <div class="field">
+    <%= f.label :unit%>
+    <%=f.collection_select :unit, Ingredient.all, :id, :gmwt_desc1 %>
+  </div>
+
+</div>

@@ -4,10 +4,11 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.ingredients.build
+    @recipe.ingredients_recipes.build
   end
 
     def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(:created_at)
     @search = Recipe.search(params[:q])
     @recipes = @search.result
   end
@@ -29,3 +30,8 @@ private
   end
 
 end
+# <!-- <div>
+#   <%=f.fields_for :ingredients_recipes do |r|%>
+#     <%= render 'ingredients_recipe_fields', :f => r %>
+#   <%end%>
+# </div> -->
