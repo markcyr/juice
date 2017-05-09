@@ -1,4 +1,6 @@
-<h1>All my Juicé</h1>
+Name: <%= @recipe.name %><br>
+Ingredients: <% @recipe.ingredients.each do |ingredient| %>
+<%= ingredient.name %><br>
 
-<p>Name<%= @recipe.name %></p>
-<p>Ingredients</p>
+
+<% end %>

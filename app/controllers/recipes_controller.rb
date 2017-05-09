@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     # @user_name = @user_name.find(params_id)
-   @recipe.order(:created_at).reverse
+  #  @recipe.order(:created_at).reverse
   end
 
   def create
