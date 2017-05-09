@@ -11,7 +11,12 @@
 
 <h1>View Juicé: my recipes</h1>
 <% @recipes.each do |recipe| %>
-  <%= recipe.name %>
+<p>
+  <%= recipe.name %><br>
+  <%= link_to "Recipe","/recipes/#{recipe.id}" %>
 
+
+
+</p>
 <% end %>
 <% end %>
