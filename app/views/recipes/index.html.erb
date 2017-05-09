@@ -1,4 +1,3 @@
-
 <h1>Search All Recipes</h1>
 
 <%= search_form_for @search do |f| %>
@@ -8,15 +7,11 @@
   </div>
   <div class"actions">
     <%= f.submit "Search" %></div>
-
+  <% end %>
 <h1>View Juicé: my recipes</h1>
 <% @recipes.each do |recipe| %>
 <p>
   <%= recipe.name %><br>
   <%= link_to "Recipe","/recipes/#{recipe.id}" %>
-
-
-
 </p>
-<% end %>
 <% end %>
