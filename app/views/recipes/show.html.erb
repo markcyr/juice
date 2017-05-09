@@ -1,6 +1,14 @@
 Name: <%= @recipe.name %><br>
-Ingredients: <% @recipe.ingredients.each do |ingredient| %>
-<%= ingredient.name %><br>
+Ingredients:
 
-
+<% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+  Name: <%= ingredient_recipe.ingredient.name %><br>
+  quantity: <%= ingredient_recipe.quantity %><br>
 <% end %>
+
+
+
+
+<%= link_to "All Recipes", recipes_path %><br>
+
+<%= link_to "Back to profile", user_path  %>
