@@ -77,18 +77,18 @@ end
 
 
 
-swapna = User.create(user_name: 'Swapna', email: 'swapna@gmail.com', crypted_password: 'password')
-paul = User.create(user_name: 'Paul', email: 'paul@gmail.com', crypted_password: 'password')
-azadeh = User.create(user_name: 'Azadeh', email: 'azadeh@gmail.com', crypted_password: 'password')
-mark = User.create(user_name: 'Mark', email: 'mark@gmail.com', crypted_password: 'password')
+swapna = User.create(user_name: 'Swapna', email: 'swapna@gmail.com', password: 'password', password_confirmation: 'password')
+paul = User.create(user_name: 'Paul', email: 'paul@gmail.com', password: 'password', password_confirmation: 'password')
+azadeh = User.create(user_name: 'Azadeh', email: 'azadeh@gmail.com', password: 'password', password_confirmation: 'password')
+mark = User.create(user_name: 'Mark', email: 'mark@gmail.com', password: 'password', password_confirmation: 'password')
 
 
 
 
-Recipe.create(name: 'AppleCarrotGinger', user:swapna)
-Recipe.create(name: 'BeetSpinach', user:paul)
-Recipe.create(name: 'KaleCarrotAppleGinger', user:azadeh)
-Recipe.create(name: 'CeleryCucumberAppleGingerLemon' ,user:mark)
+Recipe.create(name: 'AppleCarrotGinger', user_id:1)
+Recipe.create(name: 'BeetSpinach', user_id:2)
+Recipe.create(name: 'KaleCarrotAppleGinger', user_id:3)
+Recipe.create(name: 'CeleryCucumberAppleGingerLemon' ,user_id:4)
 
 
 
