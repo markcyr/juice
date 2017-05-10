@@ -8,7 +8,10 @@ class IngredientsController < ApplicationController
   end
 
  def show
-     @ingredient = Ingredient.find(params[:id])
+      @ingredient = Ingredient.find(params[:id])
+  # <%= ingredient.select :unit, ingredient.measure%>
+# <%= ingredient.collection_select(:ingredient_id, @ingredient.measure, :id, :measure ) %>
+# <%= ingredient.select(:ingredient, :ingredient.measure)
  end
 
   def new

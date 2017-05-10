@@ -1,13 +1,11 @@
-<h1>Search All Recipes</h1>
 
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :name_cont, "Ingredient" %>
-    <%= f.text_field :name_cont %>
-  </div>
-  <div class"actions">
-    <%= f.submit "Search" %></div>
-<% end %>
+<%console%>
+<h5>Measures:</h5>
+  <ul>
+  <%@ingredient.measure.each do |m|%>
+   <li>unit:<%=m %></li>
+  </ul>
+<%end%>
 <h1>Listing ingredient</h1>
 
 <table border="black" align="center">

@@ -1,8 +1,8 @@
 <div class="nested-fields">
 
-  <div class="field">
+  <div class="field ingredient">
   <%= f.label :ingredient_id%>
-  <%=f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%=f.collection_select :ingredient_id, Ingredient.all, :name, :name %>
   </div>
 
   <div class="field">
@@ -10,9 +10,17 @@
   <%=f.number_field :quantity%>
   </div>
 
-  <div id="ingredients">
-    <%=f.fields_for :ingredient do |r|%>
-      <%= render 'ingredient_field', :f => r %>
-    <%end%>
+  <div class="field">
+  <%= f.label :unit%>
+  <%#=f.collection_select :ingredient_id, Ingredient.all, :id, :measure %>
+  <%#=f.select :ingredient_id, ingredient.measure %>
+
   </div>
+
+  <!-- <div id="ingredients"> -->
+
+    <%#=f.fields_for :ingredient do |ingredient|%>
+      <%#= render 'ingredient_field', ingredient: ingredient%>
+    <%#end%>
+  <!-- </div> -->
 </div>
