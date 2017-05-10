@@ -8,21 +8,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Healthy POP</a>
-    </div>
+      <a class="navbar-brand" href="/">Juicé</a>
+      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">My Recipes</a></li>
-          <li><a href="#">Create a Recipe</a></li>
-            <li><a href="#">Look for a Recipe</a></li>
+          <li><%= link_to 'My Recipes',current_user %></li>
+          <li><%= link_to 'Create a Recipe',new_recipe_url %></li>
+            <li><%= link_to 'Look for a Recipe' , recipes_url %></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Login</a></li>
+        <% if current_user %>
+        <li >Hey <%= current_user.user_name %></li>
+        <li><%= link_to 'Logout',:logout, method: :post %></li>
+        <% else %>
+          <li><%= link_to 'Login', :login %></li>
+          <li><%= link_to 'Sign Up', new_user_path %></li>
+        <% end %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

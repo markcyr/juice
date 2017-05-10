@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+  before_action :require_login, only: [:new, :show]
 
   def new
     @recipe = Recipe.new
@@ -8,13 +8,16 @@ class RecipesController < ApplicationController
   end
 
     def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(:created_at)
     @search = Recipe.search(params[:q])
     @recipes = @search.result
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @reviews = @recipe.reviews.order(:created_at).reverse
+    @review = @recipe.reviews.build
+
     # @user_name = @user_name.find(params_id)
   #  @recipe.order(:created_at).reverse
   end

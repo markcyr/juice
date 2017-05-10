@@ -1,0 +1,11 @@
+Welcome <%= @user.user_name %><br>
+<p> This is where your recipes will be, try to create a few
+<%= link_to "create", "/recipes/new" %>
+<p>
+
+List of your recipes<br>
+<% @user.recipes.each do |recipe| %>
+<%= link_to recipe.name, "/recipes/#{recipe.id}" %><br>
+test<br>
+
+<% end %>
