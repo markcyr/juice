@@ -109,3 +109,6 @@ IngredientsRecipe.create(recipe_id:4,  ingredient_id:54, quantity:30)
 IngredientsRecipe.create(recipe_id:4,  ingredient_id:3, quantity:30)
 IngredientsRecipe.create(recipe_id:4,  ingredient_id:66, quantity:30)
 IngredientsRecipe.create(recipe_id:4,  ingredient_id:82, quantity:30)
+
+Unit.create(unit_name: gr)
+Unit.create(unit_name: cup)
