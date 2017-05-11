@@ -1,13 +1,13 @@
 <h1>Search All Recipes</h1>
 
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :name_cont, "Ingredient" %>
-    <%= f.text_field :name_cont %>
-  </div>
-  <div class"actions">
-    <%= f.submit "Search" %></div>
-<% end %>
+<div class="search">
+<%= form_tag recipes_url, method: 'get' do%>
+  <%= text_field_tag :query, params[:query], placeholder: 'Ingredient'%>
+<%= submit_tag 'Find'%>
+<%end%>
+</div>
+
+
 <h1>View recipes</h1>
 <% @recipes.each do |recipe| %>
 <p>
