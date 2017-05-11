@@ -5,13 +5,18 @@ ingredients = {}
 Ingredient.all.each{|i| ingredients[i.name]= i.measure}
 %>
 var ingredients = <%= ingredients.to_json %>
-console.log(ingredients)
-// $('.actions').on('click', function(){
-$('.ingredients_recipes_list').on('change', '.ingredient', function(){
-  var n = $('.ingredient select').val();
-  console.log(n)
-  var a = ingredients[n]
-  var k = $('<select class = measure>').appendTo('.field:last')
+console.log(ingredients);
+
+$('.ingredients_recipes_list').on('change', '.ingredient', function(event){
+    // if($('.measure').val() !== undefined){
+    //   $('.measure').empty();
+    // }
+    // console.log(k)
+  var n = $(event.target).val(),
+      a = ingredients[n],
+      k = $('<select class = measure>').appendTo('.field:last');
+      console.log($('.field:last').html)
+   console.log(n);
   for(var i=0; i < a.length; i++){
 
     $('<option>').attr('value',a[i])
