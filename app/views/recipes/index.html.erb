@@ -1,5 +1,76 @@
 <h1>Search All Recipes</h1>
 
+
+<div class="row">
+		<div class="col-md-6">
+      <h1>View recipes</h1>
+<table>
+
+      <% @recipes.each do |recipe| %>
+      <tr>
+        <td colspan="2" align="center" > <H1>  <%= recipe.name %> </H1>  </td>
+      </tr>
+      <tr>
+      <td>
+
+        <img alt="Bootstrap Image Preview" src="/assets/glass.jpg">
+      </td>
+      <td>
+        <h3>Ingredient List</h3>
+        <ul>
+          <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
+            <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
+            <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center" > <H1>  <%= link_to "Recipe Details","/recipes/#{recipe.id}" %> </H1>  </td>
+    </tr>
+      <% end %>
+
+</table>
+		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<ul class="pagination">
+				<li>
+					<a href="#">Prev</a>
+				</li>
+				<li>
+					<a href="#">1</a>
+				</li>
+				<li>
+					<a href="#">2</a>
+				</li>
+				<li>
+					<a href="#">3</a>
+				</li>
+				<li>
+					<a href="#">4</a>
+				</li>
+				<li>
+					<a href="#">5</a>
+				</li>
+				<li>
+					<a href="#">Next</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+
+
+
+
 <div class="search">
 <%= form_tag recipes_url, method: 'get' do%>
   <%= text_field_tag :query, params[:query], placeholder: 'Ingredient'%>
@@ -8,11 +79,4 @@
 </div>
 
 
-<h1>View recipes</h1>
-<% @recipes.each do |recipe| %>
-<p>
-  <%= recipe.name %><br>
-  <%= link_to "Recipe Details","/recipes/#{recipe.id}" %>
 
-</p>
-<% end %>
