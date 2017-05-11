@@ -7,10 +7,16 @@ class RecipesController < ApplicationController
     @recipe.ingredients_recipes.build
   end
 
-    def index
-    @recipes = Recipe.all.order(:created_at)
-    @search = Recipe.search(params[:q])
-    @recipes = @search.result
+  def index
+    # @search = Recipe.search(params[:q])
+    # @recipes = @search.result
+    # Ingredients.find(params[:name])
+    if (params[:query] != "")
+      @recipes = Recipe.joins(:ingredients).where("ingredients.name LIKE ? OR recipes.name LIKE ?" ,"%#{params[:query]}%".upcase,"%#{params[:query]}%").distinct
+      # @recipes = Recipe.where("%#{params[:ingredient_name]}%")
+    else
+      @recipes = Recipe.all.order(:created_at)
+    end
   end
 
   def show
