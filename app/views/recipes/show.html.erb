@@ -44,62 +44,51 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-        <h3>Reviews</h3>
-          <h4> How do you like the Juice</h4>
-			<div class="btn-group btn-group-sm">
 
-				<button class="btn btn-default" type="button">
-					<em class="glyphicon glyphicon-star"></em> 1 Star
-				</button>
-				<button class="btn btn-default" type="button">
-					<em class="glyphicon glyphicon-star"></em>  2 Star
-				</button>
-				<button class="btn btn-default" type="button">
-					<em class="glyphicon glyphicon-star"></em>  3 Star
-				</button>
-				<button class="btn btn-default" type="button">
-					<em class="glyphicon glyphicon-star"></em>  4 Star
-				</button>
-        <button class="btn btn-default" type="button">
-          <em class="glyphicon glyphicon-star"></em>  5 Star
-        </button>
-			</div>
-
-
-
-          <%= @reviews.each do |review| %>
-
-              <%= review.comment %></br>
-              <% if review.user != nil %>
-               by <%= review.created_at%>
-                 by <%= review.rating %>
-              <%= link_to "edit", edit_reciep_product_path(@recipe,review) %>
-              <% end %>
-
-            <% end %>
-
-			<form role="form">
-				<div class="form-group">
-
-					<label for="exampleInputEmail1">
-						Email address
-					</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" />
-				</div>
-				<div class="form-group">
-
-					<label for="exampleInputPassword1">
-						Password
-					</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" />
-				</div>
+        <%= form_for([@recipe, @review]) do |f| %>
+            <h4> How do you like the Juice</h4>
+            <div>
+                <%= f.radio_button :rating, 1 %>
+                <%= f.label :rating_1, "$" %>
+                <%= f.radio_button :rating, 2 %>
+                <%= f.label :rating_2, "$$" %>
+                <%= f.radio_button :rating, 3%>
+                <%= f.label :rating_3, "$$$" %>
+                <%= f.radio_button :rating, 4 %>
+                <%= f.label :rating_4, "$$$$" %>
+                <%= f.radio_button :rating, 5 %>
+                <%= f.label :rating_5, "$$$$$$" %>
+            </div>
+            <div>
+                  <%= f.label :comment %><br />
+                  <%= f.text_area :comment %>
+            </div>
+            <div>
+                  <%= f.submit %>
+            </div>
+        <% end %>
 
 
-				<button type="submit" class="btn btn-default">
-					Submit
-				</button>
-			</form>
-		</div>
+
+
+
+    <p><h3>Reviews for <%= @recipe.name %></h3></p>
+
+      <% @recipe.reviews.each do |review| %>
+        <p>
+          <b>  Comment:</b><%= review.comment %></br>
+            <b> here is my user id:</b> <%= @recipe.user.user_name %></br>
+              <b> here is my rating:</b> <%= review.rating %></br>
+              <b>on this date:</b> <%= review.created_at%>
+        </p>
+        <% end %>
+
+  </div>
+
+
+
+
+
 		<div class="col-md-4">
       <h3>HERE WILL GO THE NUTRITION VALUES</h3>
 			<ul class="list-unstyled">
@@ -134,21 +123,3 @@
 		</div>
 	</div>
 </div>
-<h4>Ratings</h4>
-
-
-
-
-
-  <h4>New Review</h4>
-  <%= form_for([@recipe,@review]) do |f| %>
-      <div class="field">
-          <%= f.label :comment %><br />
-          <%= f.text_area :comment %><br />
-          <%= f.label :rating %><br />
-          <%= f.number_field :rating %>
-      </div>
-      <div class="actions">
-          <%= f.submit %>
-
-          <% end %>
