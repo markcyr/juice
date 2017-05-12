@@ -27,8 +27,10 @@
       <h3>Ingredient List</h3>
       <ul >
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+
           <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
           <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
+
         <% end %>
       </ul>
     </div>
@@ -44,6 +46,7 @@
   </div>
   <div class="row">
     <div class="col-md-4">
+<<<<<<< HEAD
         <h3>Reviews</h3>
           <h4> How do you like the Juice</h4>
       <div class="btn-group btn-group-sm">
@@ -121,20 +124,84 @@
   </div>
 </div>
 <h4>Ratings</h4>
+=======
+
+        <%= form_for([@recipe, @review]) do |f| %>
+            <h4> How do you like the Juice</h4>
+            <div>
+                <%= f.radio_button :rating, 1 %>
+                <%= f.label :rating_1, "$" %>
+                <%= f.radio_button :rating, 2 %>
+                <%= f.label :rating_2, "$$" %>
+                <%= f.radio_button :rating, 3%>
+                <%= f.label :rating_3, "$$$" %>
+                <%= f.radio_button :rating, 4 %>
+                <%= f.label :rating_4, "$$$$" %>
+                <%= f.radio_button :rating, 5 %>
+                <%= f.label :rating_5, "$$$$$$" %>
+            </div>
+            <div>
+                  <%= f.label :comment %><br />
+                  <%= f.text_area :comment %>
+            </div>
+            <div>
+                  <%= f.submit %>
+            </div>
+        <% end %>
+>>>>>>> 6f18390a6a40b795f3c082c5e2e3260e759d3f74
 
 
 
 
 
-  <h4>New Review</h4>
-  <%= form_for([@recipe,@review]) do |f| %>
-      <div class="field">
-          <%= f.label :comment %><br />
-          <%= f.text_area :comment %><br />
-          <%= f.label :rating %><br />
-          <%= f.number_field :rating %>
-      </div>
-      <div class="actions">
-          <%= f.submit %>
+    <p><h3>Reviews for <%= @recipe.name %></h3></p>
 
-          <% end %>
+      <% @recipe.reviews.each do |review| %>
+        <p>
+          <b>  Comment:</b><%= review.comment %></br>
+            <b> here is my user id:</b> <%= @recipe.user.user_name %></br>
+              <b> here is my rating:</b> <%= review.rating %></br>
+              <b>on this date:</b> <%= review.created_at%>
+        </p>
+        <% end %>
+
+  </div>
+
+
+
+
+
+    <div class="col-md-4">
+      <h3>HERE WILL GO THE NUTRITION VALUES</h3>
+      <ul class="list-unstyled">
+        <li>
+          <%= @recipe.iron%>
+        </li>
+        <li>
+          Consectetur adipiscing elit
+        </li>
+        <li>
+          Integer molestie lorem at massa
+        </li>
+        <li>
+          Facilisis in pretium nisl aliquet
+        </li>
+        <li>
+          Nulla volutpat aliquam velit
+        </li>
+        <li>
+          Faucibus porta lacus fringilla vel
+        </li>
+        <li>
+          Aenean sit amet erat nunc
+        </li>
+        <li>
+          Eget porttitor lorem
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
+    </div>
+  </div>
+</div>

@@ -10,5 +10,4 @@ class IngredientsRecipesController < ApplicationController
   #   # @ingredient_recipe.recipe
   # end
 
-
 end
