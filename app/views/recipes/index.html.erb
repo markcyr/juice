@@ -1,5 +1,11 @@
 <h1>Seach All Recipes</h1>
 
+<form action="/recipes" method="GET">
+   <label for="search_field">Search</label>
+   <input id="search_field" type="text" name="query">
+   <input type="submit">
+ </form>
+
 <% if @recipes && !@recipes.empty? %>
     <ul>
     <% @recipes.each do | r | %>
@@ -81,7 +87,3 @@
     </div>
   </div>
 </div>
-
-
-
-
