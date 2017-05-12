@@ -7,4 +7,17 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
   accepts_nested_attributes_for :ingredients_recipes
+
+
+  def iron
+    iron_array = []
+    joint_record = self.ingredients_recipes
+    joint_record.each do |ingredient_recipe|
+    q = ingredient_recipe.quantity
+    f = ingredient_recipe.ingredient.iron_mg
+    iron_array << q*(f/100.0)
+    end
+    return iron_array.sum
+  end
+
 end
