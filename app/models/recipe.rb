@@ -7,4 +7,25 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
   accepts_nested_attributes_for :ingredients_recipes
+
+  # def water
+  #
+  #  @recipe.ingredients_recipes.each do |ingredient_recipe|
+  #
+  #    amount = ingredient_recipe.quantity
+  #
+  #    total_water = ingredient_recipe.ingredient.water_g
+  #
+  #    return amount * total_water
+  #
+  #
+  # end
 end
+
+
+
+
+# <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+# Name:<%= ingredient_recipe.ingredient.name %> ,
+# <%= ingredient_recipe.quantity %><br>
+# Water: <%= ingredient_recipe.ingredient.water_g %>gms<br>
