@@ -7,4 +7,6 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
   accepts_nested_attributes_for :ingredients_recipes
+
+  
 end

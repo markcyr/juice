@@ -32,12 +32,23 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.ingredients_recipes.build
+    # @recipe.ingredients_recipes.build
     # @recipe.ingredients.build
+      @recipe.user_id = current_user.id
+    puts "PARAMS NAME #{params[:recipe][:name]}"
+    puts "PARAMS IMAGE #{params[:recipe][:image]}"
+    puts "PARAMS USER ID #{params[:recipe][:user_id]}"
+
+    if @recipe.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
+
   end
 private
   def recipe_params
-    params.require(:recipe).permit(:name, :image, :user_id)
+    params.require(:recipe).permit(:name, :image, :user_id, ingredients_recipes_attributes: [:ingredient_id, :quantity, :unit_id])
 
   end
 
