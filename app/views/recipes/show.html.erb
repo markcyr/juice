@@ -1,51 +1,49 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="page-header">
-    <h1><%= @recipe.name %></h1>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h2>
-        Juicing Article
-      </h2>
-      <p> Here will be a really cool article about juicing
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="page-header">
+		<h1><%= @recipe.name %></h1>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h2>
+				Juicing Article
+			</h2>
+			<p> Here will be a really cool article about juicing
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
 
 
       <img src="/assets/glass.jpg" alt="apple">
-        <!-- <img  src="assets/green.jpg" alt="juice"> -->
-    </div>
-    <div class="col-md-4">
+  			<!-- <img  src="assets/green.jpg" alt="juice"> -->
+		</div>
+		<div class="col-md-4">
       <h3>Ingredient List</h3>
-      <ul >
+			<ul >
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
-
           <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
           <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
-
         <% end %>
-      </ul>
-    </div>
-    <div class="col-md-4">
+			</ul>
+		</div>
+		<div class="col-md-4">
       <h2>
-        Which Juicer should you buy
-      </h2>
-      <p> Let us show you our findings</p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
+				Which Juicer should you buy
+			</h2>
+			<p> Let us show you our findings</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
 
         <%= form_for([@recipe, @review]) do |f| %>
             <h4> How do you like the Juice</h4>
@@ -72,8 +70,6 @@
 
 
 
-
-
     <p><h3>Reviews for <%= @recipe.name %></h3></p>
 
       <% @recipe.reviews.each do |review| %>
@@ -86,9 +82,6 @@
         <% end %>
 
   </div>
-
-
-
 
 
     <div class="col-md-4">
