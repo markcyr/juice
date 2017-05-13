@@ -41,6 +41,7 @@ class Recipe < ApplicationRecord
   # end
 
   def calcium
+    
     calcium_array = []
     joint_record = self.ingredients_recipes
     joint_record.each do |ingredient_recipe|
