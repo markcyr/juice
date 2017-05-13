@@ -27,15 +27,14 @@
       <h3>Ingredient List</h3>
       <ul >
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
-
           <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
           <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
-
         <% end %>
       </ul>
     </div>
     <div class="col-md-4">
       <h2>
+<<<<<<< HEAD
         Which Juicer should you buy
       </h2>
       <p> Let us show you our findings</p>
@@ -113,7 +112,7 @@
          Water: <%= ingredient_recipe.ingredient.water_g %>gms<br>
 
         <% end %>
-      
+
 
 
       </ul>
@@ -124,7 +123,18 @@
   </div>
 </div>
 <h4>Ratings</h4>
-=======
+
+        Which Juicer should you buy
+      </h2>
+      <p> Let us show you our findings</p>
+      <p>
+        <a class="btn" href="#">View details »</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+
 
         <%= form_for([@recipe, @review]) do |f| %>
             <h4> How do you like the Juice</h4>
@@ -148,8 +158,6 @@
                   <%= f.submit %>
             </div>
         <% end %>
->>>>>>> 6f18390a6a40b795f3c082c5e2e3260e759d3f74
-
 
 
 
@@ -158,17 +166,16 @@
 
       <% @recipe.reviews.each do |review| %>
         <p>
+
           <b>  Comment:</b><%= review.comment %></br>
-            <b> here is my user id:</b> <%= @recipe.user.user_name %></br>
-              <b> here is my rating:</b> <%= review.rating %></br>
+<% if review.user != nil %>
+              <b> here is my rating:</b> <%= review.user.user_name %></br>
               <b>on this date:</b> <%= review.created_at%>
+              <% end %>
         </p>
         <% end %>
 
   </div>
-
-
-
 
 
     <div class="col-md-4">
