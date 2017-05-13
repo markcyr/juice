@@ -1,0 +1,6 @@
+<ul class="reviews">
+  test
+<% @reviews.each do |review| %>
+<%= render partial: 'single_review',locals: {review: comment}%>
+<% end %>
+</ul>
