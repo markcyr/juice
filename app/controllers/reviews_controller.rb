@@ -6,15 +6,18 @@ before_action :load_recipe
   end
 
   def create
+    @review = Review.new
     # @recipe = Recipe.find(params[:recipe.id])
     @review = @recipe.reviews.build(review_params)
-    @review.user = current_user
+    @review.user_id = current_user.id
+
     if @review.save
-        redirect_to 'recipes/show' , notice: 'Review created successfully'
-      else
-        redirect_to 'recipe/show', notice: 'Review didnt go'
-      end
-  end
+                 redirect_to 'recipes/show' , notice: 'Review created successfully'
+               else
+                 redirect_to 'recipe/show', notice: 'Review didnt go'
+
+               end
+    end
 
 private
 
