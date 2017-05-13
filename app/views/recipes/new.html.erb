@@ -1,6 +1,6 @@
 <%= form_for @recipe do |f|%>
 
-  <div id="ingredients_recipes">
+  <div id="ingredients_recipes" class="ingredients_recipes_list">
     <%=f.fields_for :ingredients_recipes do |r|%>
     <%= render 'ingredients_recipe_fields', :f => r %>
     <%end%>

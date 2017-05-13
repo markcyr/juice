@@ -2,7 +2,7 @@
 
   <div class="field ingredient">
   <%= f.label :ingredient_id%>
-  <%=f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%=f.collection_select :ingredient_id, Ingredient.all, :name, :name %>
   </div>
 
   <div class="field">
@@ -11,15 +11,9 @@
   </div>
 
   <div class="field">
+
   <%= f.label :unit_id%>
-  <%#=f.collection_select :ingredient_id, Ingredient.all, :id, :measure %>
   <%= f.collection_select :unit_id, Unit.all, :id, :unit_name %>
+
   </div>
-
-  <!-- <div id="ingredients"> -->
-
-    <%#=f.fields_for :ingredient do |ingredient|%>
-      <%#= render 'ingredient_field', ingredient: ingredient%>
-    <%#end%>
-  <!-- </div> -->
 </div>
