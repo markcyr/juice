@@ -70,14 +70,17 @@
 
 
 
+
     <p><h3>Reviews for <%= @recipe.name %></h3></p>
 
       <% @recipe.reviews.each do |review| %>
         <p>
+
           <b>  Comment:</b><%= review.comment %></br>
-            <b> here is my user id:</b> <%= @recipe.user.user_name %></br>
-              <b> here is my rating:</b> <%= review.rating %></br>
+<% if review.user != nil %>
+              <b> here is my rating:</b> <%= review.user.user_name %></br>
               <b>on this date:</b> <%= review.created_at%>
+              <% end %>
         </p>
         <% end %>
 
