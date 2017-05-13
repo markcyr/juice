@@ -51,5 +51,15 @@ class Recipe < ApplicationRecord
     end
     return calcium_array.sum
 
+
   end
+
 end
+
+
+
+
+# <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+# Name:<%= ingredient_recipe.ingredient.name %> ,
+# <%= ingredient_recipe.quantity %><br>
+# Water: <%= ingredient_recipe.ingredient.water_g %>gms<br>
