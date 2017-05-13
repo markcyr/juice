@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    # @iron = @recipe.iron
+
     # @reviews = @recipe.reviews.order(:created_at).reverse
     # @review = @recipe.reviews.build
 
