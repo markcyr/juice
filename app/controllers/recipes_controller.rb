@@ -41,7 +41,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    # @recipe.ingredients_recipes.build
     # @recipe.ingredients.build
       @recipe.user_id = current_user.id
     puts "PARAMS NAME #{params[:recipe][:name]}"

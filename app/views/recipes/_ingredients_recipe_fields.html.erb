@@ -2,7 +2,7 @@
 
   <div class="field ingredient">
   <%= f.label :ingredient_id%>
-  <%=f.collection_select :ingredient_id, Ingredient.all, :name, :name %>
+  <%=f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
   </div>
 
   <div class="field">
