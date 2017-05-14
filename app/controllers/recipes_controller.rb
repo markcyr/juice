@@ -27,9 +27,6 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
 
-    # @reviews = @recipe.reviews.order(:created_at).reverse
-    # @review = @recipe.reviews.build
-
     if current_user
 
       @review = @recipe.reviews.build
