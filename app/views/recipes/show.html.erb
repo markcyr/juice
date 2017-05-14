@@ -104,11 +104,10 @@
     <div class="col-md-4">
       <h3>HERE WILL GO THE NUTRITION VALUES</h3>
       <ul class="list-unstyled">
-         <%#= @recipe.get_nutrient.each do |key, value|%>
         <li>
-        <%#="#{key}: #{value}"%>
-        <%=@recipe.calcium%>
+          iron: <%=@recipe.get_nutrient('iron')%> mg
         </li>
+
         <li>
           Consectetur adipiscing elit
         </li>
@@ -130,7 +129,7 @@
         <li>
           Eget porttitor lorem
         </li>
-        <%#end%>
+
       </ul>
     </div>
     <div class="col-md-4">
