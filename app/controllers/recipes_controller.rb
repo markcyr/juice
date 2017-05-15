@@ -7,9 +7,14 @@ class RecipesController < ApplicationController
     @recipe.ingredients_recipes.build
   end
   def edit
+    @recipe = Recipe.find(params[:id])
+  end
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update_attributes(recipe_params)
+    redirect_to recipe_url(@recipe)
 
   end
-
   def index
       if ( params[ :query ] && params[ :query ] != "" )
         queryArr = params[ :query ].split( " " )
@@ -54,6 +59,10 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+
+
+
+
 
   end
 private

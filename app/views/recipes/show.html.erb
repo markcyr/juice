@@ -2,8 +2,9 @@
   <div class="row">
     <div class="col-md-8">
       <div class="page-header">
-    <h1><%= @recipe.name %></h1>
-      
+
+    <h1><%= @recipe.name %></h1><%=  link_to "edit", edit_recipe_path(@recipe) %>
+
       </div>
     </div>
     <div class="col-md-4">
