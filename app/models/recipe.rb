@@ -55,7 +55,7 @@ class Recipe < ApplicationRecord
 
     characters = ["Monster", "Diva", "King", "Princess", "Prince", "Queen", "Giant", "Fighter", "Wizard", "Hero", "Heroine", "Explorer", "Rebel", "Ruler", "Boss", "God", "Goddess", "Challenger", "Warrior", "Badboy", "Contender", "Cat-lady", "Bad-girl", "Drama-Queen", "Southern Bell", "Soulmate", "Ninja", "Knight", "Droid", "Hacker", "Robot", "Drag-Queen"]
 
-    self.name = adjective.sample + " " + ingredients.sample.name + " " + characters.sample
+    self.name = adjective.sample + " " + ingredients.sample.name.titlecase + " " + characters.sample
 
     self.save
   end

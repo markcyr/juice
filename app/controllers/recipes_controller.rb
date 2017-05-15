@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
         allResults = [];
 
         queryArr.each do | queryTerm |
-          results = Recipe.joins( :ingredients ).where( "recipes.name LIKE ? OR ingredients.name LIKE ?",  "%#{queryTerm}%".upcase, "%#{queryTerm}%".upcase )
+          results = Recipe.joins( :ingredients ).where( "recipes.name LIKE ? OR ingredients.name LIKE ?",  "%#{queryTerm}%".titlecase, "%#{queryTerm}%".upcase )
 
           allResults = allResults.concat( results )
         end
