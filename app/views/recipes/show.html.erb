@@ -86,18 +86,17 @@
 
 
     <p><h3>Reviews for <%= @recipe.name %></h3></p>
+    <ul id="reviewoutput" style="list-style: none">
 
-      <% @recipe.reviews.each do |review| %>
-        <p>
-
-          <b>  Comment:</b><%= review.comment %></br>
-<% if review.user != nil %>
-              <b> here is my rating:</b> <%= review.user.user_name %></br>
-              <b>on this date:</b> <%= review.created_at%>
-              <% end %>
-        </p>
-        <% end %>
-
+            <% @recipe.reviews.each do |review| %>
+              <li>Comment:<%= review.comment %></li>
+              <li>Rating:</b><%= review.rating %></li>
+                  <% if review.user != nil %>
+              <li>User:</b> <%= review.user.user_name %></li>
+              <li>On this date:</b> <%= review.created_at%></li>
+                  <% end %>
+            <% end %>
+          </ul>
   </div>
 
 

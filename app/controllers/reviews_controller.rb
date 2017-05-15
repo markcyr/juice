@@ -11,14 +11,22 @@ before_action :load_recipe
     @review = @recipe.reviews.build(review_params)
     @review.user_id = current_user.id
 
-    if @review.save
+    if request.xhr?
+      if @review.save
+        render partial: 'single_review'
+      else
+
+      end
+
+
+    else
+        if @review.save
                  redirect_to 'recipes/show' , notice: 'Review created successfully'
                else
                  redirect_to 'recipe/show', notice: 'Review didnt go'
-
-               end
+        end
     end
-
+  end
 private
 
   def review_params
