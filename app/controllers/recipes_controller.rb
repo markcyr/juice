@@ -6,6 +6,9 @@ class RecipesController < ApplicationController
     @recipe.ingredients.build
     @recipe.ingredients_recipes.build
   end
+  def edit
+
+  end
 
   def index
       if ( params[ :query ] && params[ :query ] != "" )
