@@ -101,36 +101,76 @@
   </div>
 
 
-    <div class="col-md-4">
-      <h3>HERE WILL GO THE NUTRITION VALUES</h3>
-      <ul class="list-unstyled">
-        <li>
-          iron: <%=@recipe.get_nutrient('iron')%> mg    <%=@recipe.daily_value('iron')%> %
-        </li>
-
-        <li>
-          calcium: <%=@recipe.get_nutrient('calcium')%> mg  <%=@recipe.daily_value('calcium')%> %
-        </li>
-        <li>
-          Integer molestie lorem at massa
-        </li>
-        <li>
-          Facilisis in pretium nisl aliquet
-        </li>
-        <li>
-          Nulla volutpat aliquam velit
-        </li>
-        <li>
-          Faucibus porta lacus fringilla vel
-        </li>
-        <li>
-          Aenean sit amet erat nunc
-        </li>
-        <li>
-          Eget porttitor lorem
-        </li>
-
-      </ul>
+  <div class="col-md-4">
+    <h3>HERE WILL GO THE NUTRITION VALUES</h3>
+    <table class = "nutrition_facts">
+      <thead>
+        <tr>
+          <th>Nutrition facts</th>
+        </tr>
+        <tr>
+          <td>Serving Size 1/2 cup</td>
+          <td>125 g</td>
+        </tr>
+      </thead>
+        <tr class = "nutrient_cell">
+          <td class = "left_cell"> Amount per serving</td>
+          <td>%Daily Value</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td class = "left_cell">Calories <%=@recipe.get_nutrient('calory')%></td>
+        </tr>
+        <tr>
+          <td class = "left_cell">Total Fat</td>
+        </tr>
+        <tr>
+          <td class = "sub_cell left_cell">Saturated Fat</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td class = "sub_cell">Trans Fat</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td>Cholestrol 0</td>
+          <td>0%</td>
+        </tr>
+        <tr class="nutrient_cell">
+          <td>Sodium <%=@recipe.get_nutrient('sodium')%></td>
+          <td><%=@recipe.daily_value('sodium')%> %</td>
+        </tr>
+        <tr>
+          <td> Total Carbohydrates <%=@recipe.get_nutrient('carbohydrate')%></td>
+          <td><%=@recipe.daily_value('carbohydrate')%> %</td>
+        </tr>
+        <tr class="nutrient_cell">
+          <td>Dietary Fiber <%= @recipe.get_nutrient("fiber")%></td>
+          <td><%=@recipe.daily_value("fiber")%> %</td>
+        </tr>
+        <tr class="nutrient_cell" >
+          <td>Sugars <%= @recipe.get_nutrient("sugar")%></td>
+        </tr>
+        <tr >
+          <td>Protein <%= @recipe.get_nutrient("protein")%></td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td>Vitamin A</td>
+          <td><%=@recipe.daily_value("vitA")%> %</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td>Vitamin C</td>
+          <td><%=@recipe.daily_value("vitC")%> %</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td>Calcium</td>
+          <td><%=@recipe.daily_value('calcium')%> %</td>
+        </tr>
+        <tr class = "nutrient_cell">
+          <td>Iron</td>
+          <td><%=@recipe.daily_value('iron')%> %</td>
+        </tr>
+        <tfoot>
+          <td>Percent Daily Values are based on a 2,000 calori diet.</td>
+        </tfoot>
+      </table>
     </div>
     <div class="col-md-4">
       <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
