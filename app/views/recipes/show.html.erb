@@ -28,7 +28,7 @@
       <ul >
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
           <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
-          <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
+          <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%></li>
         <% end %>
       </ul>
     </div>
@@ -105,11 +105,11 @@
       <h3>HERE WILL GO THE NUTRITION VALUES</h3>
       <ul class="list-unstyled">
         <li>
-          iron: <%=@recipe.get_nutrient('iron')%> mg
+          iron: <%=@recipe.get_nutrient('iron')%> mg    <%=@recipe.daily_value('iron')%> %
         </li>
 
         <li>
-          Consectetur adipiscing elit
+          calcium: <%=@recipe.get_nutrient('calcium')%> mg  <%=@recipe.daily_value('calcium')%> %
         </li>
         <li>
           Integer molestie lorem at massa
