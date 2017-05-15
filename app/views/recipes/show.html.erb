@@ -1,139 +1,190 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="page-header">
-    <h1><%= @recipe.name %></h1>
-      </div>
-    </div>
-    <div class="col-md-4">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="page-header">
+				<h1>
+				<h1><%= @recipe.name %></h1>
+				</h1>
+			</div>
+			<blockquote>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+				</p> <small>Someone famous <cite>Source Title</cite></small>
+			</blockquote>
+		</div>
+		<div class="col-md-4">
       <h2>
-        Juicing Article
-      </h2>
-      <p> Here will be a really cool article about juicing
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
+       Juicing Article
+     </h2>
+     <p> Here will be a really cool article about juicing
+     </p>
+     <p>
+       <a class="btn" href="#">View details »</a>
+     </p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+<img src="/assets/beverages-400" alt="drink" height="400" width="400">
+		</div>
+		<div class="col-md-4">
+      <h1>Ingredient List</h1>
+   <ul >
+     <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+      <h3> <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></h3></b></li>
+       <h4><li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></h4></b></li>
+     <% end %>
+   </ul>
+		</div>
+		<div class="col-md-4">
+<h2>
+            Which Juicer should you buy
+          </h2>
+          <p> Let us show you our findings</p>
+          <p>
+            <a class="btn" href="#">View details »</a>
+          </p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
 
+              <%= form_for([@recipe, @review]) do |f| %>
+                  <h4> How do you like the Juice</h4>
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <%= f.radio_button :rating, 1 %>
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </label>
+                    <label class="btn btn-primary">
+                      <%= f.radio_button :rating, 2 %>
+                      <input type="radio" name="options" id="option2" autocomplete="off">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </label>
+                    <label class="btn btn-primary">
+                      <%= f.radio_button :rating, 3 %>
+                      <input type="radio" name="options" id="option3" autocomplete="off">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </label>
+                    <label class="btn btn-primary">
+                      <%= f.radio_button :rating, 4 %>
+                      <input type="radio" name="options" id="option2" autocomplete="off">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </label>
+                    <label class="btn btn-primary">
+                      <%= f.radio_button :rating, 5 %>
+                      <input type="radio" name="options" id="option3" autocomplete="off">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </label>
+                  </div>
+                  <div>
+                        <%= f.label :comment %><br />
+                        <%= f.text_area :comment %>
+                  </div>
+                  <div>
+                        <%= f.submit %>
 
-      <img src="/assets/glass.jpg" alt="apple">
-        <!-- <img  src="assets/green.jpg" alt="juice"> -->
-    </div>
-    <div class="col-md-4">
-      <h3>Ingredient List</h3>
-      <ul >
-        <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
-          <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
-          <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
-        <% end %>
-      </ul>
-    </div>
+                    <% end %>
 
+                  </div></br>
 
-        <button type="submit" class="btn btn-default">
-          Submit
-        </button>
-      </form>
-    </div>
+			<div class="tabbable" id="tabs-992607">
+				<ul class="nav nav-tabs">
+					<li>
+						<a href="#panel-670447" data-toggle="tab">Reviews</a>
+					</li>
+					<li class="active">
+						<a href="#panel-617571" data-toggle="tab">Nutrition</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane" id="panel-670447">
+            <p><h3>Reviews for <%= @recipe.name %></h3></p>
 
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
-    </div>
-  </div>
-</div>
-<h4>Ratings</h4>
-
-        Which Juicer should you buy
-      </h2>
-      <p> Let us show you our findings</p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-
-
-        <%= form_for([@recipe, @review]) do |f| %>
-            <h4> How do you like the Juice</h4>
-            <div>
-                <%= f.radio_button :rating, 1 %>
-                <%= f.label :rating_1, "$" %>
-                <%= f.radio_button :rating, 2 %>
-                <%= f.label :rating_2, "$$" %>
-                <%= f.radio_button :rating, 3%>
-                <%= f.label :rating_3, "$$$" %>
-                <%= f.radio_button :rating, 4 %>
-                <%= f.label :rating_4, "$$$$" %>
-                <%= f.radio_button :rating, 5 %>
-                <%= f.label :rating_5, "$$$$$$" %>
-            </div>
-            <div>
-                  <%= f.label :comment %><br />
-                  <%= f.text_area :comment %>
-            </div>
-            <div>
-                  <%= f.submit %>
-            </div>
-        <% end %>
-
-
-
-
-    <p><h3>Reviews for <%= @recipe.name %></h3></p>
-
-      <% @recipe.reviews.each do |review| %>
-        <p>
+            <% @recipe.reviews.each do |review| %>
+            <p>
 
           <b>  Comment:</b><%= review.comment %></br>
-<% if review.user != nil %>
-              <b> here is my rating:</b> <%= review.user.user_name %></br>
+            <% if review.user != nil %>
+              <b> here is my rating:</b> <%= review.rating %></br>
+              <b> reviewer:</b> <%= review.user.user_name %></br>
               <b>on this date:</b> <%= review.created_at%>
               <% end %>
-        </p>
-        <% end %>
+            </p>
+            <% end %>
 
-  </div>
+            <ul class="pagination">
+      				<li>
+      					<a href="#">Prev</a>
+      				</li>
+      				<li>
+      					<a href="#">1</a>
+      				</li>
+      				<li>
+      					<a href="#">2</a>
+      				</li>
+      				<li>
+      					<a href="#">3</a>
+      				</li>
+      				<li>
+      					<a href="#">4</a>
+      				</li>
+      				<li>
+      					<a href="#">5</a>
+      				</li>
+      				<li>
+      					<a href="#">Next</a>
+      				</li>
+      			</ul>
+					</div>
+					<div class="tab-pane active" id="panel-617571">
+            <h3>HERE WILL GO THE NUTRITION VALUES</h3>
+     <ul class="list-unstyled">
+       <li>
+         iron: <%=@recipe.get_nutrient('iron')%> mg
+       </li>
 
+       <li>
+         Consectetur adipiscing elit
+       </li>
+       <li>
+         Integer molestie lorem at massa
+       </li>
+       <li>
+         Facilisis in pretium nisl aliquet
+       </li>
+       <li>
+         Nulla volutpat aliquam velit
+       </li>
+       <li>
+         Faucibus porta lacus fringilla vel
+       </li>
+       <li>
+         Aenean sit amet erat nunc
+       </li>
+       <li>
+         Eget porttitor lorem
+       </li>
 
-    <div class="col-md-4">
-      <h3>HERE WILL GO THE NUTRITION VALUES</h3>
-      <ul class="list-unstyled">
-        <li>
-          iron: <%=@recipe.get_nutrient('iron')%> mg
-        </li>
+     </ul>
+					</div>
+				</div>
+			</div>
 
-        <li>
-          Consectetur adipiscing elit
-        </li>
-        <li>
-          Integer molestie lorem at massa
-        </li>
-        <li>
-          Facilisis in pretium nisl aliquet
-        </li>
-        <li>
-          Nulla volutpat aliquam velit
-        </li>
-        <li>
-          Faucibus porta lacus fringilla vel
-        </li>
-        <li>
-          Aenean sit amet erat nunc
-        </li>
-        <li>
-          Eget porttitor lorem
-        </li>
-
-      </ul>
-    </div>
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
-    </div>
-  </div>
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
+		</div>
+	</div>
 </div>
