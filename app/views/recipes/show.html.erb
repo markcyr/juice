@@ -14,6 +14,7 @@
 		</div>
 		<div class="col-md-4">
       <h2>
+
        Juicing Article
      </h2>
      <p> Here will be a really cool article about juicing
@@ -114,13 +115,13 @@
 
             <% @recipe.reviews.each do |review| %>
             <p>
-
           <b>  Comment:</b><%= review.comment %></br>
             <% if review.user != nil %>
               <b> here is my rating:</b> <%= review.rating %></br>
               <b> reviewer:</b> <%= review.user.user_name %></br>
               <b>on this date:</b> <%= review.created_at%>
               <% end %>
+
             </p>
             <% end %>
 
@@ -187,4 +188,5 @@
 			<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
 		</div>
 	</div>
+
 </div>
