@@ -1,7 +1,8 @@
-<h1>Edit <%= @recipe.name %> </h1>
+<h1><%= @recipe.name %> </h1>
 <%= form_for [@recipe] do |f| %>
 
 <div class="field">
+  You can edit
   <%= f.label :name %><br />
   <%= f.text_field :name %>
 </div>
