@@ -1,42 +1,23 @@
-<h1>Seach All Recipes</h1>
+<h2>What ingredients do you want to juice today</h2>
 
 <form action="/recipes" method="GET">
-   <label for="search_field">Search</label>
+   <label for="search_field">Search your favorite ingredients</label>
    <input id="search_field" type="text" name="query">
    <input type="submit">
  </form>
 
 <div class="row">
     <div class="col-md-6">
-      <h1>View recipes</h1>
-<table>
+
+      <h1>Check out these great recipes</h1>
+
 
       <% @recipes.each do |recipe| %>
-      <tr>
-        <td colspan="2" align="center" > <H1>  <%= recipe.name %> </H1>  </td>
-      </tr>
-      <tr>
+            <td colspan="2" align="center" > <H1>  <%= link_to recipe.name, "/recipes/#{recipe.id}" %> </H1>  </td>
 
-      <td>
-        <img alt="Bootstrap Image Preview" src="/assets/glass.jpg">
-      </td>
-
-      <td>
-        <h3>Ingredient List</h3>
-        <ul>
-          <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
-            <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
-            <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center" > <H1>  <%= link_to "Recipe Details","/recipes/#{recipe.id}" %> </H1>  </td>
-    </tr>
       <% end %>
 
-</table>
+
     </div>
     </div>
   </div>
@@ -44,30 +25,7 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-      <ul class="pagination">
-        <li>
-          <a href="#">Prev</a>
-        </li>
-        <li>
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a href="#">2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">4</a>
-        </li>
-        <li>
-          <a href="#">5</a>
-        </li>
-        <li>
-          <a href="#">Next</a>
-        </li>
-      </ul>
-    </div>
+
     <div class="col-md-4">
     </div>
   </div>
