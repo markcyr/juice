@@ -2,9 +2,10 @@ class IngredientsController < ApplicationController
 
 
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.page(params[:page]).per(5)
     @search = Ingredient.search(params[:q])
-    @ingredients = @search.result
+    # @ingredients = @search.result
+
   end
 
  def show

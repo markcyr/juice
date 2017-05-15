@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :require_login, only: [:new, :show]
 
+
   def new
     @recipe = Recipe.new
     @recipe.ingredients.build
@@ -20,16 +21,26 @@ class RecipesController < ApplicationController
         end
         @recipes = allResults.uniq
       else
-        @recipes = Recipe.all
+        @recipes = Recipe.page(params[:page]).per(3)
+
+
+
+      #   @recipes = allResults.uniq
+      # else
+      #   @recipes = Recipe.all
+
       end
+
     end
 
   def show
     @recipe = Recipe.find(params[:id])
+  @reviews  = Review.page(params[:page]).per(3)
 
     if current_user
 
       @review = @recipe.reviews.build
+
 
     end
     # @user_name = @user_name.find(params_id)

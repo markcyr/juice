@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # gem for nested forms
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 
+#gem Pagination with Kaminari
+gem 'kaminari'
+
 # get for  meta search
 gem 'ransack', '~> 1.8', '>= 1.8.2'
 

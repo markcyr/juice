@@ -35,7 +35,7 @@
       <td colspan="2" align="center" > <H1>  <%= link_to "Recipe Details","/recipes/#{recipe.id}" %> </H1>  </td>
     </tr>
       <% end %>
-
+ <%= paginate @recipes %>
 </table>
     </div>
     </div>
@@ -44,29 +44,7 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-      <ul class="pagination">
-        <li>
-          <a href="#">Prev</a>
-        </li>
-        <li>
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a href="#">2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">4</a>
-        </li>
-        <li>
-          <a href="#">5</a>
-        </li>
-        <li>
-          <a href="#">Next</a>
-        </li>
-      </ul>
+
     </div>
     <div class="col-md-4">
     </div>
