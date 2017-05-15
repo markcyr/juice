@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
         allResults = [];
 
         queryArr.each do | queryTerm |
-          results = Recipe.joins( :ingredients ).where( "recipes.name LIKE ? OR ingredients.name LIKE ?",  "%#{queryTerm}%".upcase, "%#{queryTerm}%".upcase )
+          results = Recipe.joins( :ingredients ).where( "recipes.name LIKE ? OR ingredients.name LIKE ?",  "%#{queryTerm}%".titlecase, "%#{queryTerm}%".upcase )
 
           allResults = allResults.concat( results )
         end
@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
     end
     # @user_name = @user_name.find(params_id)
   #  @recipe.order(:created_at).reverse
+
   end
 
   def create
@@ -45,6 +46,7 @@ class RecipesController < ApplicationController
     puts "PARAMS USER ID #{params[:recipe][:user_id]}"
 
     if @recipe.save
+      @recipe.generate_name
       redirect_to recipe_path(@recipe)
     else
       render :new
