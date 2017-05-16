@@ -32,9 +32,14 @@ class Recipe < ApplicationRecord
         when "lb"
           g = 454
       end
+      # size returns the total amount grams of the juice
       size += (q*g)
       # v is the amount of nutrient per 100 gram of an ingredient
-      v = ingredient_recipe.ingredient.send("#{nutrients[nutrient.to_sym]}")
+      if (ingredient_recipe.ingredient.send("#{nutrients[nutrient.to_sym]}") == nil)
+        v = 0
+      else
+        v = ingredient_recipe.ingredient.send("#{nutrients[nutrient.to_sym]}")
+      end
       ingredient_nutrient << (q*g)*(v/100.0)
     end
     total_per_serving =  (ingredient_nutrient.sum)/(size/125.0)
@@ -44,7 +49,7 @@ class Recipe < ApplicationRecord
 
   def daily_value(nutrient)
     # recommended daily intake of nutrients is stored in rdi
-    rdi = {iron: 14, calcium: 1100, fat: 65,vitC: 60, vitA: 1000, sodium: 2400, carbohydrate: 300, fiber: 25}
+    rdi = {iron: 14, calcium: 1100, fat: 65, vitC: 60, vitA: 1000, sodium: 2400, carbohydrate: 300, fiber: 25}
     serving_amount = self.get_nutrient(nutrient)
     nutrient_rdi = rdi[nutrient.to_sym]
     davily_value = (serving_amount / nutrient_rdi) * 100
