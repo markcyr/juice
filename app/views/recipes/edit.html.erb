@@ -6,15 +6,13 @@
 <%= f.text_field :name %>
 
   <div id="ingredients_recipes">
-    <%=f.fields_for :ingredients_recipes do |r|%>
-    <%= render 'ingredients_recipe_fields', :f => r %>
+    <%=f.fields_for :ingredients_recipes do |ingredient_recipe|%>
+    <%= render 'ingredients_recipe_fields', f: ingredient_recipe %>
     <%end%>
   </div>
 
   <div class = "links">
       <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
   </div>
-  <div class="actions">
     <%= f.submit %>
-  </div>
 <%end%>

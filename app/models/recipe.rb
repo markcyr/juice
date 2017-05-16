@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
   has_many :users, through: :reviews
 
   belongs_to :user
-  accepts_nested_attributes_for :ingredients_recipes
+  accepts_nested_attributes_for :ingredients_recipes, allow_destroy: true, reject_if: :all_blank
 
 # get_nutrient method calculates the amount of a nutrient per serving size
   def get_nutrient(nutrient)

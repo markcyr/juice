@@ -49,13 +49,18 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update_attributes(recipe_params)
-    redirect_to recipe_url(@recipe)
+
+    if @recipe.update(recipe_params)
+      redirect_to recipe_url(@recipe)
+    else
+      # redirect_back_or_t edit_recipe_path(@recipe)
+      render :edit
+    end
   end
 
 private
   def recipe_params
-    params.require(:recipe).permit(:name, :image, :user_id, ingredients_recipes_attributes: [:ingredient_id, :quantity, :unit_id])
+    params.require(:recipe).permit(:name, :image, :user_id, ingredients_recipes_attributes: [:ingredient_id, :quantity, :unit_id, :id, :_destroy])
 
   end
 
