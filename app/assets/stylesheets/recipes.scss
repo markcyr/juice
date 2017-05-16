@@ -1,3 +1,42 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nutrition_facts{
+border: 2px solid gray;
+}
+.nutrition_facts th{
+  font-size: 18px;
+  text-align: right;
+}
+.nutrition_facts thead{
+  border-bottom: 3px solid black;
+}
+
+.left_cell, .right_cell{
+  border-bottom: 1px solid black
+  }
+
+.nutrition_facts tfoot{
+  font-size: 12px;
+}
+.left_cell{
+  width: 100px;
+  padding-left: 20px;
+}
+
+.right_cell{
+  width: 60px;
+  text-align: right;
+  padding-right: 10px;
+}
+.divider{
+  border-bottom: 3px solid black;
+}
+.sub_cell{
+  padding-left: 40px;
+}
+.daily_value_cell{
+  text-align: left;
+  padding-right: 0px;
+}
