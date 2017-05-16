@@ -51,41 +51,24 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-4">
+        <% article_ids = Article.pluck(:id).to_a %>
+        <% sample_ids = article_ids.sample(3) %>
+        <% featured_articles = Article.where("id in (?)", sample_ids) %>
+        <% featured_articles.each do |article| %>
+
+    		<div class="col-md-4">
 					<div class="thumbnail">
-            	 <%  m = Article.order("RANDOM()").first  %>
-						<img src="/assets/<%= m.image %>" alt="drinking juice">
+        		<img src="/assets<%= article.image %>" alt="drinking juice">
 						<div class="caption">
-                  <H3> <%= m.title %></h3>
-							 <p><%= m.sentence  %> </p>
+                  <H3> <%= article.title %></h3>
+							 <p><%= article.sentence  %> </p>
 							<p> <a class="btn btn-primary" href="#">Read More</a>  </p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-             <%  n = Article.order("RANDOM()").second_to_last() %>
-             <img  alt="drinking juice" src="/assets/<%= n.image %>">
- 						<div class="caption">
-                   <H3> <%= n.title %></h3>
- 							 <p><%= n.sentence  %> </p>
- 							<p> <a class="btn btn-primary" href="#">Read More</a>  </p>
- 						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-            <%  o = Article.order("RANDOM()").last %>
-            <img src="/assets/<%= o.image %>" alt="drinking juice">
-           <div class="caption">
 
-                  <H3> <%= o.title %></h3>
+          <% end %>
 
-              <p><%= o.sentence  %> </p>
-             <p> <a class="btn btn-primary" href="#">Read More</a>  </p>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
