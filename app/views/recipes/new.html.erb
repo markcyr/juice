@@ -1,15 +1,1 @@
-<%= form_for @recipe do |f|%>
-
-  <div id="ingredients_recipes" class="ingredients_recipes_list">
-    <%=f.fields_for :ingredients_recipes do |r|%>
-    <%= render 'ingredients_recipe_fields', :f => r %>
-    <%end%>
-  </div>
-
-  <div class = "links">
-      <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
-  </div>
-
-    <%= f.submit %>
-
-<%end%>
+<%= render 'recipe_form', recipe: @recipe %>
