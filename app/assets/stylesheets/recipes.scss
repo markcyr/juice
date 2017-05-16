@@ -13,9 +13,26 @@ border: 2px solid black;
   border-bottom: 3px solid black;
 }
 
-.nutrient_cell{
+.left_cell, .right_cell{
   border-bottom: 1px solid black
 }
 .nutrition_facts tfoot{
   font-size: 12px;
+}
+.left_cell{
+  width: 100px;
+}
+
+.right_cell{
+  width: 60px;
+  text-align: center;
+}
+.divider{
+  border-bottom: 3px solid black;
+}
+.hidden{
+  display: none;
+}
+.sub_cell{
+  marging-left: 10px;
 }
