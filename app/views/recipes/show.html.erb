@@ -107,10 +107,11 @@
       <thead>
         <tr>
           <th>Nutrition facts</th>
+          <th></th>
         </tr>
         <tr>
-          <td>Serving Size 1/2 cup</td>
-          <td>125 g</td>
+          <td class = "left_cell">Serving Size 1/2 cup</td>
+          <td class = "right_cell">125 g</td>
         </tr>
       </thead>
         <tr>
@@ -119,13 +120,15 @@
         </tr>
         <tr>
           <td class = "left_cell divider">Calories <%=@recipe.get_nutrient('calory')%></td>
+          <td class = "right_cell divider"></td>
         </tr>
         <tr>
           <td class = "left_cell">Total Fat</td>
+          <td class = "right_cell"></td>
         </tr>
         <tr>
           <td class = "sub_cell left_cell">Saturated Fat <%=@recipe.get_nutrient('saturated_fat')%> g</td>
-
+          <td class = "right_cell"></td>
         </tr>
         <tr>
           <td class = "sub_cell td left_cell">Trans Fat 0g</td>
@@ -149,10 +152,11 @@
         </tr>
         <tr >
           <td class = "left_cell sub_cell">Sugars <%= @recipe.get_nutrient("sugar")%> g</td>
+          <td class = "right_cell"></td>
         </tr>
         <tr>
           <td class = "left_cell divider">Protein <%= @recipe.get_nutrient("protein")%> g</td>
-          <td class = "right_cell"s></td>
+          <td class = "right_cell divider"s></td>
         </tr>
         <tr>
           <td class = "left_cell">Vitamin A</td>
@@ -171,7 +175,7 @@
           <td class = "right_cell"><%=@recipe.daily_value('iron')%> %</td>
         </tr>
         <tfoot>
-          <td>Percent Daily Values are based on a 2,000 calori diet.</td>
+          <td colspan="2">Percent Daily Values are based on a 2,000 calori diet.</td>
           <td class = "right_cell"></td>
         </tfoot>
       </table>

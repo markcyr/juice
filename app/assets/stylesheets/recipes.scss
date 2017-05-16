@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .nutrition_facts{
-border: 2px solid black;
+border: 2px solid gray;
 }
 .nutrition_facts th{
   font-size: 18px;
@@ -15,12 +15,14 @@ border: 2px solid black;
 
 .left_cell, .right_cell{
   border-bottom: 1px solid black
-}
+  }
+
 .nutrition_facts tfoot{
   font-size: 12px;
 }
 .left_cell{
   width: 100px;
+  padding-left: 20px;
 }
 
 .right_cell{
@@ -31,5 +33,5 @@ border: 2px solid black;
   border-bottom: 3px solid black;
 }
 .sub_cell{
-  margin-left: 10px;
+  padding-left: 40px;
 }
