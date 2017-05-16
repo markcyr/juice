@@ -5,7 +5,7 @@
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
       <ul>
         <% @recipe.errors.messages.values.each do |msg| %>
-          <li><%= msg.join('') %></li>
+          <li>Quantity <%= msg.join('') %></li>
         <% end %>
       </ul>
     </div>
