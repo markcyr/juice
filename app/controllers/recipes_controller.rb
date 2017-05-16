@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
     puts "PARAMS NAME #{params[:recipe][:name]}"
     puts "PARAMS IMAGE #{params[:recipe][:image]}"
     puts "PARAMS USER ID #{params[:recipe][:user_id]}"
-
+    @recipe.image = "#{rand(19)}.jpg" 
     if @recipe.save
       @recipe.generate_name
       redirect_to recipe_path(@recipe)
