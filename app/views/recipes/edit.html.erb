@@ -1,0 +1,14 @@
+<h1><%= @recipe.name %> </h1>
+<%= form_for [@recipe] do |f| %>
+
+<div class="field">
+  You can edit
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
