@@ -13,4 +13,7 @@ class IngredientsRecipe < ApplicationRecord
   #   end
 
 
+
+
+
 end
