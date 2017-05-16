@@ -1,5 +1,4 @@
 <%= form_for @recipe do |f|%>
-
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -10,9 +9,8 @@
       </ul>
     </div>
   <% end %>
-  
 
-  <div id="ingredients_recipes" class="ingredients_recipes_list">
+  <div id="ingredients_recipes">
     <%=f.fields_for :ingredients_recipes do |r|%>
     <%= render 'ingredients_recipe_fields', :f => r %>
     <%end%>
@@ -21,7 +19,5 @@
   <div class = "links">
       <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
   </div>
-
-    <%= f.submit %>
-
+  <%= f.submit %>
 <%end%>

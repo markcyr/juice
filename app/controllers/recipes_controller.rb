@@ -6,15 +6,7 @@ class RecipesController < ApplicationController
     @recipe.ingredients.build
     @recipe.ingredients_recipes.build
   end
-  def edit
-    @recipe = Recipe.find(params[:id])
-  end
-  def update
-    @recipe = Recipe.find(params[:id])
-    @recipe.update_attributes(recipe_params)
-    redirect_to recipe_url(@recipe)
 
-  end
   def index
       if ( params[ :query ] && params[ :query ] != "" )
         queryArr = params[ :query ].split( " " )
@@ -34,46 +26,42 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-
     if current_user
-
       @review = @recipe.reviews.build
-
     end
-    # @user_name = @user_name.find(params_id)
-  #  @recipe.order(:created_at).reverse
-
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    # @recipe.ingredients.build
-      @recipe.user_id = current_user.id
-    puts "PARAMS NAME #{params[:recipe][:name]}"
-    puts "PARAMS IMAGE #{params[:recipe][:image]}"
-    puts "PARAMS USER ID #{params[:recipe][:user_id]}"
-    @recipe.image = "#{rand(19)}.jpg" 
+    @recipe.user_id = current_user.id
+    @recipe.image = "#{rand(19)}.jpg"
     if @recipe.save
       @recipe.generate_name
       redirect_to recipe_path(@recipe)
     else
       render :new
     end
-
-
-
-
-
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to recipe_url(@recipe)
+    else
+      # redirect_back_or_t edit_recipe_path(@recipe)
+      render :edit
+    end
+  end
+
 private
   def recipe_params
-    params.require(:recipe).permit(:name, :image, :user_id, ingredients_recipes_attributes: [:ingredient_id, :quantity, :unit_id])
+    params.require(:recipe).permit(:name, :image, :user_id, ingredients_recipes_attributes: [:ingredient_id, :quantity, :unit_id, :id, :_destroy])
 
   end
 
 end
-# <!-- <div>
-#   <%=f.fields_for :ingredients_recipes do |r|%>
-#     <%= render 'ingredients_recipe_fields', :f => r %>
-#   <%end%>
-# </div> -->

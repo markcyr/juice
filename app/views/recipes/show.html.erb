@@ -1,29 +1,9 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="page-header">
 
-    <h1><%= @recipe.name %></h1><%=  link_to "edit", edit_recipe_path(@recipe) %>
+    <h1><%= @recipe.name %></h1><%= link_to "edit", edit_recipe_path(@recipe) %>
 
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h2>
-        Juicing Article
-      </h2>
-      <p> Here will be a really cool article about juicing
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-4">
 
-
-          <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
-        <!-- <img  src="assets/green.jpg" alt="juice"> -->
     </div>
     <div class="col-md-4">
       <h3>Ingredient List</h3>
@@ -35,23 +15,11 @@
       </ul>
     </div>
 
-
-        <button type="submit" class="btn btn-default">
-          Submit
-        </button>
       </form>
-    </div>
-
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
     </div>
   </div>
 </div>
 <h4>Ratings</h4>
-
-        Which Juicer should you buy
-      </h2>
-      <p> Let us show you our findings</p>
       <p>
         <a class="btn" href="#">View details »</a>
       </p>
@@ -181,8 +149,6 @@
         </tfoot>
       </table>
     </div>
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
-    </div>
+
   </div>
 </div>
