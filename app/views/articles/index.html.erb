@@ -1,0 +1,17 @@
+<h1>Articles</h1>
+
+<% @articles.each do |article| %>
+<p>
+  <h2><%= article.title %></h2>
+    <table>
+      <tr>
+        <td>  <img alt="Bootstrap Image Preview" src="assets/<%= article.image %>" height="400px" width="400px" ></td>
+        <td><%= article.text %></br></td>
+      </tr>
+    </table>
+
+
+  <h2>Quote: <%= article.quote %></h2></br>
+
+
+  <% end %>
