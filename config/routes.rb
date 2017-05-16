@@ -15,6 +15,8 @@ post 'logout' => 'sessions#destroy', :as => :logout
    end
    resources :sessions
 
+   resources :articles
+
    resources :ingredients
   #  resources :ingredients, only: [:show]
 

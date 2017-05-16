@@ -14,7 +14,7 @@
 					<div class="item active">
 						<img src="assets/green.jpg" alt="apple">
 						<div class="carousel-caption">
-              <H3>Are you looking for juicing tips?</h3>
+            <H3>Are you looking for juicing tips?</h3>
                  <ul>
                    <li>Are you trying to find a way to make juicing seem less intimidating?</li>
                    <li>Here you will find healthy tips to help you start your juicing journey,</li>
@@ -53,37 +53,36 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<img src="assets/child.jpg" alt="child drinking juice">
+            	 <%  m = Article.order("RANDOM()").first  %>
+						<img src="/assets/<%= m.image %>" alt="drinking juice">
 						<div class="caption">
-							<h3>
-								Kids drinking juice
-							</h3>
-							 <p>Here is a great aricle why kids should drink more juice	 </p>
-							<p> <a class="btn btn-primary" href="#">Action</a>  </p>
+                  <H3> <%= m.title %></h3>
+							 <p><%= m.sentence  %> </p>
+							<p> <a class="btn btn-primary" href="#">Read More</a>  </p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<img alt="belly losing weight" src="assets/belly.jpg">
-						<div class="caption">
-							<h3>
-								Juicing can help you lose weight
-							</h3>
-							<p> Here are some great tips where juicing can help you lose weight </p>
-              	<p> <a class="btn btn-primary" href="#">Action</a> </p>
-						</div>
+             <%  n = Article.order("RANDOM()").second_to_last() %>
+             <img  alt="drinking juice" src="/assets/<%= n.image %>">
+ 						<div class="caption">
+                   <H3> <%= n.title %></h3>
+ 							 <p><%= n.sentence  %> </p>
+ 							<p> <a class="btn btn-primary" href="#">Read More</a>  </p>
+ 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<img alt="gym" src="assets/bodybuilder.jpg">
-						<div class="caption">
-							<h3>
-								Juicing and the gym
-							</h3>
-							<p>How juicing can help you with your workout </p>
-							<p> <a class="btn btn-primary" href="#">Action</a> </p>
+            <%  o = Article.order("RANDOM()").last %>
+            <img src="/assets/<%= o.image %>" alt="drinking juice">
+           <div class="caption">
+
+                  <H3> <%= o.title %></h3>
+
+              <p><%= o.sentence  %> </p>
+             <p> <a class="btn btn-primary" href="#">Read More</a>  </p>
 						</div>
 					</div>
 				</div>
