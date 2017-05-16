@@ -1,5 +1,4 @@
-<%#= render 'recipe_form', recipe: @recipe %>
-<%= form_for @recipe do |f|%>
+<%= form_for recipe do |f|%>
 
   <div id="ingredients_recipes">
     <%=f.fields_for :ingredients_recipes do |r|%>

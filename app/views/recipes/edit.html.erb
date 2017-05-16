@@ -1,14 +1,18 @@
 <h1><%= @recipe.name %> </h1>
-<%= form_for [@recipe] do |f| %>
 
-<div class="field">
-  You can edit
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</div>
+<%= form_for @recipe do |f|%>
 
-<div class="actions">
-  <%= f.submit %>
-</div>
+<%= f.label :name %><br />
+<%= f.text_field :name %>
 
-<% end %>
+  <div id="ingredients_recipes">
+    <%=f.fields_for :ingredients_recipes do |ingredient_recipe|%>
+    <%= render 'ingredients_recipe_fields', f: ingredient_recipe %>
+    <%end%>
+  </div>
+
+  <div class = "links">
+      <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
+  </div>
+    <%= f.submit %>
+<%end%>
