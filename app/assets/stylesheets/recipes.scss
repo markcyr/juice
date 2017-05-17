@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+background-color: #8cc63f;
+}
+
+#error_explanation li{
+  list-style-type: none;
+}
+#error_explanation{
+  color: red;
+  text-align: left;
+}
+
+.field_with_errors{
+  color: red;
+}
+
+.recipe_form{
+  text-align: center;
+  margin-top: 50px;
+}
+
 .nutrition_facts{
 border: 2px solid gray;
 }
