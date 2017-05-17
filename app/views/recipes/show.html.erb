@@ -68,14 +68,12 @@
     <ul id="reviewoutput" style="list-style: none">
 
         <% @recipe.reviews.each do |review| %>
-
-          <li>Comment:<%= review.comment %></li>
-          <li>Rating:<%= review.rating %></li>
-            <% if review.user != nil %>
-              <li>by:<%= review.user.user_name %></li>
-              <li>On:<%= review.created_at.strftime('%b %e, %Y')%></li><br />
-            <% end %>
+          <% if review.user != nil %>
+            <li>Comment:<%= review.comment %></li>
+            <li>Rating:<%= review.rating %></li>
+            <li>By <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %></span> on <%= review.created_at.strftime('%b %e, %Y')%></li><br />
           <% end %>
+        <% end %>
     </ul>
   </div>
 

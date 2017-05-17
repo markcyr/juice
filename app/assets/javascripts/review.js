@@ -18,12 +18,13 @@ $(function() {
       console.log('submit was successful');
       console.log(data);
 
-    }).fail(function(){
+    }).fail(function(data){
         console.log('submit failed');
-
     }).always(function(){
 
-    })
+    }).error(function(){
+      
+    });
 
   });
 
