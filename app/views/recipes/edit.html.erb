@@ -1,11 +1,28 @@
+<style>
+body {background-color: #8cc63f;}
+</style>
 <div class="recipe_form">
 <h1><%= @recipe.name %> </h1>
 
 <%= form_for @recipe do |f|%>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
+      <ul>
+        <% @recipe.errors.messages.values.each do |msg| %>
+          <li>Quantity:<br>
+            <%= msg.join("<br>").html_safe %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<br>
 
+<div class="edit_name">
 <%= f.label :name %>
 <%= f.text_field :name, :size => 40 %>
-<br>
+</div>
 <br>
   <div id="ingredients_recipes">
     <%=f.fields_for :ingredients_recipes do |ingredient_recipe|%>

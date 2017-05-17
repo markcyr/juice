@@ -2,9 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-background-color: #8cc63f;
+.field {
+    width: 500px;
+    label {
+      width: 15%;
+    }
 }
+
+.edit_name{
+  width: 600px;
+  clear: both;
+  margin-left: 30%;
+  text-align: left;
+  label {
+    width: 13%;
+  }
+}
+
+.nested-fields{
+  width: 600px;
+  clear: both;
+  margin-left: 30%;
+  text-align: left;
+}
+
+.nested-fields input{
+  width: 60%;
+  clear: both;
+}
+
 
 #error_explanation li{
   list-style-type: none;
