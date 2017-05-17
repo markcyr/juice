@@ -22,7 +22,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <li >Hey <%= current_user.user_name %></li>
+        <li class="hey">Hey <%= current_user.user_name %></li>
         <li><%= link_to 'Logout',:logout, method: :post %></li>
         <% else %>
           <li><%= link_to 'Login', :login %></li>

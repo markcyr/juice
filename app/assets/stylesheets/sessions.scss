@@ -1,3 +1,29 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_head {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.login_fields {
+
+
+
+}
+.login {
+ text-align: center;
+ opacity: 0.6;
+ filter: alpha(opacity=50);
+ background-color:rgb(140, 198, 62);
+ margin: 0 20% 0 20%;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.login:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}

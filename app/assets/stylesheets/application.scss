@@ -18,7 +18,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 
 .item {
@@ -36,4 +40,9 @@ font-size: 20px;
 padding-top: 10px;
 padding-bottom: 10px;
 
+}
+
+.hey{
+
+  margin-top: 5%;
 }
