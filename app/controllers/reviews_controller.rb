@@ -6,27 +6,51 @@ before_action :load_recipe
   end
 
   def create
-    @review = Review.new
+    # @review = Review.new
     # @recipe = Recipe.find(params[:recipe.id])
     @review = @recipe.reviews.build(review_params)
     @review.user_id = current_user.id
 
-    if request.xhr?
-      if @review.save
-        render partial: 'single_review'
-      else
-
+    respond_to do |format|
+      format.html do
+        if request.xhr?
+          if @review.save
+            render partial: 'single_review', locals: {review: @review}
+          else
+            render 'recipes/show'
+          end
+        else
+          if @review.save
+            redirect_to recipe_path(@recipe)
+          else
+            render 'recipes/show'
+          end
+        end
       end
 
-
-    else
+      format.json do
         if @review.save
-                 redirect_to 'recipes/show' , notice: 'Review created successfully'
-               else
-                 redirect_to 'recipe/show', notice: 'Review didnt go'
+          render json: @review
+        else
+          render 'recipes/show'
         end
+      end
     end
   end
+    # if request.xhr?
+    #   if @review.save
+    #     render partial: 'single_review'
+    #   end
+    #
+    #
+    # else
+    #     if @review.save
+    #              redirect_to 'recipes/show' , notice: 'Review created successfully'
+    #            else
+    #              render 'recipe/show'
+    #     end
+    # end
+  # end
 private
 
   def review_params

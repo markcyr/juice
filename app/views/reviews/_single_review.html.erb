@@ -1,2 +1,6 @@
-<li>Comment:<%= @review.comment %></li>
-<li>Rating:<%= @review.rating %></li></br>
+<li>Comment:<%= review.comment %></li>
+<li>Rating:<%= review.rating %></li>
+<% if review.user != nil %>
+  <li>by:</b> <%= review.user.user_name %></li>
+  <li>Added on:</b> <%= review.created_at.strftime('%b %e, %Y')%></li> <br />
+<% end %>

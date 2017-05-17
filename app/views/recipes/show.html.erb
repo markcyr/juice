@@ -2,10 +2,10 @@
     <h1><%= @recipe.name %></h1><%= link_to "edit", edit_recipe_path(@recipe) %>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <h3>Ingredient List</h3>
       <ul >
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
@@ -20,13 +20,11 @@
   </div>
 </div>
 <h4>Ratings</h4>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
+
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
 
 
         <%= form_for([@recipe, @review]) do |f| %>
@@ -43,6 +41,17 @@
                 <%= f.radio_button :rating, 5 %>
                 <%= f.label :rating_5, "$$$$$$" %>
             </div>
+
+    <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+        <ul>
+          <% @review.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
             <div>
                   <%= f.label :comment %><br />
                   <%= f.text_area :comment %>
@@ -58,15 +67,16 @@
     <p><h3>Reviews for <%= @recipe.name %></h3></p>
     <ul id="reviewoutput" style="list-style: none">
 
-            <% @recipe.reviews.each do |review| %>
-              <li>Comment:<%= review.comment %></li>
-              <li>Rating:</b><%= review.rating %></li>
-                  <% if review.user != nil %>
-              <li>User:</b> <%= review.user.user_name %></li>
-              <li>On this date:</b> <%= review.created_at%></li>
-                  <% end %>
+        <% @recipe.reviews.each do |review| %>
+
+          <li>Comment:<%= review.comment %></li>
+          <li>Rating:<%= review.rating %></li>
+            <% if review.user != nil %>
+              <li>by:<%= review.user.user_name %></li>
+              <li>On:<%= review.created_at.strftime('%b %e, %Y')%></li><br />
             <% end %>
-          </ul>
+          <% end %>
+    </ul>
   </div>
 
 
