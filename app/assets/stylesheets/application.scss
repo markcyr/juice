@@ -18,8 +18,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+<<<<<<< HEAD
 
 .row {
+=======
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+>>>>>>> master
 
   margin: 0 auto;
 }
@@ -38,4 +46,9 @@ font-size: 20px;
 padding-top: 10px;
 padding-bottom: 10px;
 
+}
+
+.hey{
+
+  margin-top: 5%;
 }

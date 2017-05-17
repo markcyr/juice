@@ -43,3 +43,17 @@
 .table-rounded tr+tr td, .table-rounded th+tr td{
     border-top: none;
     }
+
+.signup {
+
+  text-align: center;
+  opacity: 0.6;
+  filter: alpha(opacity=50);
+  background-color: #f7941e;
+  margin: 0 20% 0 20%;
+  font-family: 'Montserrat', sans-serif;
+}
+.signup:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
