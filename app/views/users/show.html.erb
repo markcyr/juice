@@ -1,11 +1,26 @@
-Welcome <%= @user.user_name %><br>
-<p> This is where your recipes will be, try to create a few
-<%= link_to "create", "/recipes/new" %>
-<p>
 
-List of your recipes<br>
-<% @user.recipes.each do |recipe| %>
-<%= link_to recipe.name, "/recipes/#{recipe.id}" %><br>
+  <div class="bob">
+    <div class="shadow">
 
+      <% @user.recipes.each do |recipe| %>
+<div>
 
-<% end %>
+      <table class="table-rounded">
+         <tr>
+            <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
+         </tr>
+         <tr>
+                <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="300" height="250"></td>
+         </tr>
+         <tr> <td>Rating</td>  </tr>
+      </table>
+</div>
+
+ <%end %>
+
+<center>
+ <h3>This is where your recipes will be, try to create a few </h3>
+ <h1><%= link_to "create", "/recipes/new" %></h1>
+</center>
+</div>
+  </div>
