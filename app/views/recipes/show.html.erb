@@ -3,9 +3,11 @@
 <div class="container-fluid content">
   <div class="row recipe_name">
     <h3><%= @recipe.name %></h3>
-    <div class = "edit_link">
-      <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
-    </div>
+    <%if @recipe.user == current_user%>
+      <div class = "edit_link">
+        <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
+      </div>
+    <%end%>
     <div class="col-md-6 recipe_img ">
       <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
 
@@ -37,6 +39,7 @@
         <%end%>
         <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
       </div>
+
       <h4> How do you like the Juice</h4>
       <%= form_for([@recipe, @review]) do |f| %>
         <div class="btn-group" data-toggle="buttons">
@@ -85,33 +88,6 @@
         </div>
           <%= f.submit "submit review"%>
       <% end %>
-
-    <!-- <p><h3>Reviews for <%= @recipe.name %></h3></p> -->
-
-
-      <!-- <% @recipe.reviews.each do |review| %>
-        <% if review.user != nil %>
-          <ul id="reviewoutput" style="list-style: none">
-          <li>Comment:
-            <%= review.comment %>
-          </li>
-          <li id = 'rate'>
-          <span class = 'star'>&starf;</span>
-            <% review.rating.times do %>
-              &starf;
-            <% end %>
-          </li>
-
-          <li>
-            By
-            <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %>
-          </span>
-          on <%= review.created_at.strftime('%b %e, %Y')%>
-          </li><br />
-          </ul>
-        <% end %>
-      <% end %> -->
-
   </div>
 
   <div class="col-md-6">
@@ -193,11 +169,28 @@
       </table>
     </div>
   </div>
+<div class = "row list_of_reviews">
+  <h4>Reviews for <%= @recipe.name %></h4>
+  <ul class="reviews">
+  <% @recipe.reviews.each do |review| %>
+    <% if review.user != nil %>
+      <li id = 'rate' class = "star_rates">
+        <% review.rating.times do %>
+          &starf;
+        <% end %>
+      </li>
+      <li>
+        By
+        <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %>
+        </span>
+        on <%= review.created_at.strftime('%b %e, %Y')%>
+      </li>
+      <li>
+        Comment:
+        <%= review.comment %>
+      </li><br />
+    <% end %>
+  <% end %>
+  </ul>
 </div>
-
-<div class = 'modal'>
-  <p class= 'thanks'>
-    Thanks for your review.
-  </p>
-  <button type="button" class="close">x</button>
 </div>

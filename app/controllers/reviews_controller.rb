@@ -1,8 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :load_recipe
-  def index
-    @reviews = @recipe.reviews
-  end
 
   def show
     @review = Review.find(params[:id])
@@ -12,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = @recipe.reviews.new(review_params)
     @review.user = current_user
     @review.save
-    render json: { review: @review, errors: @review.errors.full_messages }
+    render json: { review: @review, errors: @review.errors.full_messages, reviewer: @review.user.user_name}
   end
 
 private
