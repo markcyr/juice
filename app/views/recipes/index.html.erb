@@ -11,18 +11,21 @@
             </center>
               <div class="row">
 
-                <div class="bob" >
+                <div class="rec" >
                   <div class="shadow">
                   </br>
-                  <% recipe_ids = Recipe.pluck(:id).to_a %>
-                  <% sample_ids = recipe_ids.sample(40) %>
-                  <% featured_recipes = Recipe.where("id in (?)", sample_ids) %>
-                    <% featured_recipes.each do |recipe| %>
 
 
-                        <table class="table-roundedr">
+    <div class="category">
+      <div class="container-fluid">
+        <div class="row" >
+
+          <% @recipes.each do |recipe| %>
+
+            <div class="col-lg-4">
+              <table class="table-roundedr">
                           <tr>
-                            <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
+                            <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
                           </tr>
                           <tr>
                             <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="200" height="200"></td>
@@ -39,28 +42,19 @@
                           </tr>
                         </table>
 
-                        <table class="table-roundedr">
-                          <tr>
-                            <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
-                          </tr>
-                          <tr>
-                            <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="200" height="200"></td>
-                            <td>
-                              <center><h4>Ingredient List</h4> </center>
-                              <ul>
-                                <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
-                                  <li style="list-style-type:square"><h5><b><%= ingredient_recipe.ingredient.name %></b></h5></li>
-                                  <li style="list-style-type:none" > <h5>Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </h5></li>
-                                <% end %>
-                              </ul>
+              </br>
+            </div>
 
-                            </td>
-                          </tr>
-                        </table>
-                        </br>
-                        <%end %>
-                      </div>
-                    </div>
+          <% end %>
+
+
+        </div>
+      </div>
+    </div>
+
+
+                </div>
               </div>
+        </div>
 
-  </div>
+</div>

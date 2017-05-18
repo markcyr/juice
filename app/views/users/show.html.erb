@@ -4,12 +4,16 @@
  <h3>Click create a recipe</h3>
 </center>
 
-
-<div class="bob">
+  <div class="row">
+<div class="usr">
   <div class="shadow">
 </br>
-      <% @user.recipes.each do |recipe| %>
 
+    <div class="category">
+      <div class="container-fluid">
+        <div class="row" >
+      <% @user.recipes.each do |recipe| %>
+<div class="col-lg-6">
 
       <table class="table-rounded">
          <tr>
@@ -20,7 +24,9 @@
          </tr>
          <tr> <td>Rating:</td>  </tr>
       </table>
-</br>
+      </br>
+    </div>
+
 
  <%end %>
 
