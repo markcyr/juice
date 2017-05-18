@@ -2,6 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+.table-rounded {
+    width: 400px;
+    font-size: 11px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+   border-radius: 12px;
+    }
+.table-rounded th {
+    padding: 10px 20px;
+    background-color: orange;
+    color: #fff;
+    font-size: 15px;
+    }
+.table-rounded td{
+    padding: 6px;
+    vertical-align: middle;
+    border: 1px solid #58acee;
+
+    }
+.table-rounded th:first-child, .table-rounded tr:first-child td:first-child {
+    border-top-left-radius: 12px;
+    }
+.table-rounded th:last-child, .table-rounded tr:first-child td:last-child {
+    border-top-right-radius: 12px;
+    }
+.table-rounded tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+    }
+.table-rounded tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+    }
+.table-rounded td+td {
+    border-left: none;
+    }
+.table-rounded tr+tr td, .table-rounded th+tr td{
+    border-top: none;
+    }
+
 .signup {
 
   text-align: center;
