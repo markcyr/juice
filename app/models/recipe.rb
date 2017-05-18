@@ -66,4 +66,17 @@ class Recipe < ApplicationRecord
     self.save
   end
 
+  def total_rating
+    count = self.reviews.count
+    rates = self.reviews.map do |review|
+      review.rating
+    end
+    total_rate = rates.compact.sum
+    if total_rate == 0
+      return 'No reviews available'
+    else
+      return total_rate/count
+    end
+  end
+
 end

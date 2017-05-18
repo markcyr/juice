@@ -1,85 +1,105 @@
 
-    <h1><%= @recipe.name %></h1><%= link_to "edit", edit_recipe_path(@recipe) %>
 
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
+      <h3><%= @recipe.name %></h3>
       <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
+      <%= link_to "edit", edit_recipe_path(@recipe) %>
     </div>
     <div class="col-md-6">
-      <h3>Ingredient List</h3>
-      <ul >
+      <h4>Ingredient List</h4>
+      <ul>
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
           <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
           <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%></li>
         <% end %>
       </ul>
     </div>
-
-      </form>
-    </div>
   </div>
-</div>
-<h4>Ratings</h4>
 
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-6">
+      <h4>Ratings</h4>
+      <h3>Total rating of this recipe is: <%=@recipe.total_rating%></h3>
+      <h5> How do you like the Juice</h5>
+      <%= form_for([@recipe, @review]) do |f| %>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <%= f.radio_button :rating, 1 %>
+            <input type="radio" name="options" id="option1" autocomplete="off" checked>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          </label>
 
+          <label class="btn btn-primary">
+            <%= f.radio_button :rating, 2 %>
+            <input type="radio" name="options" id="option2" autocomplete="off">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          </label>
 
-        <%= form_for([@recipe, @review]) do |f| %>
-            <h4> How do you like the Juice</h4>
-            <div>
-                <%= f.radio_button :rating, 1 %>
-                <%= f.label :rating_1, "$" %>
-                <%= f.radio_button :rating, 2 %>
-                <%= f.label :rating_2, "$$" %>
-                <%= f.radio_button :rating, 3%>
-                <%= f.label :rating_3, "$$$" %>
-                <%= f.radio_button :rating, 4 %>
-                <%= f.label :rating_4, "$$$$" %>
-                <%= f.radio_button :rating, 5 %>
-                <%= f.label :rating_5, "$$$$$$" %>
-            </div>
+          <label class="btn btn-primary">
+            <%= f.radio_button :rating, 3 %>
+            <input type="radio" name="options" id="option3" autocomplete="off">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          </label>
+          <label class="btn btn-primary">
+             <%= f.radio_button :rating, 4 %>
+            <input type="radio" name="options" id="option2" autocomplete="off">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          </label>
 
-    <% if @review.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-        <ul>
-          <% @review.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-            <div>
-                  <%= f.label :comment %><br />
-                  <%= f.text_area :comment %>
-            </div>
-            <div>
-                  <%= f.submit %>
-            </div>
-        <% end %>
-
-
-
+          <label class="btn btn-primary">
+            <%= f.radio_button :rating, 5 %>
+            <input type="radio" name="options" id="option3" autocomplete="off">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+           </label>
+        </div>
+        <div class = 'comment_box'>
+          <%= f.label :comment %><br />
+          <%= f.text_area :comment %>
+        </div>
+          <%= f.submit %>
+      <% end %>
 
     <p><h3>Reviews for <%= @recipe.name %></h3></p>
-    <ul id="reviewoutput" style="list-style: none">
 
-        <% @recipe.reviews.each do |review| %>
-          <% if review.user != nil %>
-            <li>Comment:<%= review.comment %></li>
-            <li>Rating:<%= review.rating %></li>
-            <li>By <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %></span> on <%= review.created_at.strftime('%b %e, %Y')%></li><br />
-          <% end %>
+
+      <% @recipe.reviews.each do |review| %>
+        <% if review.user != nil %>
+          <ul id="reviewoutput" style="list-style: none">
+          <li>Comment:
+            <%= review.comment %>
+          </li>
+          <li id = 'rate'>
+          <span class = 'star'>&starf;</span>
+            <% review.rating.times do %>
+              &starf;
+            <% end %>
+          </li>
+
+          <li>
+            By
+            <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %>
+          </span>
+          on <%= review.created_at.strftime('%b %e, %Y')%>
+          </li><br />
+          </ul>
         <% end %>
-    </ul>
+      <% end %>
+
   </div>
 
-
-  <div class="col-md-4">
-    <h3>HERE WILL GO THE NUTRITION VALUES</h3>
+  <div class="col-md-6">
     <table class = "nutrition_facts">
       <thead>
         <tr>
@@ -157,6 +177,12 @@
         </tfoot>
       </table>
     </div>
-
   </div>
+</div>
+
+<div class = 'modal'>
+  <ul>
+
+  </ul>
+  <button type="button" class="close">x</button>
 </div>
