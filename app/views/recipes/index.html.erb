@@ -7,14 +7,17 @@
                 <input id="search_field" type="text" name="query">
                 <input type="submit">
               </form>
-              <h1>Check out these great recipes</h1>
+
             </center>
               <div class="row">
 
                 <div class="bob" >
                   <div class="shadow">
                   </br>
-                    <% @recipes.each do |recipe| %>
+                  <% recipe_ids = Recipe.pluck(:id).to_a %>
+                  <% sample_ids = recipe_ids.sample(40) %>
+                  <% featured_recipes = Recipe.where("id in (?)", sample_ids) %>
+                    <% featured_recipes.each do |recipe| %>
 
 
                         <table class="table-roundedr">
@@ -35,6 +38,26 @@
                             </td>
                           </tr>
                         </table>
+
+                        <table class="table-roundedr">
+                          <tr>
+                            <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
+                          </tr>
+                          <tr>
+                            <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="200" height="200"></td>
+                            <td>
+                              <center><h4>Ingredient List</h4> </center>
+                              <ul>
+                                <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
+                                  <li style="list-style-type:square"><h5><b><%= ingredient_recipe.ingredient.name %></b></h5></li>
+                                  <li style="list-style-type:none" > <h5>Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </h5></li>
+                                <% end %>
+                              </ul>
+
+                            </td>
+                          </tr>
+                        </table>
+                        </br>
                         <%end %>
                       </div>
                     </div>
