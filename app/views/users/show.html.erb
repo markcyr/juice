@@ -1,28 +1,28 @@
+<center>
+
+ <h2>Why not add to this awesome list</h2>
+ <h3>Click create a recipe</h3>
+</center>
+
+
+<div class="bob">
+  <div class="shadow">
 </br>
-
-  <div class="bob">
-    <div class="shadow">
-
-
       <% @user.recipes.each do |recipe| %>
-<div>
+
 
       <table class="table-rounded">
          <tr>
             <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
          </tr>
          <tr>
-                <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="300" height="250"></td>
+                <td><center><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="300" height="250"></center></td>
          </tr>
-         <tr> <td>Rating</td>  </tr>
+         <tr> <td>Rating:</td>  </tr>
       </table>
-</div>
+</br>
 
  <%end %>
 
-<center>
- <h3>This is where your recipes will be, try to create a few </h3>
- <h1><%= link_to "create", "/recipes/new" %></h1>
-</center>
 </div>
-	</div>
+</div>
