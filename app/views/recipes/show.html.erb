@@ -1,28 +1,43 @@
 
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <h3><%= @recipe.name %></h3>
-      <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
-      <%= link_to "edit", edit_recipe_path(@recipe) %>
+<div class="container-fluid content">
+  <div class="row recipe_name">
+    <h3><%= @recipe.name %></h3>
+    <div class = "edit_link">
+      <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 recipe_img ">
+      <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice">
+
+    </div>
+    <div class="col-md-6 ingredient_list">
       <h4>Ingredient List</h4>
-      <ul>
+      <ul class = "list">
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
-          <li style="list-style-type:square"><b><%= ingredient_recipe.ingredient.name %></b></li>
-          <li style="list-style-type:none" > Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%></li>
+
+          <li class = "ingredient_name">
+            <%= ingredient_recipe.ingredient.name %>
+          </li>
+          <li class = "ingredient_quantity">
+             Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%>
+           </li><br />
         <% end %>
       </ul>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <h4>Ratings</h4>
-      <h3>Total rating of this recipe is: <%=@recipe.total_rating%></h3>
-      <h5> How do you like the Juice</h5>
+  <div class="row nutrition_review">
+    <div class="col-md-6 review_container">
+      <div class = "review_report">
+        <%@recipe.total_rating.times do %>
+          &starf;
+        <%end%>
+        <%(5 - @recipe.total_rating).times do %>
+          &star;
+        <%end%>
+        <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
+      </div>
+      <h4> How do you like the Juice</h4>
       <%= form_for([@recipe, @review]) do |f| %>
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-primary active">
@@ -68,13 +83,13 @@
           <%= f.label :comment %><br />
           <%= f.text_area :comment %>
         </div>
-          <%= f.submit %>
+          <%= f.submit "submit review"%>
       <% end %>
 
-    <p><h3>Reviews for <%= @recipe.name %></h3></p>
+    <!-- <p><h3>Reviews for <%= @recipe.name %></h3></p> -->
 
 
-      <% @recipe.reviews.each do |review| %>
+      <!-- <% @recipe.reviews.each do |review| %>
         <% if review.user != nil %>
           <ul id="reviewoutput" style="list-style: none">
           <li>Comment:
@@ -95,7 +110,7 @@
           </li><br />
           </ul>
         <% end %>
-      <% end %>
+      <% end %> -->
 
   </div>
 
@@ -181,8 +196,8 @@
 </div>
 
 <div class = 'modal'>
-  <ul>
-
-  </ul>
+  <p class= 'thanks'>
+    Thanks for your review.
+  </p>
   <button type="button" class="close">x</button>
 </div>

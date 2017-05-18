@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :load_recipe
+  def index
+    @reviews = @recipe.reviews
+  end
 
   def show
     @review = Review.find(params[:id])
