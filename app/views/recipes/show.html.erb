@@ -31,6 +31,12 @@
   <div class="row nutrition_review">
     <div class="col-md-6 review_container">
       <div class = "review_report">
+        <%if @recipe.total_rating == 'No reviews available'%>
+           <%(5).times do %>
+            &star;
+           <%end%>
+          <%=@recipe.total_rating%>
+          <%else%>
         <%@recipe.total_rating.times do %>
           &starf;
         <%end%>
@@ -38,6 +44,7 @@
           &star;
         <%end%>
         <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
+        <%end%>
       </div>
 
       <h4> How do you like the Juice</h4>
@@ -181,7 +188,8 @@
       </li>
       <li>
         By
-        <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %>
+        <span class = 'commenter'><%=link_to  review.user.user_name, user_path(review.user.id) %>
+
         </span>
         on <%= review.created_at.strftime('%b %e, %Y')%>
       </li>
