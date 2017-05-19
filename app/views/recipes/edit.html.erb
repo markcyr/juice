@@ -17,7 +17,6 @@ body {background-color: #8cc63f;}
     </div>
   <% end %>
 <br>
-<br>
 
 <div class="edit_name">
 <%= f.label :name %>
@@ -29,7 +28,7 @@ body {background-color: #8cc63f;}
     <%= render 'ingredients_recipe_fields', f: ingredient_recipe %>
     <%end%>
   </div>
-
+  <br>
   <div class = "links">
       <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
   </div>
