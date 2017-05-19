@@ -1,3 +1,4 @@
+
 <center>
 
  <h2>Why not add to this awesome list</h2>
@@ -12,7 +13,9 @@
     <div class="category">
       <div class="container-fluid">
         <div class="row" >
-      <% @recipes.each do |recipe| %>
+
+      <% @user.recipes.each do |recipe| %>
+
 <div class="col-lg-6">
 
       <table class="table-rounded">
@@ -30,6 +33,11 @@
 
  <%end %>
 
+<<<<<<< HEAD
 </div>
 <%= will_paginate @recipes%>
+=======
+  </div>
+
+>>>>>>> master
 </div>
