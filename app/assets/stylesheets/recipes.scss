@@ -3,53 +3,60 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fields {
-  width: 500px;
+  // width: 500px;
   label {
     width: 15%;
   }
 }
-.edit_name{
-  width: 600px;
-  clear: both;
-  margin-left: 30%;
-  text-align: left;
-  label {
-    width: 13%;
-  }
-}
 
-#ingredients_recipes{
-  height: 150px;
-}
+//
+// .edit_name{
+//   width: 600px;
+//   clear: both;
+//   margin-left: 30%;
+//   text-align: left;
+//   label {
+//     width: 13%;
+//   }
+// }
 
-.nested-fields{
-  width: 600px;
-  height: 150px;
-  clear: both;
-  margin-left: 30%;
-  text-align: left;
-}
+// #ingredients_recipes{
+// //   // height: 160px;
+// //   // width: 600px;
+// //   // height: 160px;
+// //   // clear: both;
+// //   // margin-left: 20%;
+//   text-align: left;
+// }
 
-.nested-fields input{
-  width: 60%;
-  clear: both;
-}
+// .nested-fields{
+//   width: 600px;
+//   height: 160px;
+//   clear: both;
+//   margin-left: 30%;
+  // text-align: left;
+// }
+//
+// .nested-fields input{
+//   width: 60%;
+//   clear: both;
+// }
 
-.links{
-  width: 450px;
-  clear: both;
-  margin-left: 30%;
-  text-align: right;
-  margin-top: 0;
-}
+// .links{
+//   width: 450px;
+//   clear: both;
+//   margin-left: 30%;
+//   text-align: right;
+//   margin-top: 0;
+// }
 
-.rem{
-  width: 290px;
-  clear: both;
-  margin-left: 30%;
-  text-align: right;
-  margin-top: 0;
-}
+// .rem{
+//   width: 290px;
+//   clear: both;
+//   margin-left: 30%;
+//   text-align: right;
+//   margin-top: 0;
+// }
 
 #error_explanation li{
   list-style-type: none;
@@ -58,15 +65,17 @@
   color: red;
   text-align: left;
 }
-
+//
 .field_with_errors{
   color: red;
+  display: inline-block;
+  width: 15%;
 }
-
-.recipe_form{
-  text-align: center;
-  margin-top: 50px;
-}
+//
+// .recipe_form{
+//   text-align: center;
+//   margin-top: 50px;
+// }
 
 .nutrition_facts{
 border: 2px solid gray;
