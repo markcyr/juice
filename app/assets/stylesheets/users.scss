@@ -56,9 +56,20 @@
 .signup {
 
   text-align: center;
-  background-color:rgb(195, 218, 56);
-  margin: 0 38% 0 38%;
+  background-color:#8cc63f;
+  margin: 2% 28% 0 28%;
   font-family: 'Montserrat', sans-serif;
+  padding: 5% 0 5% 0;
+}
+.signup a {
+  font-size: 17px;
+}
+.signup_head {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 6%;
+  font-size: 55px;
+
 }
 // .signup:hover {
 //  background-color: rgb(255, 120, 70);
