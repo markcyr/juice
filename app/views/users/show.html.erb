@@ -25,7 +25,15 @@
          <tr>
                 <td><center><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="300" height="250"></center></td>
          </tr>
-         <tr> <td>Rating:</td>  </tr>
+         <tr> <td> <h3>Rating:
+           <%if recipe.total_rating == 'No reviews available'%>
+            <%= recipe.total_rating%>
+            <%else%>
+            <%  recipe.total_rating.times do %>
+              &starf;
+                <%end%>
+              <%end%> </h3>
+         </td>  </tr>
       </table>
       </br>
     </div>
@@ -34,9 +42,9 @@
  <%end %>
 
 </div>
-<%= will_paginate @recipes%>
+
 
   </div>
-
+<%= will_paginate @recipes%>
 
 </div>
