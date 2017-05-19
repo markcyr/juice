@@ -5,21 +5,28 @@
 .login_head {
   color: black;
   font-family: 'Montserrat', sans-serif;
-
+  padding-bottom: 14%;
+  font-size: 55px;
+  margin-top: -24px;
 
 }
 
-// .login_fields {
-//
-//   font-size:
-//
-// }
+.login p,a {
+  font-size: 17px;
+}
+
+.login_fields {
+
+  font-size: 150%;
+
+}
+
 .login {
  text-align: center;
-
- background-color:rgb(195, 218, 56);
- margin: 0 37% 0 37%;
+ background-color:#8cc63f;
+ margin: 3% 25% 0 25%;
  font-family: 'Montserrat', sans-serif;
+ padding: 10% 0 10% 0;
 }
 
 // .login:hover {
