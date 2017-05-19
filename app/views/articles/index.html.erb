@@ -5,7 +5,7 @@
   <h2><%= article.title %></h2>
     <table>
       <tr>
-        <td>  <img alt="Bootstrap Image Preview" src="assets/<%= article.image %>" height="400px" width="400px" ></td>
+        <td>              <%= image_tag("#{article.image}", :class =>"recipeimages")  %></td>
         <td><%= article.text %></br></td>
       </tr>
     </table>
