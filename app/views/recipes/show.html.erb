@@ -17,12 +17,12 @@
       <ul class = "list">
         <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
 
-          <li class = "ingredient_name">
-            <%= ingredient_recipe.ingredient.name %>
+          <li class = "single_ingredient">
+             <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> <%= ingredient_recipe.ingredient.name %>
           </li>
-          <li class = "ingredient_quantity">
+          <!-- <li class = "ingredient_quantity">
              Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%>
-           </li><br />
+           </li><br /> -->
         <% end %>
       </ul>
     </div>

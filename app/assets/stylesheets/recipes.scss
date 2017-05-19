@@ -164,19 +164,18 @@ border: 2px solid gray;
     }
     // --------styles for the recipe/show view
 .recipe_name {
-  margin-bottom: 20px;
   border: 2px solid green;
   border-radius: 10px;
-  margin-top: 30px;
+  margin: 30px 50px 20px 50px;
 }
 .recipe_name h3{
-  margin: 40px 330px;
+  margin: 40px 250px 0 390px;
 }
 .content {
   padding: 20px 50px;
 }
 .recipe_img img {
-  margin: 20px 0 20px 60px;
+  margin: 0 0 20px 90px;
 }
 
 .nutrition_facts{
@@ -221,26 +220,24 @@ margin: 30px 20px 0px 70px;
 .commenter{
   color: blue;
 }
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left:50%;
-  width: 20%;
-  height: 20%;
-  background-color: rgba(30,30,30,0.8)
-}
 .thanks{
   position:absolute;
   top: 50%;
   left:50%;
 }
-.col-md-6.ingredient_list {
+.ingredient_list {
   padding: 50px 20px;
 }
 .ingredient_list h4 {
-    margin-bottom: 25px;
+  padding: 0 20px 0 180px;
+  font-size: 22px;
+}
+.single_ingredient {
+  padding: 4px 30px 0 160px;
+  font-size: 15px;
+}
+.list{
+  list-style-type: none;
 }
 .recipe_name a{
   position: absolute;
@@ -251,7 +248,7 @@ li.ingredient_quantity {
     list-style: none;
 }
 .review_container {
-  padding: 60px 0 0 40px;
+  padding: 60px 0 0 80px;
 }
 .review_report {
   padding: 20px 0 20px 20px;
