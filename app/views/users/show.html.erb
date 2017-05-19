@@ -23,7 +23,8 @@
             <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
          </tr>
          <tr>
-                <td><center><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="300" height="250"></center></td>
+             <td><%= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimage")  %></td>
+
          </tr>
          <tr> <td> <h3>Rating:
            <%if recipe.total_rating == 'No reviews available'%>
