@@ -56,15 +56,19 @@
 .signup {
 
   text-align: center;
-  opacity: 0.6;
-  filter: alpha(opacity=50);
-  background-color: #f7941e;
-  margin: 0 20% 0 20%;
+  background-color:rgb(195, 218, 56);
+  margin: 0 38% 0 38%;
   font-family: 'Montserrat', sans-serif;
 }
-.signup:hover {
-  opacity: 1.0;
-  filter: alpha(opacity=100);
+// .signup:hover {
+//  background-color: rgb(255, 120, 70);
+// }
+
+.user_recipe{
+  font-size: 50px;
+  padding: 40px 0 40px 0;
+  font-family: 'Tillana', cursive;
+
 }
 
 .rate p {

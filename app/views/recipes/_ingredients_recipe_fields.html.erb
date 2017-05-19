@@ -3,12 +3,12 @@
   <%= f.label :ingredient_id%>
   <%=f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
   </div>
-  <br>
+  <!-- <br> -->
   <div class="fields">
   <%= f.label :quantity%>
   <%=f.number_field :quantity%>
   </div>
-  <br>
+  <!-- <br> -->
   <div class="fields">
   <%= f.label :unit_id%>
   <%= f.collection_select :unit_id, Unit.all, :id, :unit_name %>
@@ -18,3 +18,5 @@
 </div>
 </div>
 </div><!-- /.nested-fields -->
+<br>
+<br>
