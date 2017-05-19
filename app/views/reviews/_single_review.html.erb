@@ -1,2 +1,15 @@
-<li>Comment:<%= @review.comment %></li>
-<li>Rating:<%= @review.rating %></li></br>
+<li id = 'rate' class = "star_rates">
+  <% review.rating.times do %>
+    &starf;
+  <% end %>
+</li>
+<li>
+  By
+  <span class = 'commenter'><%=link_to  review.user.user_name, user_path(current_user) %>
+  </span>
+  on <%= review.created_at.strftime('%b %e, %Y')%>
+</li>
+<li>
+  Comment:
+  <%= review.comment %>
+</li><br />

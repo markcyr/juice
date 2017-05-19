@@ -7,19 +7,25 @@
                 <input id="search_field" type="text" name="query">
                 <input type="submit">
               </form>
-              <h1>Check out these great recipes</h1>
+
             </center>
               <div class="row">
 
-                <div class="bob" >
+                <div class="rec" >
                   <div class="shadow">
                   </br>
-                    <% @recipes.each do |recipe| %>
 
 
-                        <table class="table-roundedr">
+    <div class="category">
+      <div class="container-fluid">
+        <div class="row" >
+
+          <% @recipes.each do |recipe| %>
+
+            <div class="col-lg-4">
+              <table class="table-roundedr">
                           <tr>
-                            <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
+                            <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
                           </tr>
                           <tr>
                             <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="200" height="200"></td>
@@ -35,9 +41,20 @@
                             </td>
                           </tr>
                         </table>
-                        <%end %>
-                      </div>
-                    </div>
-              </div>
 
-  </div>
+              </br>
+            </div>
+
+          <% end %>
+
+
+        </div>
+      </div>
+    </div>
+
+
+                </div>
+              </div>
+        </div>
+
+</div>
