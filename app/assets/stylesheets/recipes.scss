@@ -3,14 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fields {
-
   width: 500px;
   label {
     width: 15%;
   }
-
 }
-
 .edit_name{
   width: 600px;
   clear: both;
@@ -109,8 +106,6 @@ border: 2px solid gray;
   text-align: left;
   padding-right: 0px;
 }
-
-
 .rec {
     // display:table;
     width: 90%;
@@ -167,3 +162,115 @@ border: 2px solid gray;
 .table-roundedr tr+tr td, .table-rounded th+tr td{
     border-top: none;
     }
+    // --------styles for the recipe/show view
+.recipe_name {
+  border: 2px solid green;
+  border-radius: 10px;
+  margin: 30px 50px 20px 50px;
+}
+.recipe_name h3{
+  margin: 40px 250px 0 390px;
+}
+.content {
+  padding: 20px 50px;
+}
+.recipe_img img {
+  margin: 0 0 20px 90px;
+}
+
+.nutrition_facts{
+border: 2px solid gray;
+margin: 30px 20px 0px 70px;
+}
+.nutrition_facts th{
+  font-size: 18px;
+  text-align: right;
+}
+.nutrition_facts thead{
+  border-bottom: 3px solid black;
+}
+
+.left_cell, .right_cell{
+  border-bottom: 1px solid black
+  }
+
+.nutrition_facts tfoot{
+  font-size: 12px;
+}
+.left_cell{
+  width: 100px;
+  padding-left: 20px;
+}
+
+.right_cell{
+  width: 60px;
+  text-align: right;
+  padding-right: 10px;
+}
+.divider{
+  border-bottom: 3px solid black;
+}
+.sub_cell{
+  padding-left: 40px;
+}
+.daily_value_cell{
+  text-align: left;
+  padding-right: 0px;
+}
+.commenter{
+  color: blue;
+}
+.thanks{
+  position:absolute;
+  top: 50%;
+  left:50%;
+}
+.ingredient_list {
+  padding: 50px 20px;
+}
+.ingredient_list h4 {
+  padding: 0 20px 0 180px;
+  font-size: 22px;
+}
+.single_ingredient {
+  padding: 4px 30px 0 160px;
+  font-size: 15px;
+}
+.list{
+  list-style-type: none;
+}
+.recipe_name a{
+  position: absolute;
+  top: 90px;
+  right: 10px;
+}
+li.ingredient_quantity {
+    list-style: none;
+}
+.review_container {
+  padding: 60px 0 0 80px;
+}
+.review_report {
+  padding: 20px 0 20px 20px;
+}
+.new_review{
+  margin: 25px;
+}
+.comment_box {
+    margin: 20px;
+}
+.list_of_reviews {
+  padding: 50px 0 0 30px;
+}
+.reviews li {
+    list-style-type: none;
+}
+.single_star {
+  color: #FFC107;
+  padding-right: 8px;
+  font-size: 13px;
+}
+.star_rates{
+font-size: 18px;
+color: #FFC107;
+}
