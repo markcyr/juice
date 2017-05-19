@@ -10,15 +10,15 @@
 }
 
 //
-// .edit_name{
+.edit_name{
 //   width: 600px;
 //   clear: both;
 //   margin-left: 30%;
 //   text-align: left;
-//   label {
-//     width: 13%;
-//   }
-// }
+  label {
+    width: 15%;
+  }
+}
 
 // #ingredients_recipes{
 // //   // height: 160px;
@@ -57,6 +57,7 @@
 //   text-align: right;
 //   margin-top: 0;
 // }
+
 
 #error_explanation li{
   list-style-type: none;
