@@ -29,7 +29,8 @@
                             <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
                           </tr>
                           <tr>
-                            <td><img src="/assets/recipeimages/<%= recipe.image %>" alt="juice" width="200" height="200"></td>
+                            <td><%= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimages")  %></td>
+
                             <td>
                               <center><h4>Ingredient List</h4> </center>
                               <ul>
