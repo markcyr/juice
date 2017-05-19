@@ -1,4 +1,4 @@
-<h2>Create A Recipe</h2>
+<h2>New Recipe</h2>
 
 <style>
 body {background-color: #8cc63f;}
@@ -6,7 +6,18 @@ body {background-color: #8cc63f;}
 
 <div class="recipe_form">
 <%= form_for @recipe do |f|%>
-
+<% if @recipe.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
+    <ul>
+      <% @recipe.errors.messages.values.each do |msg| %>
+        <li>Quantity:<br>
+          <%= msg.join("<br>").html_safe %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<br>
 
     <%=f.fields_for :ingredients_recipes do |r|%>
     <%= render 'ingredients_recipe_fields', :f => r %>
