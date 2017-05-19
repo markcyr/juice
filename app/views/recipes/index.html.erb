@@ -25,14 +25,17 @@
 
             <div class="col-lg-4">
               <table class="table-roundedr">
-                          <tr>
-                            <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
-                          </tr>
-                          <tr>
-                            <td><%#= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimages")  %></td>
-
-                            <td>
-                              <center><h4>Ingredient List</h4> </center>
+                <tr>
+                  <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
+                </tr>
+                <tr>
+                  <td>
+                    <% if (recipe.image)%>
+                      <%= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimages")  %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <center><h4>Ingredient List</h4> </center>
                               <ul>
                                 <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
                                   <li style="list-style-type:square"><h5><b><%= ingredient_recipe.ingredient.name %></b></h5></li>
