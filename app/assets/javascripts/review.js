@@ -27,14 +27,11 @@ $(function() {
           $(star).addClass('single_star');
           $(star).appendTo(rate);
           $(' ').appendTo(rate);
-
+          location.reload(true);
         }
         $('#review_comment').val('');
-        // $('.modal').fadeIn();
-        // $('button.close').on('click', function(){
-        //     $('.modal').fadeOut('slow');
-        //     window.location.reload(true);
-        // });
+
+
       }
       console.log('submit was successful');
 

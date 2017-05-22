@@ -19,9 +19,6 @@
           <li class = "single_ingredient">
              <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> <%= ingredient_recipe.ingredient.name %>
           </li>
-          <!-- <li class = "ingredient_quantity">
-             Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%>
-           </li><br /> -->
         <% end %>
       </ul>
     </div>
@@ -42,7 +39,7 @@
         <%(5 - @recipe.total_rating).times do %>
           &star;
         <%end%>
-        <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
+        <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
         <%end%>
       </div>
 
@@ -175,7 +172,7 @@
       </table>
     </div>
   </div>
-<div class = "row list_of_reviews">
+<div id = "list_of_reviews" class = "row">
   <h4>Reviews for <%= @recipe.name %></h4>
   <ul class="reviews">
   <% @recipe.reviews.each do |review| %>
