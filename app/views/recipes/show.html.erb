@@ -10,7 +10,7 @@
     <%end%>
     <div class="col-md-6 recipe_img ">
       <!-- <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice"> -->
-      <%= image_tag("recipeimages/#{@recipe.image}")%>
+      <%#= image_tag("recipeimages/#{@recipe.image}")%>
     </div>
     <div class="col-md-6 ingredient_list">
       <h4>Ingredient List</h4>
@@ -47,48 +47,23 @@
         <%end%>
       </div>
 
+
       <h4> How do you like the Juice</h4>
       <%= form_for([@recipe, @review]) do |f| %>
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <%= f.radio_button :rating, 1 %>
-            <input type="radio" name="options" id="option1" autocomplete="off" checked>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 2 %>
-            <input type="radio" name="options" id="option2" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 3 %>
-            <input type="radio" name="options" id="option3" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-          <label class="btn btn-primary">
-             <%= f.radio_button :rating, 4 %>
-            <input type="radio" name="options" id="option2" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 5 %>
-            <input type="radio" name="options" id="option3" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-           </label>
-        </div>
+    <fieldset>
+      <span class="star-cb-group">
+         <%= f.radio_button :rating, 5%>
+         <label for = "review_rating_5" class="rating-star">5</label>
+        <%= f.radio_button :rating, 4, class:'rating-input' %>
+        <label for = "review_rating_4" class="rating-star">4</label>
+        <%= f.radio_button :rating, 3, class:'rating-input'%>
+        <label for = "review_rating_3" class="rating-star">3</label>
+        <%= f.radio_button :rating, 2, class:'rating-input'%>
+        <label for = "review_rating_2" class="rating-star">2</label>
+        <%= f.radio_button :rating, 1, class:'rating-input'%>
+        <label for = "review_rating_1" class="rating-star">1</label>
+      </span>
+    </fieldset>
         <div class = 'comment_box'>
           <%= f.label :comment %><br />
           <%= f.text_area :comment %>
