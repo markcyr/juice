@@ -4,7 +4,7 @@ body {background-color: #8cc63f;}
 <div class="recipe_form">
 <h1><%= @recipe.name %> </h1>
 
-<%= form_for @recipe do |f|%>
+<%= form_for @recipe, :html => {:multipart => true} do |f|%>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
