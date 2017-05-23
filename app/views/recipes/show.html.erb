@@ -43,7 +43,7 @@
         <%(5 - @recipe.total_rating).times do %>
           &star;
         <%end%>
-        <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
+        <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
         <%end%>
       </div>
 
@@ -53,15 +53,15 @@
     <fieldset>
       <span class="star-cb-group">
          <%= f.radio_button :rating, 5%>
-         <label for = "review_rating_5" class="rating-star">5</label>
-        <%= f.radio_button :rating, 4, class:'rating-input' %>
-        <label for = "review_rating_4" class="rating-star">4</label>
-        <%= f.radio_button :rating, 3, class:'rating-input'%>
-        <label for = "review_rating_3" class="rating-star">3</label>
-        <%= f.radio_button :rating, 2, class:'rating-input'%>
-        <label for = "review_rating_2" class="rating-star">2</label>
-        <%= f.radio_button :rating, 1, class:'rating-input'%>
-        <label for = "review_rating_1" class="rating-star">1</label>
+         <label for = "review_rating_5">5</label>
+        <%= f.radio_button :rating, 4%>
+        <label for = "review_rating_4">4</label>
+        <%= f.radio_button :rating, 3%>
+        <label for = "review_rating_3">3</label>
+        <%= f.radio_button :rating, 2%>
+        <label for = "review_rating_2">2</label>
+        <%= f.radio_button :rating, 1%>
+        <label for = "review_rating_1">1</label>
       </span>
     </fieldset>
         <div class = 'comment_box'>
@@ -151,7 +151,7 @@
       </table>
     </div>
   </div>
-<div class = "row list_of_reviews">
+<div class = "row" id = "list_of_reviews">
   <h4>Reviews for <%= @recipe.name %></h4>
   <ul class="reviews">
   <% @recipe.reviews.each do |review| %>
