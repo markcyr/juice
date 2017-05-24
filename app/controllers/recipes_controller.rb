@@ -36,7 +36,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
 
-    @recipe.image = "#{rand(18+1)}.jpg"
     if @recipe.save
       @recipe.generate_name
       redirect_to recipe_path(@recipe)
