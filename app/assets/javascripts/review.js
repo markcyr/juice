@@ -8,11 +8,12 @@ $(function() {
       data: $(this).serialize(),
       dataType: 'json'
     }).done(function(data) {
-
+      $('comment_box span').val('');
       if(data.errors.length !== 0){
         var error = $('<span>').appendTo('.comment_box')
         $(error).html('<p>' + data.errors[0]+'</p>')
       }else{
+        $('.comment_box span').html(' ');
       var review = data['review'],
         comment = $('<li>').prependTo('.reviews'),
         commenter = $('<li>').prependTo('.reviews'),
@@ -30,11 +31,12 @@ $(function() {
           $(' ').appendTo(rate);
         }
         if(data.review_count === 1 ){
-          $('.review_link').html(data.review_count.toString() + 'review')
+          $('.review_link').html(data.review_count.toString() + 'review');
         }else{
-          $('.review_link').html(data.review_count.toString() + 'reviews').css('color', '#337ab7')
+          $('.review_link').html(data.review_count.toString() + 'reviews').css('color', '#337ab7');
         }
         $('#review_comment').val('');
+
         // $('.modal').fadeIn();
         // $('button.close').on('click', function(){
         //     $('.modal').fadeOut('slow');
@@ -48,6 +50,7 @@ $(function() {
 
     }).always(function() {
        $('input[type="submit"]').removeAttr('disabled');
+
     }).error(function()   {
 
     });
