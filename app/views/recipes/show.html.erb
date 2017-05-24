@@ -9,8 +9,8 @@
       </div>
     <%end%>
     <div class="col-md-6 recipe_img ">
-      <!-- <img src="/assets/recipeimages/<%= @recipe.image %>" alt="juice"> -->
-      <%= image_tag("#{@recipe.image}")%>
+      <%=image_tag @recipe.image.url(:thumb) %>
+
     </div>
     <div class="col-md-6 ingredient_list">
       <h4>Ingredient List</h4>
@@ -20,6 +20,9 @@
           <li class = "single_ingredient">
              <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> <%= ingredient_recipe.ingredient.name %>
           </li>
+          <!-- <li class = "ingredient_quantity">
+             Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%>
+           </li><br /> -->
         <% end %>
       </ul>
     </div>
