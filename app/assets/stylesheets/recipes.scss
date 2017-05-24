@@ -86,7 +86,7 @@
   font-family: 'Tillana', cursive;
   padding: 10px 0 10px 20px;
 }
-#edit_recipe_3 {
+.edit_recipe {
   padding-left: 40px;
 }
 .newrecipe{
@@ -264,7 +264,7 @@ li.ingredient_quantity {
 .comment_box {
     margin: 20px;
 }
-.list_of_reviews {
+#list_of_reviews {
   padding: 50px 0 0 30px;
 }
 .reviews li {

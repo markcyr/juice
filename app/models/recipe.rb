@@ -8,6 +8,8 @@ class Recipe < ApplicationRecord
   belongs_to :user
   accepts_nested_attributes_for :ingredients_recipes, allow_destroy: true, reject_if: :all_blank
 
+  mount_uploader :image, ImageUploader
+
 # get_nutrient method calculates the amount of a nutrient per serving size
   def get_nutrient(nutrient)
     nutrients = {protein: 'protein_g', iron: 'iron_mg', calcium: 'calcium_mg', calory: 'energ_kcal', fat: 'lipid_tot_g',
@@ -79,4 +81,23 @@ class Recipe < ApplicationRecord
     end
   end
 
+  def source_of
+    nutrients = ['iron', 'calcium','vitC', 'vitA', 'fiber']
+    nutrition_value =  {}
+
+    nutrients.each do |nutrient|
+      value = self.daily_value(nutrient)
+      nutrition_value[nutrient] = value
+    end
+    #source is an array including the max value and its corresponding key
+    source = nutrition_value.max
+    if source[0] == 'vitC'
+      return 'vitamin C'
+    elsif source[0] == 'vitA'
+      return 'vitamin A'
+    else
+      return source[0]
+    end
+  end
+  
 end
