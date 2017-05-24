@@ -23,18 +23,22 @@
             <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
          </tr>
          <tr>
-             <td><%=image_tag recipe.image.url%></td>
-
+           <th>source of <%= recipe.source_of%></th>
          </tr>
-         <tr> <td> <h3>Rating:
+         <tr>
+             <td><%=image_tag recipe.image.url(:thumb)%></td>
+         </tr>
+         <tr>
+           <td> <h3>Rating:</h3>
            <%if recipe.total_rating == 'No reviews available'%>
             <%= recipe.total_rating%>
             <%else%>
             <%  recipe.total_rating.times do %>
               &starf;
-                <%end%>
-              <%end%> </h3>
-         </td>  </tr>
+            <%end%>
+              <%end%>
+         </td>
+        </tr>
       </table>
       </br>
     </div>
