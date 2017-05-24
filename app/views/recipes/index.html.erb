@@ -1,4 +1,4 @@
-<div>
+
     <center>
           <h2>What ingredients do you want to juice today</h2>
               <div class="search_form">
@@ -10,56 +10,37 @@
             </div>
 
             </center>
-              <div class="row">
-
-                <div class="rec" >
-                  <div class="shadow">
-                  </br>
 
 
-    <div class="category">
-      <div class="container-fluid">
-        <div class="row" >
 
-          <% @recipes.each do |recipe| %>
+<div class="container">
+  <div class="row">
+      <% @recipes.each do |recipe| %>
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
+        <div class="thumbnail">
+          <br>
+          <%=image_tag recipe.image.url(:thumb) %>
+          <div class="caption">
+            <%= recipe.name %>
+            <hr >
 
-            <div class="col-lg-4">
-              <table class="table-roundedr">
-                <tr>
-                  <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
-                </tr>
-                <tr>
-                  <td>
-                    <% if (recipe.image)%>
-                      <%= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimages")  %>
-                    <% end %>
-                  </td>
-                  <td>
-                    <center><h4>Ingredient List</h4> </center>
-                              <ul>
-                                <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
-                                  <li style="list-style-type:square"><h5><b><%= ingredient_recipe.ingredient.name %></b></h5></li>
-                                  <li style="list-style-type:none" > <h5>Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </h5></li>
-                                <% end %>
-                              </ul>
+            <ul>
+              <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
+              <li style="list-style-type:none"><b><%= ingredient_recipe.ingredient.name %></b></li>
+               <li style="list-style-type:none"> Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </li>
+              <% end %>
+            </ul>
 
-                            </td>
-                          </tr>
-                        </table>
-
-              </br>
-            </div>
-
-          <% end %>
-
-
+            <button class="btn btn-default" role="button">View More</button>
+          </div>
         </div>
+
+
       </div>
-    </div>
 
 
-                </div>
-              </div>
-        </div>
+        </a>
+          <% end %>
+      </div>
 
 </div>

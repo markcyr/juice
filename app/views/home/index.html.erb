@@ -1,78 +1,150 @@
-<body class="bodyhome">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12">
+    			<div class="jumbotron">
+            <div class="container text-right">
+
+                    <h1>Juice for Health</h1>
+
+                    <h2>Recipes for you by you</h2>
+
+
+
+                  </div>
+
+    		</div>
+
+  </div>
+</div>
+</div>
+<div class="container-fluid home">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="carousel slide" id="carousel-71994">
-				<ol class="carousel-indicators">
-					<li class="active" data-slide-to="0" data-target="#carousel-71994">
-					</li>
-					<li data-slide-to="1" data-target="#carousel-71994">
-					</li>
-					<li data-slide-to="2" data-target="#carousel-71994">
-					</li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-    <%= image_tag("apple-juice.jpg")  %>
-
-						<div class="carousel-caption">
-            <H2>Are you looking for juicing tips?</h2>
-                 <ul><h4>
-                   <li>Are you trying to find a way to make juicing seem less intimidating?</li>
-                   <li>Here you will find healthy tips to help you start your juicing journey,</li>
-                    <li>  or to make the juicing journey you are on, more beneficial.</li>
-                  <h4></ul>
-						</div>
-					</div>
-					<div class="item">
-						<%= image_tag("detox.jpg")  %>
-						<div class="carousel-caption">
-              <h2>Juicing your own juice at home has so many benefits:</h2>
-              <ul><h4>
-                <li>Often healthier</li>
-                <li>Often cheaper</li>
-                <li>You know exactly what’s going into your juice</li>
-              </h4></ul>
-						</div>
-					</div>
-					<div class="item">
-						<%= image_tag("vegetable-juices.jpg")  %>
-						<div class="carousel-caption">
-              <h2>Several reasons why you need to juice</h2>
-              <ul><h4>
-                <li>Get micro nutirents</li>
-                <li>Get daily recommended vitimans and minerals</li>
-                <li>Get ripped</li>
-              </h4></ul>
-						</div>
-					</div>
-				</div> <a class="left carousel-control" href="#carousel-71994" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-71994" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-        <% article_ids = Article.pluck(:id).to_a %>
-        <% sample_ids = article_ids.sample(3) %>
-        <% featured_articles = Article.where("id in (?)", sample_ids) %>
-        <% featured_articles.each do |article| %>
-
-    		<div class="col-md-4">
-					<div class="thumbnail">
-
-            <%= image_tag("#{article.image}", :class =>"recipeimages")  %>
-						<div class="caption">
-                  <H3> <%= article.title %></h3>
-							 <p><%= article.sentence  %> </p>
-							<p> <a class="btn btn-primary" href="\articles\<%= article.id %>">Read More</a>  </p>
-						</div>
-					</div>
-				</div>
-
-          <% end %>
-
+			<div class="page-header">
+				<h1><center> Recent Articles</centre></h1>
+        <hr>
+          <center>Learn About Some Useful Facts</center>
+				</h1>
 			</div>
 		</div>
 	</div>
 </div>
-</body>
+<div class="row">
+  <div class="col-md-12">
+
+      <% article_ids = Article.pluck(:id).to_a %>
+      <% sample_ids = article_ids.sample(3) %>
+      <% featured_articles = Article.where("id in (?)", sample_ids) %>
+      <% featured_articles.each do |article| %>
+
+      <div class="col-md-4">
+        <div class="thumbnail_home">
+
+          <%= image_tag("#{article.image}", :class =>"recipeimages")  %>
+          <div class="caption">
+                <H3> <%= article.title %></h3>
+             <p><%= article.sentence  %> </p>
+            <p> <a class="btn_home" href="\articles\<%= article.id %>">Read the Article</a>  </p>
+          </div>
+        </div>
+      </div>
+
+        <% end %>
+
+
+  </div>
+</div>
+</div>
+
+
+<!-- team-->
+   <section id="team">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           <h2 class="heading">Our team</h2>
+           <div class="row"></div>
+           <!-- team-member-->
+           <div class="col-md-3 col-sm-6">
+             <div class="team-member">
+               <div class="image"><a href="#"><img src="http://img4.bdbphotos.com/images/50x50/p/q/pql57p9ij02ipliq.jpg?skj2io4l" alt=""
+                     class="img-responsive"></a></div>
+               <h3><a href="#">Han Solo</a></h3>
+               <p class="role">Founder</p>
+               <div class="social"> <a href="#" class="external facebook" data-animate-hover="pulse"><i
+                     class="fa fa-facebook"></i></a> <a href="#" class="external gplus"
+                   data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                 <a href="#" class="external twitter" data-animate-hover="pulse"><i
+                     class="fa fa-twitter"></i></a> <a href="#" class="email"
+                   data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+               </div>
+               <div class="text">
+                 <p>Pellentesque habitant morbi tristique senectus et netus et
+                   malesuada fames ac turpis egestas.</p>
+               </div>
+             </div>
+           </div>
+           <!-- team-member col end-->
+           <!-- team-member-->
+           <div class="col-md-3 col-sm-6">
+             <div class="team-member">
+               <div class="image"><a href="#"><img src="http://img4.bdbphotos.com/images/50x50/p/q/pql57p9ij02ipliq.jpg?skj2io4l" alt=""
+                     class="img-responsive"></a></div>
+               <h3><a href="#">Luke Skywalker</a></h3>
+               <p class="role">CTO</p>
+               <div class="social"> <a href="#" class="external facebook" data-animate-hover="pulse"><i
+                     class="fa fa-facebook"></i></a> <a href="#" class="external gplus"
+                   data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                 <a href="#" class="external twitter" data-animate-hover="pulse"><i
+                     class="fa fa-twitter"></i></a> <a href="#" class="email"
+                   data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+               </div>
+               <div class="text">
+                 <p>Pellentesque habitant morbi tristique senectus et netus et
+                   malesuada fames ac turpis egestas.</p>
+               </div>
+             </div>
+           </div>
+           <!-- team-member col end-->
+           <!-- team-member-->
+           <div class="col-md-3 col-sm-6">
+             <div class="team-member">
+               <div class="image"><a href="#"><img src="http://img4.bdbphotos.com/images/50x50/p/q/pql57p9ij02ipliq.jpg?skj2io4l" alt=""
+                     class="img-responsive"></a></div>
+               <h3><a href="#">Princess Leia</a></h3>
+               <p class="role">Team Leader</p>
+               <div class="social"> <a href="#" class="external facebook" data-animate-hover="pulse"><i
+                     class="fa fa-facebook"></i></a> <a href="#" class="external gplus"
+                   data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                 <a href="#" class="external twitter" data-animate-hover="pulse"><i
+                     class="fa fa-twitter"></i></a> <a href="#" class="email"
+                   data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+               </div>
+               <div class="text">
+                 <p>Pellentesque habitant morbi tristique senectus et netus et
+                   malesuada fames ac turpis egestas.</p>
+               </div>
+             </div>
+           </div>
+           <!-- team-member col end-->
+           <!-- team-member-->
+           <div class="col-md-3 col-sm-6">
+             <div class="team-member">
+               <div class="image"><a href="#"><img src="http://img4.bdbphotos.com/images/50x50/p/q/pql57p9ij02ipliq.jpg?skj2io4l" alt=""
+                     class="img-responsive"></a></div>
+               <h3><a href="#">Jabba Hut</a></h3>
+               <p class="role">Lead Developer</p>
+               <div class="social"> <a href="#" class="external facebook" data-animate-hover="pulse"><i
+                     class="fa fa-facebook"></i></a> <a href="#" class="external gplus"
+                   data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                 <a href="#" class="external twitter" data-animate-hover="pulse"><i
+                     class="fa fa-twitter"></i></a> <a href="#" class="email"
+                   data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+               </div>
+               <div class="text">
+                 <p>Pellentesque habitant morbi tristique senectus et netus et
+                   malesuada fames ac turpis egestas.</p>
+               </div>
+             </div>
+           </div>
+           <!-- team-member col end--> </div>
