@@ -1,4 +1,4 @@
-<div>
+
     <center>
           <h2>What ingredients do you want to juice today</h2>
               <div class="search_form">
@@ -10,53 +10,97 @@
             </div>
 
             </center>
-              <div class="row">
-
-                <div class="rec" >
-                  <div class="shadow">
-                  </br>
 
 
-    <div class="category">
-      <div class="container-fluid">
-        <div class="row" >
 
-          <% @recipes.each do |recipe| %>
 
-            <div class="col-lg-4">
-              <table class="table-roundedr">
-                          <tr>
-                            <th colspan="2"><center><%= link_to recipe.name, "/recipes/#{recipe.id}" %></center></th>
-                          </tr>
-                          <tr>
-                            <td><%= image_tag("recipeimages/#{recipe.image}", :class =>"recipeimages")  %></td>
 
-                            <td>
-                              <center><h4>Ingredient List</h4> </center>
-                              <ul>
-                                <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
-                                  <li style="list-style-type:square"><h5><b><%= ingredient_recipe.ingredient.name %></b></h5></li>
-                                  <li style="list-style-type:none" > <h5>Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </h5></li>
-                                <% end %>
-                              </ul>
+<div class="container">
+	<div class="row">
+      <% @recipes.each do |recipe| %>
+	    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 card">
 
-                            </td>
-                          </tr>
-                        </table>
+    		<div class="thumbnail">
+          <br>
+    		 <%= image_tag("recipeimages/#{recipe.image}")  %>
+    			<div class="caption">
+    				<h3><%= recipe.name %></h3>
+    				<hr >
 
-              </br>
-            </div>
+            <ul>
+              <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
+              <li style="list-style-type:none"><b><%= ingredient_recipe.ingredient.name %></b></li>
+               <li style="list-style-type:none"> Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </li>
+              <% end %>
+            </ul>
 
+    				<button class="btn btn-default" role="button">View More</button>
+    			</div>
+    		</div>
+
+    	</div>
+
+
+    		</a>
           <% end %>
+    	</div>
+
+</div>
 
 
-        </div>
-      </div>
-    </div>
-
-
-                </div>
-              </div>
-        </div>
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+								Thumbnail label
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+								Thumbnail label
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+								Thumbnail label
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

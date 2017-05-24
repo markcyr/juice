@@ -1,6 +1,13 @@
-   <h4><%= @article.title %></h4>
-<img src="/assets<%= @article.image %>" alt="drinking juice" height="200" width="200">
-</br>
-  <%= @article.text  %>
+  <h2> <%= @article.title %></H2>
 
-<H3><%= @article.quote %></H3>
+<table>
+  <tr>
+    <td><img src="/assets<%= @article.image %>" alt="drinking juice" height="200" width="200">
+
+    </td><td>
+    <blockquote>  <%= @article.text  %></blockquote></td>
+  </tr>
+</table>
+
+
+<blockquote class="blockquote-reverse"><%= @article.quote %></blockquote>
