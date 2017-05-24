@@ -23,10 +23,10 @@
             <th colspan="2"><%= link_to recipe.name, "/recipes/#{recipe.id}" %></th>
          </tr>
          <tr>
-           <th>a source of <%= recipe.source_of%></th>
+           <th>source of <%= recipe.source_of%></th>
          </tr>
          <tr>
-             <td><%=image_tag recipe.image.url%></td>
+             <td><%=image_tag recipe.image.url(:thumb)%></td>
          </tr>
          <tr>
            <td> <h3>Rating:</h3>
