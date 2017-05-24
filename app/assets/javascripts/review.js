@@ -8,6 +8,7 @@ $(function() {
       data: $(this).serialize(),
       dataType: 'json'
     }).done(function(data) {
+      
       if(data.errors.length !== 0){
         var error = $('<span>').appendTo('.comment_box')
         $(error).html('<p>' + data.errors[0]+'</p>')
@@ -42,7 +43,7 @@ $(function() {
       console.log('submit failed');
 
     }).always(function() {
-
+       $('input[type="submit"]').removeAttr('disabled');
     }).error(function()   {
 
     });
