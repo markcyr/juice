@@ -9,7 +9,6 @@
       </div>
     <%end%>
     <div class="col-md-6 recipe_img ">
-
       <%=image_tag @recipe.image.url(:thumb) %>
     </div>
     <div class="col-md-6 ingredient_list">
@@ -43,52 +42,27 @@
         <%(5 - @recipe.total_rating).times do %>
           &star;
         <%end%>
-        <%=link_to @recipe.reviews.count.to_s + ' reviews', recipe_reviews_path(@recipe)%>
+        <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
         <%end%>
       </div>
 
+
       <h4> How do you like the Juice</h4>
       <%= form_for([@recipe, @review]) do |f| %>
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <%= f.radio_button :rating, 1 %>
-            <input type="radio" name="options" id="option1" autocomplete="off" checked>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 2 %>
-            <input type="radio" name="options" id="option2" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 3 %>
-            <input type="radio" name="options" id="option3" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-          <label class="btn btn-primary">
-             <%= f.radio_button :rating, 4 %>
-            <input type="radio" name="options" id="option2" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          </label>
-
-          <label class="btn btn-primary">
-            <%= f.radio_button :rating, 5 %>
-            <input type="radio" name="options" id="option3" autocomplete="off">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-           </label>
-        </div>
+    <fieldset>
+      <span class="star-cb-group">
+         <%= f.radio_button :rating, 5%>
+         <label for = "review_rating_5">5</label>
+        <%= f.radio_button :rating, 4%>
+        <label for = "review_rating_4">4</label>
+        <%= f.radio_button :rating, 3%>
+        <label for = "review_rating_3">3</label>
+        <%= f.radio_button :rating, 2%>
+        <label for = "review_rating_2">2</label>
+        <%= f.radio_button :rating, 1%>
+        <label for = "review_rating_1">1</label>
+      </span>
+    </fieldset>
         <div class = 'comment_box'>
           <%= f.label :comment %><br />
           <%= f.text_area :comment %>
@@ -176,7 +150,7 @@
       </table>
     </div>
   </div>
-<div class = "row list_of_reviews">
+<div class = "row" id = "list_of_reviews">
   <h4>Reviews for <%= @recipe.name %></h4>
   <ul class="reviews">
   <% @recipe.reviews.each do |review| %>
