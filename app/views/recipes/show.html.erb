@@ -43,7 +43,9 @@
         <%(5 - @recipe.total_rating).times do %>
           &star;
         <%end%>
-        <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
+        <span class = 'review_link'>
+          <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
+        </span>
         <%end%>
       </div>
 
