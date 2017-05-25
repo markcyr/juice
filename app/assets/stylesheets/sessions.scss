@@ -28,7 +28,12 @@
  font-family: 'Montserrat', sans-serif;
  padding: 10% 0 10% 0;
 }
-
+input#password {
+    width: 80%;
+}
+input#email {
+    width: 80%;
+}
 // .login:hover {
 //  background-color: rgb(255, 120, 70);
 // }

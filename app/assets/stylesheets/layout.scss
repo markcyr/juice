@@ -1,0 +1,36 @@
+
+nav.navbar.navbar-default {
+    border-bottom-color: rgb(140, 198, 63);
+    border-bottom-width: 0.25rem;
+}
+div#bs-example-navbar-collapse-1 {
+      margin-top: 14px;
+}
+button.navbar-toggle {
+    background-color: rgb(140, 198, 63);
+}
+
+
+
+@media (max-width: 800px) {
+div#bs-example-navbar-collapse-1 {
+    z-index: 30;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.83);
+    text-align: right;
+    width: 120%;
+    padding-left: 30px;
+    margin-left: 60%;
+    float: right;
+}
+a.navbar-brand {
+  padding-left: 24.567%;
+}
+
+div#bs-example-navbar-collapse-1 ul li a {
+
+color: white;
+text-align: center;
+}
+
+}

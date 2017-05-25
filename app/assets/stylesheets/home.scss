@@ -154,3 +154,13 @@ background:rgba(144,200,71, 0.25);
 padding: 10% 15% 10% 15%;
 
 }
+
+@media (max-width: 800px) {
+.row.text-center > h4 {
+  display: none;
+}
+
+.row.text-center > h1 {
+  padding-top: 50%;
+}
+}
