@@ -30,7 +30,7 @@
                <li style="list-style-type:none"> Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> </li>
               <% end %>
             </ul>
-            <button class="btn btn-default" role="button">View More</button>
+            <a class="btn-success" href="/recipes/<%= recipe.id %>">Recipe</a>
           </div>
         </div>
       </div>
