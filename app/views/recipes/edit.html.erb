@@ -31,11 +31,18 @@ body {background-color: #8cc63f;}
   <br>
   <div class = "links">
       <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
+      <br>
+      <br>
   </div>
+
+  <div class="editbutton">
+
   <div class = "form-group">
     <%=f.label :image%>
     <%=f.file_field :image%>
   </div>
+
     <%= f.submit %>
+  </div><!-- /.editbutton -->
 <%end%>
 </div>
