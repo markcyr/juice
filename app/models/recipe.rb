@@ -9,7 +9,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :ingredients_recipes, allow_destroy: true, reject_if: :all_blank
 
   mount_uploader :image, ImageUploader
-
 # get_nutrient method calculates the amount of a nutrient per serving size
   def get_nutrient(nutrient)
     nutrients = {protein: 'protein_g', iron: 'iron_mg', calcium: 'calcium_mg', calory: 'energ_kcal', fat: 'lipid_tot_g',
@@ -99,5 +98,5 @@ class Recipe < ApplicationRecord
       return source[0]
     end
   end
-  
+
 end
