@@ -7,5 +7,6 @@ config.fog_credentials = {
     # :google_storage_secret_access_key   => ENV['GOOGLE_STORAGE_SECRET'],
 
 }
-config.fog_directory = ENV['GOOGLE_BUCKET_NAME'] || 'juice_bucket'
+config.fog_directory = 'bucketjuice'
+
 end
