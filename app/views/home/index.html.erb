@@ -1,22 +1,57 @@
+<div class="container bg-overlay">
+	<div class="row text-center">
+
+    <h1>Why Juice? <br>
+    Think about a healthy beverage. <h1>
+  <h4>  You're probably thinking about juice.<br>
+     If anything with the word 'diet' in it just crept into your mind,<br>
+      you better keep reading.</h4>
+
+	</div>
+</div>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-md-12">
-    			<div class="jumbotron">
-            <div class="container text-right">
-
-                    <h1>Juice for Health</h1>
-
-                    <h2>Recipes for you by you</h2>
-
-
-
-                  </div>
-
-    		</div>
-
-  </div>
+<div class="col-md-12">
+<div class="underlined-title">
+<center> <h1>Why Juice</h1></center>
+<hr> </div>
+<div class="services-wrapper">
+<div class="col-md-4 cards">
+<div class="inside">
+<div class="circle-badge" style="background:#f7941e">
+  <strong>  <%= image_tag("mjar.jpg")%></strong>
+</div>
+<h3>Healthy</h3>
+<h4>Fresh fruit and vegetable juices have the power of nature's healing properties and nutritional building blocks to bring
+   you closer to better health and well-being than you've ever been before.</h4>
 </div>
 </div>
+<div class="col-md-4 cards">
+ <div class="inside">
+<div class="circle-badge" style="background:#f7941e">
+  <strong>  <%= image_tag("mjar.jpg")%></strong>
+</div>
+<h3>Fresh</h3>
+<h4>Fresh juices are nutritionally packed, mega-amplified live juice that is brilliant
+   to taste, loaded with enzymes, vitamins and vital trace minerals</h4>
+</div>
+</div>
+<div class="col-md-4 cards">
+ <div class="inside">
+<div class="circle-badge" style="background:#f7941e">
+  <strong>  <%= image_tag("mjar.jpg")%></strong>
+</div>
+<h3>Detoxify</h3>
+<h4> Fresh juice is especially important for your immune system, which is constantly fending off
+  assaults from bacteria, viruses, environmental toxins and stress</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /.row --> </div>
+
+<br>
 <div class="container-fluid home">
 	<div class="row">
 		<div class="col-md-12">
@@ -31,30 +66,33 @@
 </div>
 <div class="row">
   <div class="col-md-12">
+<% article_ids = Article.pluck(:id).to_a %>
+<% sample_ids = article_ids.sample(3) %>
+<% featured_articles = Article.where("id in (?)", sample_ids) %>
+<% featured_articles.each do |article| %>
 
-      <% article_ids = Article.pluck(:id).to_a %>
-      <% sample_ids = article_ids.sample(3) %>
-      <% featured_articles = Article.where("id in (?)", sample_ids) %>
-      <% featured_articles.each do |article| %>
+<div class="container-fluid">
 
-      <div class="col-md-4">
-        <div class="thumbnail_home">
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <div class="thumbnail_slider">
+                <div class="caption_slider">
+                  <center>  <h4><%= article.title %></h4></center>
 
-          <%= image_tag("#{article.image}", :class =>"recipeimages")  %>
-          <div class="caption">
-                <H3> <%= article.title %></h3>
-             <p><%= article.sentence  %> </p>
-            <p> <a class="btn_home" href="\articles\<%= article.id %>">Read the Article</a>  </p>
-          </div>
+                   <a class="btn btn-default" href="\articles\<%= article.id %>">Read</a>
+
+                </div>
+              <%= image_tag("#{article.image}")  %>
+            </div>
         </div>
-      </div>
 
-        <% end %>
+<% end %>
 
 
-  </div>
-</div>
-</div>
+
+
+
+
 
 
 <!-- team-->
