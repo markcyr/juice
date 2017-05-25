@@ -13,18 +13,16 @@
 
 
 
-
-
 <div class="container">
-	<div class="row">
+  <div class="row">
       <% @recipes.each do |recipe| %>
-	    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
-    		<div class="thumbnail">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
+        <div class="thumbnail">
           <br>
-    		  <%=image_tag recipe.image.url(:thumb) %>
-    			<div class="caption">
-    				<%= recipe.name %>
-    				<hr >
+          <%=image_tag recipe.image.url(:thumb) %>
+          <div class="caption">
+            <%= recipe.name %>
+            <hr >
 
             <ul>
               <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
@@ -33,15 +31,16 @@
               <% end %>
             </ul>
 
-    				<button class="btn btn-default" role="button">View More</button>
-    			</div>
-    		</div>
-
-    	</div>
+            <button class="btn btn-default" role="button">View More</button>
+          </div>
+        </div>
 
 
-    		</a>
+      </div>
+
+
+        </a>
           <% end %>
-    	</div>
+      </div>
 
 </div>
