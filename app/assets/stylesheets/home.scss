@@ -52,7 +52,7 @@ background-color:  #ffffff;
 }
 
 .home  {
-  background-color: #f5f6f3;
+  background-color: white;
 }
 
 .pager-header {
@@ -150,8 +150,10 @@ bottom: 0%;
   background-color: white;
 margin: auto;
 text-align: center;
-padding: 5%;
-padding-bottom: 30px;
+padding-left: 5%;
+padding-right: 5%;
+
+padding-bottom: 5%;
 
 }
 
@@ -164,7 +166,6 @@ padding-bottom: 30px;
 background:rgba(144,200,71, 0.25);
 padding: 10% 15% 10% 15%;
 min-height: 500px;
-
 }
 
 /* Footer */
@@ -175,7 +176,7 @@ html {
 body {
   /* Margin bottom by footer height */
 
-margin-bottom: 10%;
+margin-bottom: 5%;
   height: 100%;
 }
 .footer {
