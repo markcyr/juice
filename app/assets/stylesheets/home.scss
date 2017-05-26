@@ -167,6 +167,31 @@ min-height: 500px;
 
 }
 
+/* Footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+
+margin-bottom: 10%;
+  height: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-top: 3px;
+
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  text-align: center;
+  background-color: #90c847;
+}
+
+
+
 @media (max-width: 800px) {
 .row.text-center > h4 {
   display: none;
