@@ -2,18 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.login_head {
-  color: black;
-  font-family: 'Montserrat', sans-serif;
-  padding-bottom: 14%;
-  font-size: 55px;
-  margin-top: -24px;
+// .login_head {
+//   color: black;
+//   font-family: 'Montserrat', sans-serif;
+//   padding-bottom: 14%;
+//   font-size: 55px;
+//   margin-top: -24px;
+//
+// }
 
-}
-
-.login p,a {
-  font-size: 17px;
-}
 
 .login_fields {
 
@@ -21,14 +18,50 @@
 
 }
 
+input[type="submit"] {
+    /* background-color: #8cc63f; */
+    background-color: #8cc63f;
+    border: solid 2px #8cc63f;
+    font-family: "Gotham Rounded A", "Gotham Rounded B", "Gotham Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 1.75rem;
+    border-radius: 4px;
+}
+
 .login {
  text-align: center;
- background-color:#8cc63f;
+ background-color:white;
  margin: 3% 25% 0 25%;
  font-family: 'Montserrat', sans-serif;
  padding: 10% 0 10% 0;
+ border-radius: 4px;
+ box-shadow: 0 2px 0 0 rgba(#8cc63f, 0.78);
+}
+input#password {
+    width: 80%;
+}
+input#email {
+    width: 80%;
 }
 
+@media (max-width: 800px){
+  .login {
+   text-align: center;
+   background-color:white;
+   margin: 3% 25% 0 25%;
+   font-family: 'Montserrat', sans-serif;
+   padding: 10% 0 10% 0;
+  }
+  input#password {
+      width: 100%;
+  }
+  input#email {
+      width: 100%;
+  }
+
+
+
+}
 // .login:hover {
 //  background-color: rgb(255, 120, 70);
 // }
