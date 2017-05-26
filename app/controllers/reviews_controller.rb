@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = @recipe.reviews.new(review_params)
     @review.user = current_user
     @review.save
-    render json: { review: @review, errors: @review.errors.full_messages, reviewer: @review.user.user_name}
+    render json: { review: @review, errors: @review.errors.full_messages, reviewer: @review.user.user_name, review_count: @recipe.reviews.count}
   end
 
 private
