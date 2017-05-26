@@ -20,18 +20,17 @@ body {background-color: white;}
   </div>
 <% end %>
 <br>
-
+<div class="createcard">
     <%=f.fields_for :ingredients_recipes do |r|%>
     <%= render 'ingredients_recipe_fields', :f => r %>
     <%end%>
     <div class = "links">
         <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
     </div><!-- /.links -->
-
-
 <br>
   </div>
   <div class="create">
     <%= f.submit %>
   </div> <!-- /.create -->
+</div>  <!-- /.createcard -->
 <%end%>
