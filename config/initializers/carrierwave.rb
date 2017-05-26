@@ -1,10 +1,8 @@
 CarrierWave.configure do |config|
-config.fog_credentials = {
-    :provider                           => 'Google',
-    :google_storage_access_key_id       => Rails.application.secrets.google_storage_key,
-    :google_storage_secret_access_key   => Rails.application.secrets.google_storage_secret,
-
-
-}
-config.fog_directory = 'juice_project'
+  config.fog_credentials = {
+      :provider                           => 'Google',
+      :google_storage_access_key_id       => Rails.application.secrets.google_storage_key,
+      :google_storage_secret_access_key   => Rails.application.secrets.google_storage_secret
+  }
+  config.fog_directory = 'juice_project'
 end
