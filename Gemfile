@@ -31,6 +31,8 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 # get for  meta search
 gem 'ransack', '~> 1.8', '>= 1.8.2'
 
+
+gem 'font-awesome-sass'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
