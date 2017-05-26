@@ -1,83 +1,80 @@
 
-
 <div class="container-fluid recipe_show">
   <div class="content">
     <div class = "recipe_heading">
       <h3><%= @recipe.name %></h3>
     </div>
     <div class="row recipe_description">
-
       <%if @recipe.user == current_user%>
-        <div class = "edit_link">
-          <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
-        </div>
-    <%end%>
-    <div class = "recipe_img">
-      <%= image_tag @recipe.image_url(:thumb)%>
-    </div>
-    <div class="col-md-6 ingredient_list">
-      <h4>Ingredient List</h4>
-      <ul class = "list">
-        <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
-
-          <li class = "single_ingredient">
+        <button class = "edit_link">
+          <%= link_to "Edit", edit_recipe_url(@recipe) %>
+        </button>
+      <%end%>
+      <div class = "col-md-6 recipe_img">
+        <%= image_tag @recipe.image_url(:thumb)%>
+      </div>
+      <div class = "col-md-6 ingredient_list">
+        <h4>Ingredient List</h4>
+        <ul class = "list">
+          <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
+            <li class = "single_ingredient">
              <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%> <%= ingredient_recipe.ingredient.name %>
-          </li>
-          <!-- <li class = "ingredient_quantity">
-             Quantity: <%= ingredient_recipe.quantity%> <%= ingredient_recipe.unit.unit_name%>
-           </li><br /> -->
-        <% end %>
-      </ul>
+            </li>
+          <% end %>
+        </ul>
+        <div class= "recipe_direction">
+          <h5>Directions:</h5>
+          <p>
+            Process all ingredients in a juicer, shake or stir and serve.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="row nutrition_review">
-    <div class="col-md-6 review_container">
-      <div class = "review_report">
-        <%if @recipe.total_rating == 'No reviews available'%>
-           <%(5).times do %>
-            &star;
-           <%end%>
-          <%=@recipe.total_rating%>
+    <div class="row nutrition_review">
+      <div class="col-md-6 review_container">
+        <div class = "review_report">
+          <%if @recipe.total_rating == 'No reviews available'%>
+            <%(5).times do %>
+              &star;
+            <%end%>
+            <%=@recipe.total_rating%>
           <%else%>
-        <%@recipe.total_rating.times do %>
-          &starf;
-        <%end%>
-        <%(5 - @recipe.total_rating).times do %>
-          &star;
-        <%end%>
-        <!-- <span class = 'review_link'> -->
-          <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
-        <!-- </span> -->
-        <%end%>
+            <%@recipe.total_rating.times do %>
+              &starf;
+            <%end%>
+            <%(5 - @recipe.total_rating).times do %>
+              &star;
+            <%end%>
+            <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
+          <%end%>
+        </div>
+
+        <h4> How do you like the Juice</h4>
+        <%= form_for([@recipe, @review]) do |f| %>
+          <fieldset>
+            <span class="star-cb-group">
+              <%= f.radio_button :rating, 5%>
+              <label for = "review_rating_5">5</label>
+              <%= f.radio_button :rating, 4%>
+              <label for = "review_rating_4">4</label>
+              <%= f.radio_button :rating, 3%>
+              <label for = "review_rating_3">3</label>
+              <%= f.radio_button :rating, 2%>
+              <label for = "review_rating_2">2</label>
+              <%= f.radio_button :rating, 1%>
+              <label for = "review_rating_1">1</label>
+            </span>
+          </fieldset>
+          <div class = 'comment_box'>
+            <%= f.label :comment %><br />
+            <%= f.text_area :comment %>
+          </div>
+          <%= f.submit "submit review"%>
+        <% end %>
       </div>
 
-
-      <h4> How do you like the Juice</h4>
-      <%= form_for([@recipe, @review]) do |f| %>
-    <fieldset>
-      <span class="star-cb-group">
-         <%= f.radio_button :rating, 5%>
-         <label for = "review_rating_5">5</label>
-        <%= f.radio_button :rating, 4%>
-        <label for = "review_rating_4">4</label>
-        <%= f.radio_button :rating, 3%>
-        <label for = "review_rating_3">3</label>
-        <%= f.radio_button :rating, 2%>
-        <label for = "review_rating_2">2</label>
-        <%= f.radio_button :rating, 1%>
-        <label for = "review_rating_1">1</label>
-      </span>
-    </fieldset>
-        <div class = 'comment_box'>
-          <%= f.label :comment %><br />
-          <%= f.text_area :comment %>
-        </div>
-          <%= f.submit "submit review"%>
-      <% end %>
-  </div>
-
-  <div class="col-md-6">
+      <div class="col-md-6 nutrition_table">
     <table class = "nutrition_facts">
       <thead>
         <tr>
