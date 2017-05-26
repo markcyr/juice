@@ -1,5 +1,5 @@
 <style>
-body {background-color: #8cc63f;}
+body {background-color: white;}
 </style>
 <div class="recipe_form">
 <h1><%= @recipe.name %> </h1>
@@ -18,8 +18,9 @@ body {background-color: #8cc63f;}
   <% end %>
 <br>
 
+<div class="editcard">
 <div class="edit_name">
-<%= f.label :name %>
+<%= f.label :name %>&emsp;
 <%= f.text_field :name, :size => 40 %>
 </div>
 <br>
@@ -46,3 +47,4 @@ body {background-color: #8cc63f;}
   </div><!-- /.editbutton -->
 <%end%>
 </div>
+</div><!-- /.editcard -->
