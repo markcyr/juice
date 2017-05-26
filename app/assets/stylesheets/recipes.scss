@@ -135,16 +135,39 @@ border: 2px solid gray;
 
 
     // --------styles for the recipe/show view
-.recipe_name {
-  border: 2px solid green;
+.recipe_show {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgba(0, 0, 0, 0.035);
+}
+
+.recipe_description {
+  // border: 2px solid green;
   border-radius: 10px;
   margin: 30px 50px 20px 50px;
 }
-.recipe_name h3{
-  margin: 40px 250px 0 390px;
+.recipe_heading h3{
+  // margin: 40px 250px 0 390px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3525;
+}
+.recipe_heading {
+  /* width: 100%; */
+  margin: 0px;
+  padding: 50px;
+  height: 170px;
+  background: linear-gradient(to bottom, #009688, rgba(100, 136, 128, 0));
+  text-align: center;
 }
 .content {
-  padding: 20px 50px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: -15px;
+  padding-top: 15px;
+  background-color: white;
 }
 .recipe_img img {
   margin: 0 0 20px 90px;
@@ -222,7 +245,7 @@ margin: 30px 20px 0px 70px;
 .list{
   list-style-type: none;
 }
-.recipe_name a{
+.recipe_description a{
   position: absolute;
   top: 90px;
   right: 10px;
@@ -268,32 +291,32 @@ color: #FFC107;
 
 
 .card .thumbnail{
-	padding: 0;
-	border: 1px black;
-	text-align: center;
-	border-radius: 1px;
-	-webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  padding: 0;
+  border: 1px black;
+  text-align: center;
+  border-radius: 1px;
+  -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
 }
 
 .card .thumbnail .caption{
-	margin: -20px 20px 20px 20px;
-	padding: 19px 29px 19px 29px;
-	position:relative;
-	background-color: white;
+  margin: -20px 20px 20px 20px;
+  padding: 19px 29px 19px 29px;
+  position:relative;
+  background-color: white;
 }
 
 
 .card .thumbnail .caption hr{
-	border-top: 1px solid #8cc63f;
+  border-top: 1px solid #8cc63f;
   margin: 20px 40px;
 }
 
 
 
 .card .thumbnail .caption ul{
-	font-size: 15px;
+  font-size: 15px;
   text-align:center;
   padding: 0;
 
@@ -301,20 +324,20 @@ color: #FFC107;
 }
 
 .card .thumbnail .caption button{
-	border-radius: 0;
-	color: #aaa;
-	-moz-transition: 0.3s;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
+  border-radius: 0;
+  color: #aaa;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .card .thumbnail .caption button:hover{
-	background-color: black;
-	border-color: black;
-	color: white;
-	-moz-transition: 0.3s;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
+  background-color: black;
+  border-color: black;
+  color: white;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }

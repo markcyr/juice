@@ -1,15 +1,18 @@
 
 
-<div class="container-fluid content">
-  <div class="row recipe_name">
-    <h3><%= @recipe.name %></h3>
-    <%if @recipe.user == current_user%>
-      <div class = "edit_link">
-        <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
-      </div>
+<div class="container-fluid recipe_show">
+  <div class="content">
+    <div class = "recipe_heading">
+      <h3><%= @recipe.name %></h3>
+    </div>
+    <div class="row recipe_description">
+
+      <%if @recipe.user == current_user%>
+        <div class = "edit_link">
+          <%= link_to "click here to edit the recipe", edit_recipe_path(@recipe) %>
+        </div>
     <%end%>
-    <div class="col-md-6 recipe_img ">
-      <%#= image_tag("recipeimages/#{@recipe.image}")%>
+    <div class = "recipe_img">
       <%= image_tag @recipe.image_url(:thumb)%>
     </div>
     <div class="col-md-6 ingredient_list">
@@ -43,9 +46,9 @@
         <%(5 - @recipe.total_rating).times do %>
           &star;
         <%end%>
-        <span class = 'review_link'>
+        <!-- <span class = 'review_link'> -->
           <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
-        </span>
+        <!-- </span> -->
         <%end%>
       </div>
 
@@ -177,5 +180,6 @@
     <% end %>
   <% end %>
   </ul>
+</div>
 </div>
 </div>
