@@ -3,6 +3,23 @@
   <div class="content">
     <div class = "recipe_heading">
       <h3><%= @recipe.name %></h3>
+      <span calss = "recipe_creater">By: <%=@recipe.user.user_name%></span>
+      <div class = "review_report">
+        <%if @recipe.total_rating == 'No reviews available'%>
+          <%(5).times do %>
+            &star;
+          <%end%>
+          <%=@recipe.total_rating%>
+        <%else%>
+          <%@recipe.total_rating.times do %>
+            &starf;
+          <%end%>
+          <%(5 - @recipe.total_rating).times do %>
+            &star;
+          <%end%>
+          <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span>
+        <%end%>
+      </div>
     </div>
     <div class="row recipe_description">
       <%if @recipe.user == current_user%>
@@ -33,23 +50,6 @@
 
     <div class="row nutrition_review">
       <div class="col-md-6 review_container">
-        <div class = "review_report">
-          <%if @recipe.total_rating == 'No reviews available'%>
-            <%(5).times do %>
-              &star;
-            <%end%>
-            <%=@recipe.total_rating%>
-          <%else%>
-            <%@recipe.total_rating.times do %>
-              &starf;
-            <%end%>
-            <%(5 - @recipe.total_rating).times do %>
-              &star;
-            <%end%>
-            <%=link_to @recipe.reviews.count.to_s + ' reviews', "#list_of_reviews"%>
-          <%end%>
-        </div>
-
         <h4> How do you like the Juice</h4>
         <%= form_for([@recipe, @review]) do |f| %>
           <fieldset>
@@ -75,108 +75,116 @@
       </div>
 
       <div class="col-md-6 nutrition_table">
-    <table class = "nutrition_facts">
-      <thead>
-        <tr>
-          <th>Nutrition facts</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td class = "left_cell">Serving Size 1/2 cup</td>
-          <td class = "right_cell">125 g</td>
-        </tr>
-      </thead>
-        <tr>
-          <td class = "left_cell"> Amount per serving</td>
-          <td class = " daily_value_cell right_cell">%Daily Value</td>
-        </tr>
-        <tr>
-          <td class = "left_cell divider">Calories <%=@recipe.get_nutrient('calory')%></td>
-          <td class = "right_cell divider"></td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Total Fat</td>
-          <td class = "right_cell"></td>
-        </tr>
-        <tr>
-          <td class = "sub_cell left_cell">Saturated Fat <%=@recipe.get_nutrient('saturated_fat')%> g</td>
-          <td class = "right_cell"></td>
-        </tr>
-        <tr>
-          <td class = "sub_cell td left_cell">Trans Fat 0g</td>
-          <td class = "right_cell"></td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Cholestrol 0 g</td>
-          <td class = "right_cell">0%</td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Sodium <%=@recipe.get_nutrient('sodium')%> mg</td>
-          <td class = "right_cell"><%=@recipe.daily_value('sodium')%> %</td>
-        </tr>
-        <tr>
-          <td class = "left_cell"> Total Carbohydrates <%=@recipe.get_nutrient('carbohydrate')%> g</td>
-          <td class = "right_cell"><%=@recipe.daily_value('carbohydrate')%> %</td>
-        </tr>
-        <tr>
-          <td class = "left_cell sub_cell">Dietary Fiber <%= @recipe.get_nutrient("fiber")%> g</td>
-          <td class = "right_cell"><%=@recipe.daily_value("fiber")%> %</td>
-        </tr>
-        <tr >
-          <td class = "left_cell sub_cell">Sugars <%= @recipe.get_nutrient("sugar")%> g</td>
-          <td class = "right_cell"></td>
-        </tr>
-        <tr>
-          <td class = "left_cell divider">Protein <%= @recipe.get_nutrient("protein")%> g</td>
-          <td class = "right_cell divider"s></td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Vitamin A</td>
-          <td class = "right_cell"><%=@recipe.daily_value("vitA")%> %</td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Vitamin C</td>
-          <td class = "right_cell"><%=@recipe.daily_value("vitC")%> %</td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Calcium</td>
-          <td class = "right_cell"><%=@recipe.daily_value('calcium')%> %</td>
-        </tr>
-        <tr>
-          <td class = "left_cell">Iron</td>
-          <td class = "right_cell"><%=@recipe.daily_value('iron')%> %</td>
-        </tr>
-        <tfoot>
-          <td>Percent Daily Values are based on a 2,000 calori diet.</td>
-          <td class = "right_cell"></td>
-        </tfoot>
-      </table>
+        <table class = "nutrition_facts">
+          <thead>
+            <tr>
+              <th>
+                Nutrition facts
+              </th>
+              <th>
+
+              </th>
+            </tr>
+            <tr>
+              <td class = "left_cell">Serving Size 1/2 cup</td>
+              <td class = "right_cell">125 g</td>
+            </tr>
+          </thead>
+          <tr>
+            <td class = "left_cell"> Amount per serving</td>
+            <td class = " daily_value_cell right_cell">%Daily Value</td>
+          </tr>
+          <tr>
+            <td class = "left_cell divider">Calories <%=@recipe.get_nutrient('calory')%></td>
+            <td class = "right_cell divider"></td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Total Fat</td>
+            <td class = "right_cell"></td>
+          </tr>
+          <tr>
+            <td class = "sub_cell left_cell">Saturated Fat <%=@recipe.get_nutrient('saturated_fat')%> g</td>
+            <td class = "right_cell"></td>
+          </tr>
+          <tr>
+            <td class = "sub_cell td left_cell">Trans Fat 0g</td>
+            <td class = "right_cell"></td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Cholestrol 0 g</td>
+            <td class = "right_cell">0%</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Sodium <%=@recipe.get_nutrient('sodium')%> mg</td>
+            <td class = "right_cell"><%=@recipe.daily_value('sodium')%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell"> Total Carbohydrates <%=@recipe.get_nutrient('carbohydrate')%> g</td>
+            <td class = "right_cell"><%=@recipe.daily_value('carbohydrate')%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell sub_cell">Dietary Fiber <%= @recipe.get_nutrient("fiber")%> g</td>
+            <td class = "right_cell"><%=@recipe.daily_value("fiber")%> %</td>
+          </tr>
+          <tr >
+            <td class = "left_cell sub_cell">Sugars <%= @recipe.get_nutrient("sugar")%> g</td>
+            <td class = "right_cell"></td>
+          </tr>
+          <tr>
+            <td class = "left_cell divider">Protein <%= @recipe.get_nutrient("protein")%> g</td>
+            <td class = "right_cell divider"s></td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Vitamin A</td>
+            <td class = "right_cell"><%=@recipe.daily_value("vitA")%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Vitamin C</td>
+            <td class = "right_cell"><%=@recipe.daily_value("vitC")%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Calcium</td>
+            <td class = "right_cell"><%=@recipe.daily_value('calcium')%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Iron</td>
+            <td class = "right_cell"><%=@recipe.daily_value('iron')%> %</td>
+          </tr>
+          <tfoot>
+            <td>Percent Daily Values are based on a 2,000 calori diet.</td>
+            <td class = "right_cell"></td>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class = "row" id = "list_of_reviews">
+      <div class = "col-mod-6 reviews_column">
+        <h4>Reviews for <%= @recipe.name %></h4>
+        <ul class="reviews">
+          <% @recipe.reviews.each do |review| %>
+            <% if review.user != nil %>
+              <div class = "single_comment">
+                <li id = 'rate' class = "star_rates">
+                  <% review.rating.times do %>
+                    &starf;
+                  <% end %>
+                </li>
+                <li class = "comment_info">
+                  By
+                  <span class = 'commenter'>
+                    <%=  link_to  review.user.user_name, user_path(review.user.id) %>
+                  </span>
+                  on <%= review.created_at.strftime('%b %e, %Y')%>
+                </li>
+                <li class = "comment_text">
+                  <%= review.comment %>
+                </li>
+              </div>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-<div class = "row" id = "list_of_reviews">
-  <h4>Reviews for <%= @recipe.name %></h4>
-  <ul class="reviews">
-  <% @recipe.reviews.each do |review| %>
-    <% if review.user != nil %>
-      <li id = 'rate' class = "star_rates">
-        <% review.rating.times do %>
-          &starf;
-        <% end %>
-      </li>
-      <li>
-        By
-        <span class = 'commenter'><%=link_to  review.user.user_name, user_path(review.user.id) %>
-
-        </span>
-        on <%= review.created_at.strftime('%b %e, %Y')%>
-      </li>
-      <li>
-        Comment:
-        <%= review.comment %>
-      </li><br />
-    <% end %>
-  <% end %>
-  </ul>
-</div>
-</div>
 </div>

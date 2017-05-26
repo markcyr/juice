@@ -20,7 +20,7 @@ $(function() {
         rate = $('<li>').prependTo( '.reviews'),
         newDate = new Date(),
         date = formatDate(newDate);
-        $(comment).html('<p> Comment: ' + review.comment + '</p>');
+        $(comment).html('<p>' + review.comment + '</p>');
         $(commenter).html('<p> By '+ '<span class = review_maker>' + data.reviewer + '</span>' + ' on ' + date);
         $('.review_maker').css('color', '#337ab7');
         for(i = 0;  i <data.review.rating; i++){

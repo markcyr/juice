@@ -7,7 +7,8 @@
   /* the hidden clearer */
 }
 .star-cb-group * {
-  font-size: 2rem;
+  // font-size: 3rem;
+  font-size: 28px;
 }
 .star-cb-group > input {
   display: none;
@@ -49,4 +50,61 @@
   content: "★";
   color: #FFC107;
   text-shadow: 0 0 1px #333;
+}
+/*end of star rating styles*/
+
+.review_container {
+  padding: 20px 20px 20px 20px;
+  margin: 10px 30px 20px 40px;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  width: 35%;
+  box-shadow: 5px 5px 5px gray;
+}
+.new_review{
+  margin: 25px;
+}
+.comment_box {
+    margin: 20px;
+}
+.reviews_column {
+    width: 50%;
+}
+.reviews_column h4{
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 0 20px 30px;
+}
+#list_of_reviews {
+  padding: 50px 0 0 30px;
+}
+.single_comment {
+  margin: 0 0 30px 10px;
+  border-top: 2px solid rgba(128, 128, 128, 0.4);
+  border-left: 2px solid rgba(128, 128, 128, 0.4);
+  border-radius: 10px 0 0 0;
+}
+.reviews li:first-child{
+  padding-bottom: 20px;
+}
+.reviews li:last-child{
+  padding-bottom: 20px;
+}
+.reviews li {
+  list-style-type: none;
+}
+.single_star {
+  color: #FFC107;
+  padding-right: 8px;
+  font-size: 28px;
+}
+.star_rates{
+  font-size: 28px;
+  color: #FFC107;
+  padding: 10px 0 0 20px;
+}
+.commenter{
+  color: blue;
+}
+.comment_info, .comment_text{
+  padding-left: 40px;
 }

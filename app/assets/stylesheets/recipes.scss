@@ -140,6 +140,7 @@ border: 2px solid gray;
   position:relative;
   border-bottom: 1px solid rgba(128, 128, 128, 0.43);
   margin: 35px 0px 35px 0px;
+background: rgba(100, 136, 128, 0);
 }
 .content {
   margin-left: 400px;
@@ -152,15 +153,32 @@ border: 2px solid gray;
   // margin: 40px 250px 0 390px;
   font-size: 30px;
   font-weight: bold;
-  color: #6e797d;
+  color: rgba(27, 38, 98, 0.84);
+  text-align: center;
 }
 .recipe_heading {
   /* width: 100%; */
   margin: 0px;
   padding: 50px;
-  height: 170px;
-  background: linear-gradient(to bottom,#8BC34A, rgba(100, 136, 128, 0));
-  text-align: center;
+  height: 200px;
+  // background: linear-gradient(to top,#76c41b, #76c41b,#76c41b,#76c41b);
+  background: radial-gradient(rgba(118, 196, 27, 0.47), rgb(118, 196, 27));
+// background-color: black;
+}
+.recipe_heading span{
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+.review_report{
+  display:inline-block;
+  padding: 20px 0 20px 500px;
+  font-size: 28px;
+  color:#FF5722;
+}
+.review_report a{
+  font-size: 30 px;
+  padding-left: 10px;
 }
 .recipe_img {
     width: 350px;
@@ -275,54 +293,13 @@ margin: 0 20px 0px 70px;
   text-align: left;
   padding-right: 0px;
 }
-.commenter{
-  color: blue;
-}
 .thanks{
   position:absolute;
   top: 50%;
   left:50%;
 }
-.review_container {
-  padding: 20px 20px 20px 20px;
-  margin: 10px 30px 20px 40px;
-  border: 1px solid rgba(128, 128, 128, 0.7);
-  width: 35%;
-  box-shadow: 5px 5px 5px gray;
-}
-.review_report {
-  padding: 20px 0 20px 20px;
-}
-.new_review{
-  margin: 25px;
-}
-.comment_box {
-    margin: 20px;
-}
-#list_of_reviews {
-  padding: 50px 0 0 30px;
-}
-.reviews li {
-    list-style-type: none;
-}
-.single_star {
-  color: #FFC107;
-  padding-right: 8px;
-  font-size: 13px;
-}
-.star_rates{
-font-size: 18px;
-color: #FFC107;
-}
-
-
-
-
 
 /* cards */
-
-
-
 
 .card .thumbnail{
   padding: 0;
@@ -333,28 +310,21 @@ color: #FFC107;
   -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
 }
-
 .card .thumbnail .caption{
   margin: -20px 20px 20px 20px;
   padding: 19px 29px 19px 29px;
   position:relative;
   background-color: white;
 }
-
-
 .card .thumbnail .caption hr{
   border-top: 1px solid #8cc63f;
   margin: 20px 40px;
 }
 
-
-
 .card .thumbnail .caption ul{
   font-size: 15px;
   text-align:center;
   padding: 0;
-
-
 }
 
 .card .thumbnail .caption button{
