@@ -3,14 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.carousel img {
-    min-width: 100%;
-}
-
-.carousel-inner ul {
-  list-style-type: none;
-
-}
 
 .thumbnail_home {
   border: 0;
@@ -60,7 +52,7 @@ background-color:  #ffffff;
 }
 
 .home  {
-  background-color: #f5f6f3;
+  background-color: white;
 }
 
 .pager-header {
@@ -70,8 +62,7 @@ background-color:  #ffffff;
 
 .home hr {
     display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+
     margin-left: 45%;
     margin-right: 45%;
     border-style:solid;
@@ -81,13 +72,133 @@ border-color:#8cc63f;
 -moz-border-radius: 60;
 border-radius: 60px;
 }
-.jumbotron {
 
-    background-image: image-url("apple.jpg");
-  padding-bottom: 20%;
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), image-url("apple-juice.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    width: 100%;
+    height: 600px;
+    padding-top: 50px;
+}
+
+
+.thumbnail_slider {
+   position:relative;
+   overflow:hidden;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+      background-color: #f5f6f3;
 
-    color: white;
 
+}
+
+
+.caption_slider {
+   position:absolute;
+   background-size: cover;
+   background-repeat: no-repeat;
+  background-color: #f5f6f3;
+   top:100%;
+   bottom:25%;
+   background:rgba(144,200,71, 0.75);
+   padding-left: 0 ;
+   padding-right: 0 ;
+   width:100%;
+   height:100%;
+   text-align:center;
+   color:#fff !important;
+   z-index:2;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+}
+
+
+
+.thumbnail_slider:hover .caption_slider {
+top: 80%;
+bottom: 0%;
+   width: 100%;
+
+
+
+}
+
+.circle-badge {
+  height: 200px;
+  width: 200px;
+  line-height:100px;
+  text-align: center;
+  border-radius: 100px;
+  background: #1ACAC0;
+  color:white;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.circle-badge img{
+  margin-top: 10%;
+}
+
+.cards {
+  background-color: white;
+margin: auto;
+text-align: center;
+padding-left: 5%;
+padding-right: 5%;
+
+padding-bottom: 5%;
+
+}
+
+.team-member img {
+  height: 200px;
+  width: 200px;
+}
+
+.cards .inside {
+background:rgba(144,200,71, 0.25);
+padding: 10% 15% 10% 15%;
+min-height: 500px;
+}
+
+/* Footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+
+margin-bottom: 5%;
+  height: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-top: 3px;
+
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  text-align: center;
+  background-color: #90c847;
+}
+
+
+
+@media (max-width: 800px) {
+.row.text-center > h4 {
+  display: none;
+}
+
+.row.text-center > h1 {
+  padding-top: 50%;
+}
 }

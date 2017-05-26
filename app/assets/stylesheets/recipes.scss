@@ -3,25 +3,66 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .nested-fields {
-  border: none;
-  width: 50%;
-  background-color: darkorange;
+  border: solid;
+  border-color: darkorange;
+  // width: 50%;
+  background-color: #fbf583;
   border-radius: 12px;
   padding: 20px;
-  margin-left: 25%;
+  // margin-left: 25%;
+  border-width: 4px;
 }
 
 .links {
-  margin-left: 27%;
+  margin-left: 4%;
+  text-align: right;
+}
 
+
+.form-group {
+  // margin-left: 7%;
+  // text-align: left;
+}
+
+.createcard {
+  width: 50%;
+  background-color: #fbf583;
+  border-radius: 12px;
+  padding: 20px;
+  margin-left: 25%;
+  border-width: 4px;
+}
+
+.editcard {
+  // border: solid;
+  // border-color: darkorange;
+  width: 50%;
+  background-color: #fbf583;
+  border-radius: 12px;
+  padding: 20px;
+  margin-left: 25%;
+  border-width: 4px;
 }
 
 .create {
-  margin-left: 27%;
+  margin-left: 4%;
+}
+
+.nested-fields {
+      border-color: darkorange;
+     -webkit-animation: random 7s infinite;
+     animation: random 7s infinite;
+}
+@keyframes  random {
+    15% { border-color: #8cc63f; }
+    30% { border-color: darkorange; }
+    45% { border-color: #8cc63f; }
+    60% { border-color: darkorange; }
+    75% { border-color: #8cc63f; }
 }
 
 .editbutton {
-  margin-left: 27%;
+  margin-left: 4%;
 }
 
 .fields {
@@ -31,7 +72,7 @@
 }
 
 .edit_name{
-  margin-left: 28%;
+  margin-left: 24%;
   label {
     width: 8%;
   }
@@ -302,13 +343,14 @@ margin: 0 20px 0px 70px;
 /* cards */
 
 .card .thumbnail{
-  padding: 0;
-  border: 1px black;
-  text-align: center;
-  border-radius: 1px;
-  -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+	padding: 0;
+	border: 1px black;
+  min-height: 500px;
+	text-align: center;
+	border-radius: 1px;
+	-webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
 }
 .card .thumbnail .caption{
   margin: -20px 20px 20px 20px;

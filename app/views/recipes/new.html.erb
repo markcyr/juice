@@ -3,35 +3,34 @@
 </div>
 
 <style>
-body {background-color: #8cc63f;}
+body {background-color: white;}
 </style>
 
 <div class="recipe_form">
-<%= form_for @recipe do |f|%>
-<% if @recipe.errors.any? %>
-  <div id="error_explanation">
-    <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
-    <ul>
-      <% @recipe.errors.messages.values.each do |msg| %>
-        <li>Quantity:<br>
-          <%= msg.join("<br>").html_safe %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<br>
-
-    <%=f.fields_for :ingredients_recipes do |r|%>
-    <%= render 'ingredients_recipe_fields', :f => r %>
-    <%end%>
-    <div class = "links">
-        <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
-    </div><!-- /.links -->
-
-
-<br>
-  </div>
-  <div class="create">
-    <%= f.submit %>
-  </div> <!-- /.create -->
-<%end%>
+  <%= form_for @recipe do |f|%>
+    <% if @recipe.errors.any? %>
+      <div id="error_explanation">
+        <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
+        <ul>
+          <% @recipe.errors.messages.values.each do |msg| %>
+            <li>Quantity:<br>
+              <%= msg.join("<br>").html_safe %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <br>
+    <div class="createcard">
+      <%=f.fields_for :ingredients_recipes do |r|%>
+      <%= render 'ingredients_recipe_fields', :f => r %>
+      <%end%>
+      <div class = "links">
+          <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
+      </div><!-- /.links -->
+      <br>
+        <div class="create">
+          <%= f.submit %>
+      </div>  <!-- /.createcard -->
+    </div> <!-- /.create -->
+  <%end%>
+</div>
