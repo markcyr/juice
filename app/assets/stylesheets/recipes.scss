@@ -374,6 +374,7 @@ margin: 0 20px 0px 70px;
 // ----------style for the recipe/index page
 
 .search_container{
+  padding: 0 1.5rem 0 1.5rem;
   margin-left: 20%;
   margin-right: 20%;
   background-color: white;
@@ -383,12 +384,15 @@ margin: 0 20px 0px 70px;
   text-align: center;
 }
 .search_form h2{
-  margin: 0 0 20px 0;
+  margin: 0 0 3rem 0;
   padding-top: 15px;
 }
 .search_form label{
 font-size: 20px;
 padding-right: 20px;
+}
+#search_field{
+  margin-right:2px;
 }
 .recipe_btn{
   padding: 5px 10px;
