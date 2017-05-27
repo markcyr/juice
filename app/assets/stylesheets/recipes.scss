@@ -343,14 +343,14 @@ margin: 0 20px 0px 70px;
 /* cards */
 
 .card .thumbnail{
-	padding: 0;
-	border: 1px black;
+  padding: 0;
+  border: 1px black;
   min-height: 500px;
-	text-align: center;
-	border-radius: 1px;
-	-webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  text-align: center;
+  border-radius: 1px;
+  -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
 }
 .card .thumbnail .caption{
   margin: -20px 20px 20px 20px;
@@ -386,4 +386,12 @@ margin: 0 20px 0px 70px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+// ----------style for the recipe/index page
+.azi_container{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.recipe_btn{
+  padding: 5px 10px;
 }

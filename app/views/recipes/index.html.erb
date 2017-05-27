@@ -13,29 +13,40 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid azi_container">
   <div class="row">
       <% @recipes.each do |recipe| %>
 
-	    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 card">
-        		<div class="thumbnail">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 card">
+            <div class="thumbnail">
           <br>
           <a href="/recipes/<%= recipe.id %>"> <%=image_tag recipe.image.url(:thumb) %></a>
 
           <div class="caption">
-            <%= recipe.name %>
+            <h4><strong><%= recipe.name %></strong></h4>
             <hr >
-           <h1> Ingredients</h1>
-            <ul>
-              <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
-              <li style="list-style-type:none"><b><%= ingredient_recipe.ingredient.name %>   </li>
-              <% end %>
-            </ul>
-            <a class="btn-success" href="/recipes/<%= recipe.id %>">Recipe</a>
+           <h4><b> Ingredients</b></h4>
+            <%if recipe.ingredients_recipes.size <= 3%>
+              <ul>
+                <% recipe.ingredients_recipes.each do |ingredient_recipe| %>
+                  <li style="list-style-type:none"><%= ingredient_recipe.ingredient.name %>
+                  </li>
+                <% end %>
+              </ul>
+            <%else%>
+              <ul>
+                <% recipe.ingredients_recipes.first(3).each do |ingredient_recipe| %>
+                  <li style="list-style-type:none"><%= ingredient_recipe.ingredient.name %>
+                  </li>
+                <% end %>
+              </ul>
+              <p><%=link_to "...", recipe_path(recipe)%></p>
+            <%end%>
+            <a class="btn-success recipe_btn" href="/recipes/<%= recipe.id %>">Recipe</a>
           </div>
         </div>
       </div>
           <% end %>
-    	</div>
+      </div>
 
 </div>
