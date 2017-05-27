@@ -1,50 +1,46 @@
 
-<center>
-<div class="user_recipe">
- <p><%=current_user.user_name%>'s recipes</p>
+<div class="user_name">
+ <h1><%=current_user.user_name%>'s Juice Recipes</h1>
 </div>
-</center>
-
-  <div class="row">
-<div class="usr">
-
-
-</div>
-
-    <div class="container-fluid">
-<div class="container">
-	<div class="row">
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
       <% @recipes.each do |recipe| %>
-	    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
-    		<div class="thumbnail">
-          <br>
-          Great source of <%= recipe.source_of%>
-    		  <%=image_tag recipe.image.url(:thumb) %>
-    			<div class="caption">
-    				<%= recipe.name %>
-    				<hr >
-
-
-              <a class="btn-success" href="/recipes/<%= recipe.id %>">Recipe</a>
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
+          <div class="thumbnail">
+            <br>
+            <h4><%= recipe.name %></h4>
+            <%=image_tag recipe.image.url(:thumb) %>
+            <div class="caption">
+              <span class = "source">Great source of <%= recipe.source_of%></span>
+              <hr >
+              <a class="btn-success my_recipe_btn" href="/recipes/<%= recipe.id %>">Recipe</a>
               <hr>
-            <h3>Rating:</h3>
-           <%if recipe.total_rating == 'No reviews available'%>
-            <%= recipe.total_rating%>
-            <%else%>
-            <%  recipe.total_rating.times do %>
-              &starf;
-            <%end%>
-
-              <%end%>
+              <h4>Rating:</h4>
+              <div class = "my_recipe_rating">
+                <%if recipe.total_rating == 'No reviews available'%>
+                  <%(5).times do %>
+                    &star;
+                  <%end%>
+                  <%=recipe.total_rating%>
+                <%else%>
+                  <%recipe.total_rating.times do %>
+                    &starf;
+                  <%end%>
+                  <%(5 - recipe.total_rating).times do %>
+                    &star;
+                  <%end%>
+                <%end%>
+              </div>
+            </div>
+          </div>
         </div>
-    		</div>
-    	</div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-          <% end %>
-    	</div>
-</div>
-</div>
-<div>
-<center><%= will_paginate @recipes%></center>
+<div class = "pagination">
+<%= will_paginate @recipes%>
 <br>
 </div>

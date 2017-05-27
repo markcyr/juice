@@ -96,3 +96,29 @@
    font-size: 4rem;
 
  }
+/* styles for the user show page */
+.user_name{
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+.thumbnail h4{
+  font-weight: bold;
+}
+.source{
+  font-size: 18px;
+  line-height: 6rem;
+}
+.my_recipe_btn{
+  padding: 5px 10px;
+  background-color: #3ab93f;
+  font-size:1.75rem;
+  border-radius: 4px;
+}
+.my_recipe_rating{
+  font-size: 23px;
+  color: #FFC107;
+}
+.pagination{
+  text-align: center;
+  width: 100%;
+}
