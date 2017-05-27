@@ -37,7 +37,9 @@ body{
 .navbar-brand {
 padding-top: 0px;
 }
-
+.navbar-brand > img{
+  margin-top: -5px;
+}
 .navbar {
   // background-color: white;
   margin-bottom: 0px;

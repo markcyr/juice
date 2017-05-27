@@ -4,7 +4,7 @@ nav.navbar.navbar-default {
     border-bottom-width: 0.25rem;
 }
 div#bs-example-navbar-collapse-1 {
-      margin-top: 14px;
+      margin-top: 5px;
 }
 button.navbar-toggle {
     background-color: rgb(140, 198, 63);
@@ -22,6 +22,7 @@ div#bs-example-navbar-collapse-1 {
     padding-left: 30px;
     margin-left: 60%;
     float: right;
+    float: left;
 }
 a.navbar-brand {
   padding-left: 24.567%;
@@ -38,7 +39,7 @@ text-align: center;
 @media (max-width: 900px) {
 div#bs-example-navbar-collapse-1 {
     z-index: 30;
-    
+
 }
 a.navbar-brand {
   padding-left: 24.567%;
