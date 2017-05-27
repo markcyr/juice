@@ -91,13 +91,6 @@
   display: inline-block;
   width: 15%;
 }
-
-.search_form{
-  padding-left: 30px;
-}
-// .new_recipe{
-//   padding-left: 20px;
-// }
 .newrecipe h2{
   padding-left: 20px;
 }
@@ -105,21 +98,13 @@
   font-family: 'Tillana', cursive;
   padding: 10px 0 10px 20px;
 }
+
 .edit_recipe {
   padding-left: 40px;
 }
 .newrecipe{
 font-family: 'Tillana', cursive;
 }
-
-.search_form{
-  padding: 30px;
-}
-
-.search_form label{
-font-size: 20px;
-}
-
 .nutrition_facts{
 border: 2px solid gray;
 }
@@ -175,7 +160,8 @@ border: 2px solid gray;
 }
     // --------styles for the recipe/show view
 .recipe_show {
-  background-color: rgba(33, 150, 243, 0.05);
+  // background-color: rgba(33, 150, 243, 0.05);
+  background-color: #e6e6ef;
 }
 .recipe_description {
   position:relative;
@@ -287,7 +273,6 @@ li.ingredient_quantity {
   height: 300px;
   margin-left: 15%;
 }
-
 .recipeimages {
   width: 200px;
   height: 200px;
@@ -306,11 +291,9 @@ margin: 0 20px 0px 70px;
 .nutrition_facts thead{
   border-bottom: 3px solid black;
 }
-
 .left_cell, .right_cell{
   border-bottom: 1px solid black
   }
-
 .nutrition_facts tfoot{
   font-size: 12px;
 }
@@ -318,7 +301,6 @@ margin: 0 20px 0px 70px;
   width: 100px;
   padding-left: 20px;
 }
-
 .right_cell{
   width: 60px;
   text-align: right;
@@ -344,6 +326,7 @@ margin: 0 20px 0px 70px;
 
 .card .thumbnail{
   padding: 0;
+  margin-bottom: 3rem;
   border: 1px black;
   min-height: 500px;
   text-align: center;
@@ -351,11 +334,12 @@ margin: 0 20px 0px 70px;
   -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  position: relative;
 }
 .card .thumbnail .caption{
   margin: -20px 20px 20px 20px;
   padding: 19px 29px 19px 29px;
-  position:relative;
+  // position:relative;
   background-color: white;
 }
 .card .thumbnail .caption hr{
@@ -388,10 +372,30 @@ margin: 0 20px 0px 70px;
   transition: 0.3s;
 }
 // ----------style for the recipe/index page
-.azi_container{
-  margin-left: 200px;
-  margin-right: 200px;
+
+.search_container{
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: white;
+}
+.search_form{
+  padding: 30px;
+  text-align: center;
+}
+.search_form h2{
+  margin: 0 0 20px 0;
+  padding-top: 15px;
+}
+.search_form label{
+font-size: 20px;
+padding-right: 20px;
 }
 .recipe_btn{
   padding: 5px 10px;
+  position: absolute;
+  bottom: 2rem;
+  left: 40%;
+  background-color: #3ab93f;
+  font-size:1.75rem;
+  border-radius: 4px;
 }
