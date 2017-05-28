@@ -11,13 +11,6 @@
 //
 // }
 
-
-.login_fields {
-
-  font-size: 150%;
-
-}
-
 input[type="submit"] {
     /* background-color: #8cc63f; */
     background-color: #8cc63f;
@@ -31,17 +24,21 @@ input[type="submit"] {
 .login {
  text-align: center;
  background-color:white;
- margin: 3% 25% 0 25%;
+ margin: 7% 25% 0 25%;
  font-family: 'Montserrat', sans-serif;
  padding: 10% 0 10% 0;
  border-radius: 4px;
- box-shadow: 0 2px 0 0 rgba(#8cc63f, 0.78);
+ box-shadow: 0 2px 20px 0 #9E9E9E;
+}
+.login_fields {
+  font-size: 140%;
+  padding-top: 2%;
 }
 input#password {
-    width: 80%;
+    width: 70%;
 }
 input#email {
-    width: 80%;
+    width: 70%;
 }
 
 @media (max-width: 800px){

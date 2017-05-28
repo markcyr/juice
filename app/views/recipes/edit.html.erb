@@ -1,50 +1,47 @@
-<style>
-body {background-color: white;}
-</style>
-<div class="recipe_form">
-<h1><%= @recipe.name %> </h1>
 
-<%= form_for @recipe, :html => {:multipart => true} do |f|%>
-  <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h4><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h4>
-      <ul>
-        <% @recipe.errors.messages.values.each do |msg| %>
-          <li>Quantity:<br>
+<div class="update_recipe_form">
+  <h2><%= @recipe.name %> </h2>
+  <%= form_for @recipe, :html => {:multipart => true} do |f|%>
+    <% if @recipe.errors.any? %>
+      <div id="error_explanation">
+        <h4>
+          <%= pluralize(@recipe.errors.count, "error") %>
+           prohibited this recipe from being saved:
+        </h4>
+        <ul>
+          <% @recipe.errors.messages.values.each do |msg| %>
+            <li>Quantity:<br>
             <%= msg.join("<br>").html_safe %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-<br>
-
-<div class="editcard">
-<div class="edit_name">
-<%= f.label :name %>&emsp;
-<%= f.text_field :name, :size => 40 %>
-</div>
-<br>
-  <div id="ingredients_recipes">
-    <%=f.fields_for :ingredients_recipes do |ingredient_recipe|%>
-    <%= render 'ingredients_recipe_fields', f: ingredient_recipe %>
-    <%end%>
-  </div>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <br>
+    <div class="editcard">
+      <div class="edit_name">
+        <%= f.label :name %>&emsp;
+        <%= f.text_field :name, :size => 40 %>
+      </div>
   <br>
-  <div class = "links">
-      <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
-      <br>
-      <br>
-  </div>
+      <div id="ingredients_recipes">
+        <%= f.fields_for :ingredients_recipes do |ingredient_recipe|%>
+          <%= render 'ingredients_recipe_fields', f: ingredient_recipe %>
+        <% end %>
+      </div>
+  <br>
+      <div class = "links">
+        <%= link_to_add_association 'add ingredient', f, :ingredients_recipes %>
+      </div>
 
-  <div class="editbutton">
-
-  <div class = "form-group">
-    <%=f.label :image%>
-    <%=f.file_field :image%>
-  </div>
-
-    <%= f.submit %>
-  </div><!-- /.editbutton -->
-<%end%>
+      <div class="editbutton">
+        <div class = "form-group">
+          <%= f.label :image%>
+          <%= f.file_field :image%>
+        </div>
+        <div class = "update_button">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+  <%end%>
 </div>
-</div><!-- /.editcard -->

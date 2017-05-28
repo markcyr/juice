@@ -5,12 +5,7 @@
 
 
 // ---styles for new_recipe view
-// .new_recipe_container{
-//   background-image: url("small.jpg");
-//   background-repeat: no-repeat;
-//   background-position: center 50%;
-//   background-size: cover;
-// }
+
 .nested-fields {
   border: 4px solid darkorange;
   width: 75%;
@@ -26,8 +21,9 @@
 }
 .links {
   font-size: 20px;
-  margin-left: 4%;
+  margin-right: 4%;
   text-align: right;
+  margin-top: -20px;
 }
 .links a{
   color: white;
@@ -40,8 +36,8 @@
   // background-color: #fbf583;
   background-color:rgba(251, 245, 131, 0.61);
   border-radius: 12px;
-  padding: 20px;
-  // padding:30px 30px 0px 30px;
+  // padding: 20px;
+  padding:30px 30px 0px 30px;
   margin-left: 25%;
   border-width: 4px;
   background-image: linear-gradient(rgba(0, 0, 255, 0.32), rgb(128, 128, 128)), url("jucier.jpg");
@@ -50,16 +46,9 @@
   background-size: contain;
   background-attachment: fixed;
 }
-// .editcard {
-//   width: 50%;
-//   background-color: #fbf583;
-//   border-radius: 12px;
-//   padding: 20px;
-//   margin-left: 25%;
-//   border-width: 4px;
-// }
 .create {
-  padding: 4px 10px;
+  padding: 0px 0 20px 10px;
+  margin-top: -10px;
 }
 .create input{
   font-weight:bold;
@@ -73,25 +62,33 @@
     60% { border-color: darkorange; }
     75% { border-color: #8cc63f; }
 }
-
+.update_recipe_form{
+  margin-top: -25px;
+}
+.update_recipe_form h2{
+  padding: 30px 0 0 50px;
+}
 .editbutton {
   margin-left: 4%;
 }
-
 .fields label {
-    width: 15%;
+  width: 15%;
 }
-
 .edit_name{
   margin-left: 24%;
 }
 .edit_name label{
   width: 6%;
 }
+.form-group {
+  margin: -25px 0 25px 10px;
+}
 .form-group label{
   color: black;
 }
-
+.update_button {
+    padding-bottom: 30px;
+}
 #error_explanation li{
   list-style-type: none;
 }
@@ -178,10 +175,10 @@ border: 2px solid gray;
 }
 .recipe_description {
   position:relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.43);
+  border-bottom: 1px solid rgba(139, 195, 74, 0.38);
   margin: 35px 0px 35px 0px;
-background: rgba(100, 136, 128, 0);
-padding-bottom: 20px;
+  background: rgba(100, 136, 128, 0);
+  padding-bottom: 20px;
 }
 .content {
   margin-left: 400px;
@@ -189,11 +186,8 @@ padding-bottom: 20px;
   margin-top: -15px;
   padding-top: 15px;
   background-color: white;
-  // background: linear-gradient(rgba(139, 195, 74, 0.23),rgba(139, 195, 74, 0.2),rgba(76, 175, 80, 0.04));
-
 }
 .recipe_heading h3{
-  // margin: 40px 250px 0 390px;
   font-size: 30px;
   font-weight: bold;
   color: white;
@@ -201,7 +195,6 @@ padding-bottom: 20px;
   margin-top: 30px;
 }
 .recipe_heading {
-  /* width: 100%; */
   margin: 0px;
   padding: 50px;
   height: 200px;
@@ -246,12 +239,10 @@ padding-bottom: 20px;
   position:relative;
   padding: 10px 10px;
   display: inline-block;
-  border: 1px solid rgba(128, 128, 128, 0.73);
+  border: 1px solid rgba(128, 128, 128, 0.49);
   margin: 20px 0 20px 70px;
   height: 400px;
-  /* width: 60%; */
-  /* border-radius: 2%; */
-  box-shadow: 5px 5px 5px gray;
+  box-shadow: 0px 5px 20px #9E9E9E;
 }
 .ingredient_list h4 {
   color:#8BC34A;
@@ -292,8 +283,8 @@ li.ingredient_quantity {
     list-style: none;
 }
 .nutrition_review{
-    border-bottom: 1px solid rgba(128, 128, 128, 0.43);
-    margin: 0;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.38);
+  margin: 0;
 }
 .recipeimage {
   width: 250px;

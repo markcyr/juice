@@ -3,10 +3,6 @@
   <h2><%=current_user.user_name%>'s New Recipe</h2>
 </div>
 
-<!-- /*<style>
-body {background-color: white;}
-</style>*/ -->
-
 <div class="recipe_form">
   <%= form_for @recipe do |f|%>
     <% if @recipe.errors.any? %>
