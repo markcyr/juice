@@ -29,14 +29,19 @@
 }
 body{
   font-size: 16px;
+  // background-color: #e6e6ef;
+  background-color: rgba(255, 193, 7, 0.09);
 }
+
 .item {
   background-size: 200%;
 }
 .navbar-brand {
 padding-top: 0px;
 }
-
+.navbar-brand > img{
+  margin-top: -5px;
+}
 .navbar {
   // background-color: white;
   margin-bottom: 0px;

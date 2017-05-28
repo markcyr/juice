@@ -54,14 +54,13 @@
     }
 
 .signup {
-
-  text-align: center;
-  background-color:white;
-  margin: 3% 25% 0 25%;
-  font-family: 'Montserrat', sans-serif;
-  padding: 10% 0 10% 0;
-  border-radius: 4px;
-  box-shadow: 0 2px 0 0 rgba(#8cc63f, 0.78);
+text-align: center;
+background-color:white;
+margin: 6% 35% 0 35%;
+font-family: 'Montserrat', sans-serif;
+padding: 4% 0 7% 0;
+border-radius: 4px;
+box-shadow: 0 2px 20px 0 #9E9E9E;
 }
 .signup a {
   font-size: 17px;
@@ -81,18 +80,39 @@
   font-size: 50px;
   padding: 40px 0 40px 0;
   font-family: 'Tillana', cursive;
-
 }
-
 .rate p {
   text-indent: 4em;
-
  }
-
  .signup_head {
    color: black;
    font-family: 'Montserrat', sans-serif;
    padding-bottom: 6%;
    font-size: 4rem;
-
  }
+/* styles for the user show page */
+.user_name{
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+.thumbnail h4{
+  font-weight: bold;
+}
+.source{
+  font-size: 18px;
+  line-height: 6rem;
+}
+.my_recipe_btn{
+  padding: 5px 10px;
+  background-color: #3ab93f;
+  font-size:1.75rem;
+  border-radius: 4px;
+}
+.my_recipe_rating{
+  font-size: 23px;
+  color: #FFC107;
+}
+.pagination{
+  text-align: center;
+  width: 100%;
+}

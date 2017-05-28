@@ -2,56 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+// ---styles for new_recipe view
+
 .nested-fields {
-  border: solid;
-  border-color: darkorange;
-  // width: 50%;
-  background-color: #fbf583;
+  border: 4px solid darkorange;
+  width: 75%;
+  margin: 10px auto;
+  // background-color: #fbf583;
+  background-color: rgba(251, 245, 131, 0.87);
   border-radius: 12px;
-  padding: 20px;
+  //  padding: 20px;
+  padding: 30px 0 20px 60px;
   // margin-left: 25%;
-  border-width: 4px;
+  -webkit-animation: random 7s infinite;
+  animation: random 7s infinite;
 }
-
 .links {
-  margin-left: 4%;
+  font-size: 20px;
+  margin-right: 4%;
   text-align: right;
+  margin-top: -20px;
 }
-
-
-.form-group {
-  // margin-left: 7%;
-  // text-align: left;
+.links a{
+  color: white;
+  padding-right: 15px;
+  // font-weight: bold;
 }
-
-.createcard {
-  width: 50%;
-  background-color: #fbf583;
-  border-radius: 12px;
-  padding: 20px;
-  margin-left: 25%;
-  border-width: 4px;
-}
-
+.createcard,
 .editcard {
-  // border: solid;
-  // border-color: darkorange;
   width: 50%;
-  background-color: #fbf583;
+  // background-color: #fbf583;
+  background-color:rgba(251, 245, 131, 0.61);
   border-radius: 12px;
-  padding: 20px;
+  // padding: 20px;
+  padding:30px 30px 0px 30px;
   margin-left: 25%;
   border-width: 4px;
+  background-image: linear-gradient(rgba(0, 0, 255, 0.32), rgb(128, 128, 128)), url("jucier.jpg");
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: contain;
+  background-attachment: fixed;
 }
-
 .create {
-  margin-left: 4%;
+  padding: 0px 0 20px 10px;
+  margin-top: -10px;
 }
-
-.nested-fields {
-      border-color: darkorange;
-     -webkit-animation: random 7s infinite;
-     animation: random 7s infinite;
+.create input{
+  font-weight:bold;
+  padding: 5px 8px;
+  color: black;
 }
 @keyframes  random {
     15% { border-color: #8cc63f; }
@@ -60,30 +62,40 @@
     60% { border-color: darkorange; }
     75% { border-color: #8cc63f; }
 }
-
+.update_recipe_form{
+  margin-top: -25px;
+}
+.update_recipe_form h2{
+  padding: 30px 0 0 50px;
+  font-weight: bold;
+}
 .editbutton {
   margin-left: 4%;
 }
-
-.fields {
-  label {
-    width: 15%;
-  }
+.fields label {
+  width: 15%;
 }
-
 .edit_name{
   margin-left: 24%;
-  label {
-    width: 8%;
-  }
 }
-
+.edit_name label{
+  width: 6%;
+}
+.form-group {
+  margin: -25px 0 25px 10px;
+}
+.form-group label{
+  color: black;
+}
+.update_button {
+    padding-bottom: 30px;
+}
 #error_explanation li{
   list-style-type: none;
 }
 #error_explanation{
   color: red;
-  text-align: left;
+  text-align: center;
 }
 //
 .field_with_errors{
@@ -91,35 +103,20 @@
   display: inline-block;
   width: 15%;
 }
-
-.search_form{
-  padding-left: 30px;
-}
-// .new_recipe{
-//   padding-left: 20px;
-// }
 .newrecipe h2{
-  padding-left: 20px;
+padding: 20px 0 0 50px;
 }
 .recipe_form h1{
   font-family: 'Tillana', cursive;
   padding: 10px 0 10px 20px;
 }
+
 .edit_recipe {
   padding-left: 40px;
 }
 .newrecipe{
 font-family: 'Tillana', cursive;
 }
-
-.search_form{
-  padding: 30px;
-}
-
-.search_form label{
-font-size: 20px;
-}
-
 .nutrition_facts{
 border: 2px solid gray;
 }
@@ -175,13 +172,14 @@ border: 2px solid gray;
 }
     // --------styles for the recipe/show view
 .recipe_show {
-  background-color: rgba(33, 150, 243, 0.05);
+  // background-color: #e6e6ef;
 }
 .recipe_description {
   position:relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.43);
+  border-bottom: 1px solid rgba(139, 195, 74, 0.38);
   margin: 35px 0px 35px 0px;
-background: rgba(100, 136, 128, 0);
+  background: rgba(100, 136, 128, 0);
+  padding-bottom: 20px;
 }
 .content {
   margin-left: 400px;
@@ -191,63 +189,70 @@ background: rgba(100, 136, 128, 0);
   background-color: white;
 }
 .recipe_heading h3{
-  // margin: 40px 250px 0 390px;
   font-size: 30px;
   font-weight: bold;
-  color: rgba(27, 38, 98, 0.84);
+  color: white;
   text-align: center;
+  margin-top: 30px;
 }
 .recipe_heading {
-  /* width: 100%; */
   margin: 0px;
   padding: 50px;
   height: 200px;
-  // background: linear-gradient(to top,#76c41b, #76c41b,#76c41b,#76c41b);
-  background: radial-gradient(rgba(118, 196, 27, 0.47), rgb(118, 196, 27));
-// background-color: black;
+  background: linear-gradient(rgba(158, 158, 158, 0.48), #384247), url("smoothies1.jpg");
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  position:relative;
 }
-.recipe_heading span{
+.recipe_heading p{
   font-size: 25px;
   font-weight: bold;
   color: white;
 }
 .review_report{
   display:inline-block;
-  padding: 20px 0 20px 500px;
-  font-size: 28px;
-  color:#FF5722;
+  // padding: 10px 0 10px 400px;
+  font-size: 27px;
+  // color:#FF5722;
+  color:#FFC107;
+  position: absolute;
+  right: 4rem;
+  bottom:4rem;
 }
-.review_report a{
-  font-size: 30 px;
+// .review_report a{
+.recipe_heading a{
+  font-size: 2.3rem;
   padding-left: 10px;
+  position: absolute;
+  right: 6rem;
+  bottom: 1rem;
 }
 .recipe_img {
     width: 350px;
     height: 350px;
 }
 .recipe_img img {
-  padding: 25px 0 10px 50px;
+  padding: 60px 0 10px 50px;
   width:100%;
 }
 .ingredient_list {
   position:relative;
   padding: 10px 10px;
   display: inline-block;
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.49);
   margin: 20px 0 20px 70px;
   height: 400px;
-  /* width: 60%; */
-  /* border-radius: 2%; */
-  box-shadow: 5px 5px 5px gray;
+  box-shadow: 0px 5px 20px #9E9E9E;
 }
 .ingredient_list h4 {
   color:#8BC34A;
-  padding: 0 20px 0 180px;
-  font-size: 20px;
+  padding: 0 20px 0 150px;
+  font-size: 22px;
   font-weight: bold;
 }
 .single_ingredient {
-  padding: 4px 30px 0 160px;
+  padding: 4px 30px 0 120px;
   font-size: 18px;
 }
 .list{
@@ -279,25 +284,26 @@ li.ingredient_quantity {
     list-style: none;
 }
 .nutrition_review{
-    border-bottom: 1px solid rgba(128, 128, 128, 0.43);
-    margin: 0;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.38);
+  margin: 0;
 }
 .recipeimage {
   width: 250px;
   height: 300px;
   margin-left: 15%;
 }
-
 .recipeimages {
   width: 200px;
   height: 200px;
 }
 .nutrition_table{
   margin-top: 10px;
+  margin-bottom: 35px;
 }
 .nutrition_facts{
 border: 2px solid gray;
 margin: 0 20px 0px 70px;
+background-color: white;
 }
 .nutrition_facts th{
   font-size: 18px;
@@ -306,11 +312,9 @@ margin: 0 20px 0px 70px;
 .nutrition_facts thead{
   border-bottom: 3px solid black;
 }
-
 .left_cell, .right_cell{
   border-bottom: 1px solid black
   }
-
 .nutrition_facts tfoot{
   font-size: 12px;
 }
@@ -318,7 +322,6 @@ margin: 0 20px 0px 70px;
   width: 100px;
   padding-left: 20px;
 }
-
 .right_cell{
   width: 60px;
   text-align: right;
@@ -343,19 +346,21 @@ margin: 0 20px 0px 70px;
 /* cards */
 
 .card .thumbnail{
-	padding: 0;
-	border: 1px black;
+  padding: 0;
+  margin-bottom: 3rem;
+  border: 1px black;
   min-height: 500px;
-	text-align: center;
-	border-radius: 1px;
-	-webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  text-align: center;
+  border-radius: 1px;
+  -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  position: relative;
 }
 .card .thumbnail .caption{
   margin: -20px 20px 20px 20px;
   padding: 19px 29px 19px 29px;
-  position:relative;
+  // position:relative;
   background-color: white;
 }
 .card .thumbnail .caption hr{
@@ -386,4 +391,36 @@ margin: 0 20px 0px 70px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+// ----------style for the recipe/index page
+
+.search_container{
+  padding: 0 1.5rem 0 1.5rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: white;
+}
+.search_form{
+  padding: 30px;
+  text-align: center;
+}
+.search_form h2{
+  margin: 0 0 3rem 0;
+  padding-top: 15px;
+}
+.search_form label{
+font-size: 20px;
+padding-right: 20px;
+}
+#search_field{
+  margin-right:2px;
+}
+.recipe_btn{
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 2rem;
+  left: 40%;
+  background-color: #3ab93f;
+  font-size:1.75rem;
+  border-radius: 4px;
 }

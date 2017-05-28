@@ -3,13 +3,13 @@
   <div class="content">
     <div class = "recipe_heading">
       <h3><%= @recipe.name %></h3>
-      <span calss = "recipe_creater">By: <%=@recipe.user.user_name%></span>
+      <p>By: <%=@recipe.user.user_name%></p>
       <div class = "review_report">
         <%if @recipe.total_rating == 'No reviews available'%>
           <%(5).times do %>
             &star;
           <%end%>
-          <%=@recipe.total_rating%>
+          <%#=@recipe.total_rating%>
         <%else%>
           <%@recipe.total_rating.times do %>
             &starf;
@@ -17,9 +17,10 @@
           <%(5 - @recipe.total_rating).times do %>
             &star;
           <%end%>
-          <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span>
+          <!-- <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span> -->
         <%end%>
       </div>
+      <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span>
     </div>
     <div class="row recipe_description">
       <%if @recipe.user == current_user%>
