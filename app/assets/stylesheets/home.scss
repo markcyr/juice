@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+.home_container{
+  background-color: white;
+}
 .thumbnail_home {
   border: 0;
   height: 450px;
@@ -171,12 +173,7 @@ html {
   position: relative;
   min-height: 100%;
 }
-body {
-  /* Margin bottom by footer height */
 
-margin-bottom: 5%;
-  height: 100%;
-}
 .footer {
   position: absolute;
   bottom: 0;
@@ -200,4 +197,6 @@ margin-bottom: 5%;
   padding-top: 50%;
 }
 }
-// ----------------
+.team{
+  margin-bottom: 5%;
+}
