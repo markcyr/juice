@@ -2,56 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.nested-fields {
-  border: solid;
-  border-color: darkorange;
-  // width: 50%;
-  background-color: #fbf583;
-  border-radius: 12px;
-  padding: 20px;
-  // margin-left: 25%;
-  border-width: 4px;
-}
 
+
+// ---styles for new_recipe view
+// .new_recipe_container{
+//   background-image: url("small.jpg");
+//   background-repeat: no-repeat;
+//   background-position: center 50%;
+//   background-size: cover;
+// }
+.nested-fields {
+  border: 4px solid darkorange;
+  width: 75%;
+  margin: 10px auto;
+  // background-color: #fbf583;
+  background-color: rgba(251, 245, 131, 0.87);
+  border-radius: 12px;
+  //  padding: 20px;
+  padding: 30px 0 20px 60px;
+  // margin-left: 25%;
+  -webkit-animation: random 7s infinite;
+  animation: random 7s infinite;
+}
 .links {
+  font-size: 20px;
   margin-left: 4%;
   text-align: right;
 }
-
-
-.form-group {
-  // margin-left: 7%;
-  // text-align: left;
+.links a{
+  color: white;
+  padding-right: 15px;
+  // font-weight: bold;
 }
-
-.createcard {
-  width: 50%;
-  background-color: #fbf583;
-  border-radius: 12px;
-  padding: 20px;
-  margin-left: 25%;
-  border-width: 4px;
-}
-
+.createcard,
 .editcard {
-  // border: solid;
-  // border-color: darkorange;
   width: 50%;
-  background-color: #fbf583;
+  // background-color: #fbf583;
+  background-color:rgba(251, 245, 131, 0.61);
   border-radius: 12px;
   padding: 20px;
+  // padding:30px 30px 0px 30px;
   margin-left: 25%;
   border-width: 4px;
+  background-image: linear-gradient(rgba(0, 0, 255, 0.32), rgb(128, 128, 128)), url("jucier.jpg");
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: contain;
+  background-attachment: fixed;
 }
-
+// .editcard {
+//   width: 50%;
+//   background-color: #fbf583;
+//   border-radius: 12px;
+//   padding: 20px;
+//   margin-left: 25%;
+//   border-width: 4px;
+// }
 .create {
-  margin-left: 4%;
+  padding: 4px 10px;
 }
-
-.nested-fields {
-      border-color: darkorange;
-     -webkit-animation: random 7s infinite;
-     animation: random 7s infinite;
+.create input{
+  font-weight:bold;
+  padding: 5px 8px;
+  color: black;
 }
 @keyframes  random {
     15% { border-color: #8cc63f; }
@@ -65,17 +78,18 @@
   margin-left: 4%;
 }
 
-.fields {
-  label {
+.fields label {
     width: 15%;
-  }
 }
 
 .edit_name{
   margin-left: 24%;
-  label {
-    width: 8%;
-  }
+}
+.edit_name label{
+  width: 6%;
+}
+.form-group label{
+  color: black;
 }
 
 #error_explanation li{
@@ -83,7 +97,7 @@
 }
 #error_explanation{
   color: red;
-  text-align: left;
+  text-align: center;
 }
 //
 .field_with_errors{
@@ -92,7 +106,7 @@
   width: 15%;
 }
 .newrecipe h2{
-  padding-left: 20px;
+padding: 20px 0 0 50px;
 }
 .recipe_form h1{
   font-family: 'Tillana', cursive;
@@ -194,7 +208,6 @@ padding-bottom: 20px;
   background: linear-gradient(rgba(158, 158, 158, 0.48), #384247), url("smoothies1.jpg");
   background-repeat: no-repeat;
   background-position: center 50%;
-  // background-size: 100% auto;
   background-size: cover;
   position:relative;
 }
