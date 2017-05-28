@@ -160,14 +160,14 @@ border: 2px solid gray;
 }
     // --------styles for the recipe/show view
 .recipe_show {
-  // background-color: rgba(33, 150, 243, 0.05);
-  background-color: #e6e6ef;
+  // background-color: #e6e6ef;
 }
 .recipe_description {
   position:relative;
   border-bottom: 1px solid rgba(128, 128, 128, 0.43);
   margin: 35px 0px 35px 0px;
 background: rgba(100, 136, 128, 0);
+padding-bottom: 20px;
 }
 .content {
   margin-left: 400px;
@@ -175,51 +175,65 @@ background: rgba(100, 136, 128, 0);
   margin-top: -15px;
   padding-top: 15px;
   background-color: white;
+  // background: linear-gradient(rgba(139, 195, 74, 0.23),rgba(139, 195, 74, 0.2),rgba(76, 175, 80, 0.04));
+
 }
 .recipe_heading h3{
   // margin: 40px 250px 0 390px;
   font-size: 30px;
   font-weight: bold;
-  color: rgba(27, 38, 98, 0.84);
+  color: white;
   text-align: center;
+  margin-top: 30px;
 }
 .recipe_heading {
   /* width: 100%; */
   margin: 0px;
   padding: 50px;
   height: 200px;
-  // background: linear-gradient(to top,#76c41b, #76c41b,#76c41b,#76c41b);
-  background: radial-gradient(rgba(118, 196, 27, 0.47), rgb(118, 196, 27));
-// background-color: black;
+  background: linear-gradient(rgba(158, 158, 158, 0.48), #384247), url("smoothies1.jpg");
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  // background-size: 100% auto;
+  background-size: cover;
+  position:relative;
 }
-.recipe_heading span{
+.recipe_heading p{
   font-size: 25px;
   font-weight: bold;
   color: white;
 }
 .review_report{
   display:inline-block;
-  padding: 20px 0 20px 500px;
-  font-size: 28px;
-  color:#FF5722;
+  // padding: 10px 0 10px 400px;
+  font-size: 27px;
+  // color:#FF5722;
+  color:#FFC107;
+  position: absolute;
+  right: 4rem;
+  bottom:4rem;
 }
-.review_report a{
-  font-size: 30 px;
+// .review_report a{
+.recipe_heading a{
+  font-size: 2.3rem;
   padding-left: 10px;
+  position: absolute;
+  right: 6rem;
+  bottom: 1rem;
 }
 .recipe_img {
     width: 350px;
     height: 350px;
 }
 .recipe_img img {
-  padding: 25px 0 10px 50px;
+  padding: 60px 0 10px 50px;
   width:100%;
 }
 .ingredient_list {
   position:relative;
   padding: 10px 10px;
   display: inline-block;
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.73);
   margin: 20px 0 20px 70px;
   height: 400px;
   /* width: 60%; */
@@ -228,12 +242,12 @@ background: rgba(100, 136, 128, 0);
 }
 .ingredient_list h4 {
   color:#8BC34A;
-  padding: 0 20px 0 180px;
-  font-size: 20px;
+  padding: 0 20px 0 150px;
+  font-size: 22px;
   font-weight: bold;
 }
 .single_ingredient {
-  padding: 4px 30px 0 160px;
+  padding: 4px 30px 0 120px;
   font-size: 18px;
 }
 .list{
@@ -279,10 +293,12 @@ li.ingredient_quantity {
 }
 .nutrition_table{
   margin-top: 10px;
+  margin-bottom: 35px;
 }
 .nutrition_facts{
 border: 2px solid gray;
 margin: 0 20px 0px 70px;
+background-color: white;
 }
 .nutrition_facts th{
   font-size: 18px;
