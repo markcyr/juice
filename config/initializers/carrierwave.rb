@@ -5,6 +5,6 @@ CarrierWave.configure do |config|
       :google_storage_access_key_id       => Rails.application.secrets.google_storage_key,
       :google_storage_secret_access_key   => Rails.application.secrets.google_storage_secret
   }
-  config.fog_directory = 'juice_project'
+  config.fog_directory = 'juice_project_bitmaker'
 
 end
