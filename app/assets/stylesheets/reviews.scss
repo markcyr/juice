@@ -61,9 +61,13 @@
   box-shadow: 0px 5px 20px #9E9E9E;
   background-color: white;
 }
+.review_container h4{
+  text-align: center;
+}
 .new_review{
   margin: 25px;
 }
+
 .comment_box {
     margin: 20px;
 }
@@ -79,7 +83,10 @@
   margin-right:50px;
   text-align: center;
 }
-
+.review_btn{
+  padding-left: 30px;
+  padding-top: 15px;
+}
 .single_comment {
   margin: 0 0 30px 3px;
   border-top: 2px solid rgba(128, 128, 128, 0.4);
