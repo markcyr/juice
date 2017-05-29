@@ -12,7 +12,7 @@
             <h4><%= recipe.name %></h4>
             <%=image_tag recipe.image.url(:thumb) %>
             <div class="caption">
-              <span class = "source">Great source of <%= recipe.source_of%></span>
+              <span class = "source">Great source of <br ><%= recipe.source_of%></span>
               <hr >
               <a class="btn-success my_recipe_btn" href="/recipes/<%= recipe.id %>">Recipe</a>
               <hr>
