@@ -14,8 +14,8 @@ class Recipe < ApplicationRecord
   def get_nutrient(nutrient)
     nutrients = {protein: 'protein_g', iron: 'iron_mg', calcium: 'calcium_mg', calory: 'energ_kcal', fat: 'lipid_tot_g',
        vitC: 'vit_c_mg', vitA: 'vit_a_rae', sodium: 'sodium_mg', sugar: 'sugar_tot_g',
-       carbohydrate: 'carbohydrt_g', fiber: 'fiber_td_g', saturated_fat: 'fa_sat_g', vitK: 'vit_k_ug', zinc: 'zinc_mg',
-        vitB6: 'vit_b6_mg', vitB12: 'vit_b12_ug'}
+       carbohydrate: 'carbohydrt_g', fiber: 'fiber_td_g', saturated_fat: 'fa_sat_g', vitK: 'vit_k_ug', folate: 'folate_tot_ug',
+        magnesium: 'magnesium_mg', potassium: 'potassium_mg'}
       #  serving size for juice is 125 mL
     serving_size = 125
       #  total volume of the juice considering the water density for the juice
@@ -46,14 +46,18 @@ class Recipe < ApplicationRecord
       ingredient_nutrient << (q*g)*(v/100.0)
     end
     total_per_serving =  (ingredient_nutrient.sum)/(size/125.0)
-
-    return total_per_serving.round(2)
+    #Calory is rounded to the nearest 10
+    if nutrient == 'calory'
+      return total_per_serving.round(-1)
+    else
+      return total_per_serving.round(2)
+    end
   end
 
   def daily_value(nutrient)
     # recommended daily intake of nutrients is stored in rdi
     rdi = {iron: 14, calcium: 1100, fat: 65, vitC: 60, vitA: 1000, sodium: 2400, carbohydrate: 300, fiber: 25,
-            zinc: 9, vitB12: 2, vitB6: 1.8, vitK: 80 }
+            folate: 220, magnesium: 250, potassium: 3500, vitK: 80 }
     serving_amount = self.get_nutrient(nutrient)
     nutrient_rdi = rdi[nutrient.to_sym]
     davily_value = (serving_amount / nutrient_rdi) * 100
@@ -84,7 +88,7 @@ class Recipe < ApplicationRecord
   end
 
   def source_of
-    nutrients = ['iron', 'calcium','vitC', 'vitA', 'fiber', 'vitK', 'zinc', 'vitB12', 'vitB6']
+    nutrients = ['iron', 'calcium','vitC', 'vitA', 'fiber', 'vitK', 'folate', 'magnesium', 'potassium']
     nutrition_value =  {}
     high_nutrients = []
 
@@ -102,12 +106,14 @@ class Recipe < ApplicationRecord
           high_nutrients << 'Vitamin A'
         when 'vitK'
           high_nutrients << 'Vitamin K'
-        when 'vitB6'
-          high_nutrients << 'Vitamin B6'
-        when 'vitB12'
-          high_nutrients << 'Vitamin B12'
         when 'fiber'
           high_nutrients << 'Fiber'
+        when 'folate'
+          high_nutrients << 'Folate'
+        when 'potassium'
+          high_nutrients << 'Potassium'
+        when 'magnesium'
+          high_nutrients << 'Magnesium'
         else
           high_nutrients << nutrition_value.key(v)
       end

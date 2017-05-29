@@ -9,7 +9,6 @@
           <%(5).times do %>
             &star;
           <%end%>
-          <%#=@recipe.total_rating%>
         <%else%>
           <%@recipe.total_rating.times do %>
             &starf;
@@ -17,7 +16,6 @@
           <%(5 - @recipe.total_rating).times do %>
             &star;
           <%end%>
-          <!-- <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span> -->
         <%end%>
       </div>
       <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span>
@@ -144,12 +142,27 @@
             <td class = "right_cell"><%=@recipe.daily_value("vitC")%> %</td>
           </tr>
           <tr>
+            <td class = "left_cell">Vitamin K</td>
+            <td class = "right_cell"><%=@recipe.daily_value("vitK")%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Folate</td>
+            <td class = "right_cell"><%=@recipe.daily_value("folate")%> %</td>
+          </tr>
+          <tr>
             <td class = "left_cell">Calcium</td>
             <td class = "right_cell"><%=@recipe.daily_value('calcium')%> %</td>
           </tr>
           <tr>
             <td class = "left_cell">Iron</td>
             <td class = "right_cell"><%=@recipe.daily_value('iron')%> %</td>
+          </tr>
+          <tr>
+            <td class = "left_cell">Potassium</td>
+            <td class = "right_cell"><%=@recipe.daily_value('potassium')%> %</td>
+          </tr><tr>
+            <td class = "left_cell">Magnesium</td>
+            <td class = "right_cell"><%=@recipe.daily_value('magnesium')%> %</td>
           </tr>
           <tfoot>
             <td>Percent Daily Values are based on a 2,000 calori diet.</td>
