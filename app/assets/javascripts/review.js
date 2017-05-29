@@ -11,7 +11,8 @@ $(function() {
       // $('.comment_box span').val(' ');
       if(data.errors.length !== 0){
         var error = $('<span class = comment_error>').appendTo('.comment_box');
-        $(error).html('<p>' + data.errors[0]+'</p>');
+        $(error).html('<p>' + data.errors[0]+'</p>').css('color','red').css('line-height','3rem')
+        .css('font-size', '16.5px');
       }else{
         $('.comment_error').html(' ');
       var review = data['review'],
