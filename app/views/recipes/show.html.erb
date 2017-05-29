@@ -108,7 +108,7 @@
         <table class = "nutrition_facts">
           <thead>
             <tr>
-              <th>
+              <th colspan="2">
                 Nutrition Facts
               </th>
             </tr>
@@ -117,6 +117,7 @@
               <td class = "right_cell">125 g</td>
             </tr>
           </thead>
+          <tbody>
           <tr>
             <td class = "left_cell"> Amount per serving</td>
             <td class = " daily_value_cell right_cell">%Daily Value</td>
@@ -188,12 +189,16 @@
           <tr>
             <td class = "left_cell">Potassium</td>
             <td class = "right_cell"><%=@recipe.daily_value('potassium')%> %</td>
-          </tr><tr>
+          </tr>
+          <tr>
             <td class = "left_cell">Magnesium</td>
             <td class = "right_cell"><%=@recipe.daily_value('magnesium')%> %</td>
           </tr>
+        </tbody>
           <tfoot>
-            <td>Percent Daily Values are based on a 2,000 calori diet.</td>
+            <tr>
+            <td colspan="2" class = "footnote">Percent Daily Values are based on a 2,000 calorie diet.</td>
+            </tr>
           </tfoot>
         </table>
        </div>
