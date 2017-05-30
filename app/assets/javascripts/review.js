@@ -16,9 +16,9 @@ $(function() {
       }else{
         $('.comment_error').html(' ');
       var review = data['review'],
-        comment = $('<li>').prependTo('.reviews'),
-        commenter = $('<li>').prependTo('.reviews'),
-        rate = $('<li>').prependTo( '.reviews'),
+        comment = $('<li>').prependTo('.reviews').css('margin-left','10%'),
+        commenter = $('<li>').prependTo('.reviews').css('margin-left','10%'),
+        rate = $('<li>').prependTo( '.reviews').css('margin-left','4%'),
         newDate = new Date(),
         date = formatDate(newDate);
         $(comment).html('<p>' + review.comment + '</p>');
