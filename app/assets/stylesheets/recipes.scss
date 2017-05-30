@@ -207,7 +207,7 @@ font-weight: bold;
 }
 .ingredient_list h4 {
   color:#8BC34A;
-  padding: 0 20px 0 150px;
+  padding: 10px 20px 0 150px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -270,8 +270,7 @@ li.ingredient_quantity {
   margin-bottom: 35px;
 }
 .nutrition_facts{
-  margin: 10px 10px 0px 10px;
-  background-color: white;
+  margin: 10px 10px 0px 20px;
 }
 .nutrition_facts th{
   font-size: 20px;
@@ -287,9 +286,8 @@ li.ingredient_quantity {
   }
 .footnote{
   font-size: 14px;
- line-height: 3rem;
+  line-height: 3.5rem;
  }
-
 .left_cell{
   width: 100px;
   padding-left: 20px;
