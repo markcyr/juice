@@ -1,17 +1,12 @@
 <h1>Articles</h1>
 
 <% @articles.each do |article| %>
-<p>
   <h2><%= article.title %></h2>
     <table>
       <tr>
-        <td>              <%= image_tag("#{article.image}", :class =>"recipeimages")  %></td>
+        <td><%= image_tag("#{article.image}", :class =>"recipeimages") %></td>
         <td><%= article.text %></br></td>
       </tr>
     </table>
-
-
   <h2>Quote: <%= article.quote %></h2></br>
-
-
   <% end %>
