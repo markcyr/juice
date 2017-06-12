@@ -1,5 +1,5 @@
 
-<div class="container-fluid recipe_show">
+<div class="container-fluid">
   <div class="content">
     <div class = "recipe_heading">
       <h3><%= @recipe.name %></h3>
@@ -20,16 +20,20 @@
       </div>
       <span><%=link_to @recipe.reviews.count.to_s + "  "+'reviews', "#list_of_reviews"%></span>
     </div>
-    <div class="row recipe_description">
-      <%if @recipe.user == current_user%>
+    <div class="recipe_description">
+    <div class="row">
+      <!-- <%if @recipe.user == current_user%>
         <button class = "edit_link">
           <%= link_to "Edit", edit_recipe_url(@recipe) %>
         </button>
-      <%end%>
-      <div class = "col-md-6 recipe_img">
-        <%= image_tag @recipe.image_url(:thumb)%>
+      <%end%> -->
+      <div class="col-md-6">
+        <div class="recipe_img">
+          <%= image_tag @recipe.image_url(:thumb)%>
+        </div>
       </div>
-      <div class = "col-md-6 ingredient_list">
+      <div class="col-md-6">
+        <div class="ingredient_list">
         <h4>Ingredient List</h4>
         <ul class = "list">
           <% @recipe.ingredients_recipes.each do |ingredient_recipe| %>
@@ -45,9 +49,17 @@
           </p>
         </div>
       </div>
+      </div>
+      <%if @recipe.user == current_user%>
+        <button class = "edit_link">
+          <%= link_to "Edit", edit_recipe_url(@recipe) %>
+        </button>
+      <%end%>
     </div>
+</div>
 
-    <div class="row nutrition_review">
+  <div class="nutrition_review">
+    <div class="row">
       <div class="col-md-6">
         <%if @recipe.user != current_user%>
           <div class = "review_container">
@@ -105,7 +117,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 nutrition_table">
+      <div class="col-md-6">
         <div class = "table_border">
         <table class = "nutrition_facts">
           <thead>
@@ -206,5 +218,6 @@
        </div>
       </div>
     </div>
-</div>
+    </div>
+  </div>
 </div>

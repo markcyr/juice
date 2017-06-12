@@ -130,21 +130,20 @@ font-weight: bold;
    box-shadow:         inset 0 0 40px #ffffff;
 }
 // --------styles for the recipe/show view
-.recipe_show {
-  margin-bottom: 5%;
-  // background-color: #e6e6ef;
-}
+
 .recipe_description {
   position:relative;
   border-bottom: 1px solid rgba(139, 195, 74, 0.38);
   margin: 35px 0px 35px 0px;
   background: rgba(100, 136, 128, 0);
   padding-bottom: 20px;
+  padding-right:4%;
 }
 .content {
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 21%;
+  margin-right: 21%;
   margin-top: -15px;
+  margin-bottom: 5%;
   padding-top: 15px;
   background-color: white;
 }
@@ -189,33 +188,42 @@ font-weight: bold;
   bottom: 1rem;
 }
 .recipe_img {
-    width: 350px;
-    height: 350px;
+  margin-right:10%;
+    // width: 350px;
+    // height: 350px;
 }
 .recipe_img img {
-  padding: 60px 0 10px 50px;
-  width:100%;
+  // padding: 60px 0 10px 50px;
+  padding: 12% 12%;
+  margin-left: 10%;
+  width:90%;
 }
 .ingredient_list {
   position:relative;
-  padding: 10px 10px;
-  display: inline-block;
+  padding: 5% 5%;
   border: 1px solid rgba(128, 128, 128, 0.49);
-  margin: 20px 0 20px 70px;
+  margin: 0 auto 5% auto;
+  width:90%;
   height: 400px;
   box-shadow: 0px 5px 20px #9E9E9E;
+  // @media only screen and (max-width:900px){
+  //   margin-left: 30%;
+  // }
 }
 .ingredient_list h4 {
   color:#8BC34A;
-  padding: 20px 20px 0 152px;
+  padding-top: 3%;
   font-size: 22px;
   font-weight: bold;
+  text-align: center;
 }
 .single_ingredient {
-  padding: 4px 30px 0 118px;
+  // padding: 4px 30px 0 118px;
   font-size: 18px;
+  text-align: left;
 }
 .list{
+  padding: 4% 0 0 35%;
   list-style-type: none;
 }
 .recipe_direction{
@@ -229,13 +237,16 @@ font-weight: bold;
   font-weight: bold;
 }
 .edit_link{
-  padding: 2px 15px;
+  padding: 0.5% 2%;
   position: absolute;
-  bottom: 30px;
-  left: 70px;
+  bottom: 4%;
+  left: 8%;
   background-color: #337ab7;
   border:1px solid #337ab7;
   border-radius: 10%;
+  @media(max-width:900px){
+    left:4%;
+  }
 }
 .edit_link a{
   color: white;
@@ -255,18 +266,12 @@ li.ingredient_quantity {
 .table_border {
   border: 2px solid #8BC34A;
   border-radius: 10px;
-  padding-left: 20px;
-  padding-right:20px;
-  // margin-left: 20px;
-  margin-right:60px;
-  // width:90%;
-}
-.nutrition_table{
-  margin-top: 10px;
-  margin-bottom: 35px;
+  padding: 2% 3% 0 3%;
+  margin: 3% auto 3% auto;
+  width: 80%;
 }
 .nutrition_facts{
-  margin: 10px 10px 0px 20px;
+  margin: 0 auto;
 }
 .nutrition_facts th{
   font-size: 20px;
@@ -278,8 +283,16 @@ li.ingredient_quantity {
 }
 .left_cell, .right_cell{
   border-bottom: 1px solid rgba(139, 195, 74, 0.63);
-  padding: 3px 2px;
+  padding: 1.5% 0;
   }
+.left_cell{
+  width: 70%;
+  padding-left: 5%;
+}
+.right_cell{
+  text-align: right;
+  padding-right: 4%;
+}
 .footnote{
   font-size: 14px;
   line-height: 3.5rem;
@@ -287,23 +300,15 @@ li.ingredient_quantity {
  .table_desc{
    font-weight:bold;
  }
-.left_cell{
-  width: 100px;
-  padding-left: 15px;
-}
-.right_cell{
-  width: 60px;
-  text-align: right;
-  padding-right: 10px;
-}
+
 .divider{
   border-bottom: 3px solid rgba(139, 195, 74, 0.63);
 }
 .sub_cell{
-  padding-left: 40px;
+  padding-left: 10%;
 }
 .daily_value_cell{
-  text-align: left;
+  text-align: center;
   padding-right: 0px;
 }
 .thanks{
