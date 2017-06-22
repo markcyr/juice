@@ -10,12 +10,9 @@
   border: 4px solid darkorange;
   width: 75%;
   margin: 10px auto;
-  // background-color: #fbf583;
   background-color: rgba(251, 245, 131, 0.87);
   border-radius: 12px;
-  //  padding: 20px;
-  padding: 30px 0 20px 60px;
-  // margin-left: 25%;
+  padding: 5% 0 5% 10%;
   -webkit-animation: random 7s infinite;
   animation: random 7s infinite;
 }
@@ -32,14 +29,11 @@
 }
 .createcard,
 .editcard {
-  width: 50%;
-  // background-color: #fbf583;
+  width: 90%;
   background-color:rgba(251, 245, 131, 0.61);
   border-radius: 12px;
-  // padding: 20px;
   padding:30px 30px 0px 30px;
-  margin-left: 25%;
-  margin-bottom: 5%;
+  margin: 0 auto;
   border-width: 4px;
   background-image: linear-gradient(rgba(0, 0, 255, 0.32), rgb(128, 128, 128)), image-url("jucier.jpg");
   background-repeat: no-repeat;
@@ -74,7 +68,19 @@
   margin-left: 4%;
 }
 .fields label {
-  width: 15%;
+  width: 20%;
+  margin: 0 2%;
+  @media(max-width: 400px){
+    width:100%;
+  }
+}
+.fields select{
+  width: 40%;
+  margin: 0 3%;
+}
+.fields input{
+  width: 40%;
+  margin: 0 3%;
 }
 .edit_name{
   margin-left: 24%;
@@ -161,7 +167,7 @@ font-weight: bold;
   background: linear-gradient(rgba(158, 158, 158, 0.48), #384247), image-url("smoothies1.jpg");
   background-repeat: no-repeat;
   background-position: center 50%;
-  background-size: cover;
+  background-size: contain;
   position:relative;
 }
 .recipe_heading p{
@@ -206,9 +212,9 @@ font-weight: bold;
   width:90%;
   height: 400px;
   box-shadow: 0px 5px 20px #9E9E9E;
-  // @media only screen and (max-width:900px){
-  //   margin-left: 30%;
-  // }
+  //  @media (max-width:900px){
+    // margin-left: 30%;
+  //  }
 }
 .ingredient_list h4 {
   color:#8BC34A;
@@ -408,4 +414,10 @@ padding-right: 20px;
 }
 .caption p{
   font-size: 20px;
+}
+
+@media(min-width:700px){
+  .createcard{
+    width:50%;
+  }
 }
