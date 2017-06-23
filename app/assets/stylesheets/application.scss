@@ -27,8 +27,11 @@
 *::after {
   box-sizing: border-box;
 }
-body{
+html{
   font-size: 16px;
+}
+body{
+  // font-size: 16px;
   background-color: rgba(255, 193, 7, 0.09);
   height: 100%;
 }
@@ -42,14 +45,10 @@ padding-top: 0px;
 .navbar-brand > img{
   margin-top: -5px;
 }
-.navbar {
-  margin-bottom: 0px;
-  height: 75px;
-  font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
-.hey{
-  margin-top: 6%;
+// #responsive_navbar{
+//   background-color: rgb(230, 230, 234);
+// }
+#hey{
+  margin-top: 0.7rem;
 }

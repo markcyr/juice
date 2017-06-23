@@ -105,7 +105,7 @@ box-shadow: 0 2px 20px 0 #9E9E9E;
 .my_recipe_btn{
   padding: 5px 10px;
   background-color: #3ab93f;
-  font-size:1.75rem;
+  font-size:1.2rem;
   border-radius: 4px;
 }
 .my_recipe_rating{
@@ -117,4 +117,17 @@ box-shadow: 0 2px 20px 0 #9E9E9E;
   width: 100%;
   font-size: 21px;
   padding-bottom: 7px;
+}
+@media(min-width:600px) AND (max-width:768px){
+  .login {
+    width: 60%;
+    margin: 7rem auto;
+  }
+}
+@media(max-width:320px){
+  .login{
+    width:95%;
+    margin: 5rem auto;
+
+  }
 }

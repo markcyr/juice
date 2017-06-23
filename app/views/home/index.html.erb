@@ -15,7 +15,7 @@
 <div class="container-fluid">
       <div class="row">
           <div class="col-md-12 home">
-              <center> <h1>Why Juice</h1></center>
+              <center> <h1>Why Juice?</h1></center>
                 <hr>
             </div>
 
@@ -71,31 +71,22 @@
       </div>
     </div>
   </div>
-
-
-      <div class="row">
-
-<% article_ids = Article.pluck(:id).to_a %>
-<% sample_ids = article_ids.sample(3) %>
-<% featured_articles = Article.where("id in (?)", sample_ids) %>
-<% featured_articles.each do |article| %>
-  <div class="col-sm-6 col-md-4 col-lg-4">
-
-            <div class="thumbnail_slider">
-                <div class="caption_slider">
-                  <center>  <h4><%= article.title %></h4></center>
-
-                   <a class="btn btn-default" href="\articles\<%= article.id %>">Read</a>
-
-                </div>
-              <%= image_tag("#{article.image}")  %>
-            </div>
-
+  <div class="row">
+    <% article_ids = Article.pluck(:id).to_a %>
+    <% sample_ids = article_ids.sample(3) %>
+    <% featured_articles = Article.where("id in (?)", sample_ids) %>
+    <% featured_articles.each do |article| %>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="thumbnail_slider">
+          <div class="caption_slider">
+            <center> <h4><%= article.title %></h4></center>
+            <a class="btn btn-default" href="\articles\<%= article.id %>">Read</a>
+          </div>
+          <%= image_tag("#{article.image}")  %>
         </div>
-        <% end %>
-
-
-</div>
+      </div>
+    <% end %>
+  </div>
 <br>
 <!-- team-->
    <!-- <section id="team"> -->

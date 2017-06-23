@@ -167,7 +167,7 @@ font-weight: bold;
   background: linear-gradient(rgba(158, 158, 158, 0.48), #384247), image-url("smoothies1.jpg");
   background-repeat: no-repeat;
   background-position: center 50%;
-  background-size: contain;
+  background-size: cover;
   position:relative;
 }
 .recipe_heading p{
@@ -420,4 +420,38 @@ padding-right: 20px;
   .createcard{
     width:50%;
   }
+}
+@media(max-width:767px){
+  .search_form h2 {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+.content{
+  margin-left:-2rem;
+  margin-right:-2rem;
+  margin-bottom:0;
+  padding-bottom: 3rem;
+}
+.recipe_heading h3{
+  font-size:2rem;
+  margin-top: 2rem;
+
+}
+.recipe_heading p{
+  font-size:1.7rem;
+  margin-top: 1.8rem;
+}
+.recipe_heading a{
+  font-size:1.7rem;
+}
+.search_container{
+  margin-left: 0;
+  margin-right: 0;
+}
+.search_form label{
+  font-size:1.3rem;
+}
+.recipe_btn{
+  font-size: 1.3rem;
+}
 }
