@@ -92,9 +92,12 @@ max-width:100%;
     display:none;
   }
 }
-@media(min-width:847px) and (max-width:904px){
+@media(min-width:847px) and (max-width:935px){
   .navbar-default .navbar-nav > li > a{
     padding-right: 0.7rem;
     padding-left: 0.3rem;
+  }
+  #hey{
+    display:none;
   }
 }

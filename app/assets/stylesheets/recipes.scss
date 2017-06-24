@@ -15,9 +15,15 @@
   padding: 5% 0 5% 10%;
   -webkit-animation: random 7s infinite;
   animation: random 7s infinite;
+  @media(max-width:600px){
+    width:100%;
+  }
+}
+a.remove_fields{
+  font-size: 1.1rem;
 }
 .links {
-  font-size: 20px;
+  font-size: 1.1rem;
   margin-right: 4%;
   text-align: right;
   margin-top: -20px;
@@ -33,8 +39,7 @@
   background-color:rgba(251, 245, 131, 0.61);
   border-radius: 12px;
   padding:30px 30px 0px 30px;
-  margin: 0 auto;
-  border-width: 4px;
+  margin: 0 auto 5% auto;
   background-image: linear-gradient(rgba(0, 0, 255, 0.32), rgb(128, 128, 128)), image-url("jucier.jpg");
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -60,36 +65,44 @@
 .update_recipe_form{
   margin-top: -25px;
 }
-.update_recipe_form h2{
-  padding: 30px 0 0 50px;
-  font-weight: bold;
-}
+
 .editbutton {
   margin-left: 4%;
 }
 .fields label {
   width: 20%;
-  margin: 0 2%;
+  margin-right:10%;
+  font-size: 1rem;
   @media(max-width: 400px){
     width:100%;
   }
 }
-.fields select{
-  width: 40%;
-  margin: 0 3%;
-}
+.fields select,
 .fields input{
   width: 40%;
   margin: 0 3%;
+  padding:0.2rem;
+}
+.fields:last-child select{
+  font-size:1.1rem;
+}
+.fields input{
+  font-size: 1rem;
 }
 .edit_name{
-  margin-left: 24%;
+  margin-left: 10%;
 }
 .edit_name label{
-  width: 6%;
+  width: 10%;
+  font-size: 1rem;
+}
+#recipe_name {
+  width: 60%;
+  padding-left:0.6rem;
+  font-size:1rem;
 }
 .form-group {
-  margin: -25px 0 25px 10px;
+  margin: 4px 0 25px 10px;
 }
 .form-group label{
   color: black;
@@ -107,19 +120,31 @@
 //
 .field_with_errors{
   color: red;
-  display: inline-block;
-  width: 15%;
+  display: inline;
+  width: 75%;
+}
+.newrecipe h2,
+.update_recipe_form h2{
+  // padding: 7% 0 0 4%;
+  font-weight: bold;
+  font-size:1.8rem;
+  @media(max-width: 768px){
+    text-align: center;
+  }
+  @media(min-width: 1000px){
+    // padding: 3% 0 0 4%;
+    font-size:2rem;
+  }
 }
 .newrecipe h2{
-padding: 20px 0 0 50px;
-font-weight: bold;
+  padding:2% 0 0 3%;
+}
+.update_recipe_form h2{
+  padding:4% 0 0 5%;
 }
 .recipe_form h1{
   // font-family: 'Tillana', cursive;
   padding: 10px 0 10px 20px;
-}
-.edit_recipe {
-  padding-left: 40px;
 }
 .rec {
     // display:table;
@@ -405,7 +430,7 @@ padding-right: 20px;
   bottom: 2rem;
   left: 37%;
   background-color: #3ab93f;
-  font-size:1.75rem;
+  font-size:1.1rem;
   border-radius: 4px;
 }
 .dots{
@@ -416,8 +441,15 @@ padding-right: 20px;
   font-size: 20px;
 }
 
-@media(min-width:700px){
-  .createcard{
+@media(min-width:700px) AND (max-width:1000px){
+  .createcard,
+  .editcard{
+    width:70%;
+  }
+}
+@media(min-width:1001px){
+  .createcard,
+  .editcard{
     width:50%;
   }
 }
@@ -425,6 +457,12 @@ padding-right: 20px;
   .search_form h2 {
     font-size: 1.9rem;
     font-weight: bold;
+}
+.newrecipe h2{
+  padding-top:2%;
+}
+.update_recipe_form h2{
+  padding-top:7%;
 }
 .content{
   margin-left:-2rem;
@@ -454,4 +492,95 @@ padding-right: 20px;
 .recipe_btn{
   font-size: 1.3rem;
 }
+.fields label{
+  font-size: 1.3rem;
+  margin-right: 10%;
+}
+.fields:last-child select{
+  font-size:1.3rem;
+}
+a.remove_fields,
+.links{
+  font-size:1.4rem;
+}
+#recipe_name {
+  width: 70%;
+  padding-left:0.6rem;
+  font-size: 1.2rem;
+}
+.edit_name label{
+  font-size: 1.3rem;
+}
+.editcard{
+  margin-bottom:10%;
+}
+}
+@media(max-width:400px){
+  .nested-fields{
+    text-align: center;
+    padding: 2rem 0 1rem 0
+ }
+ .fields label{
+    text-align: left;
+    margin-left: 25%;
+    display:block;
+ }
+ .fields input,
+ .fields select{
+   width:50%;
+ }
+ .fields input{
+   font-size:1.2rem;
+ }
+ .fields:last-child select{
+   font-size:1.3rem;
+ }
+ .field_with_errors {
+  color: red;
+  width:100%;
+  }
+a.remove_fields,
+.links{
+  font-size:1.3rem;
+}
+#recipe_name {
+  width: 90%;
+  display: block;
+  font-size: 1.3rem;
+  }
+  .editcard{
+    margin-bottom: 17%;
+  }
+  .edit_name label{
+    font-size:1.2rem;
+  }
+  #ingredients_recipes {
+    margin-bottom: -1.2rem;
+}
+}
+@media(min-width:560px)AND(max-width:1000px){
+  .search_container{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media(min-width:1500px){
+  .nested-fields{
+    width:65%;
+  }
+  a.remove_fields{
+    font-size:1.1rem;
+  }
+  .edit_name{
+    margin-left: 20%;
+  }
+  .fields{
+    font-size:1rem;
+  }
+  .fields:last-child select{
+    font-size:1.2rem;
+  }
+  .links a{
+    margin-right: 15%;
+  }
 }

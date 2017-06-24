@@ -30,15 +30,18 @@ input[type="submit"] {
  border-radius: 4px;
  box-shadow: 0 2px 20px 0 #9E9E9E;
 }
-.login_fields {
-  font-size: 140%;
+.login_fields,
+.signup_fields {
   padding-top: 2%;
 }
 input#password {
     width: 70%;
+    font-size: 1.2rem;
 }
 input#email {
     width: 70%;
+    font-size: 1.2rem;
+
 }
 
 @media (max-width: 768px){

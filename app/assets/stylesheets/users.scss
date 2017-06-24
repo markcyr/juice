@@ -56,11 +56,16 @@
 .signup {
 text-align: center;
 background-color:white;
-margin: 6% 35% 0 35%;
+margin: 4rem auto;
+width:40%;
 font-family: 'Montserrat', sans-serif;
 padding: 4% 0 7% 0;
 border-radius: 4px;
 box-shadow: 0 2px 20px 0 #9E9E9E;
+}
+.signup_fields input:not([type="submit"]){
+  width:60%;
+  padding:0.3rem;
 }
 .signup a {
   font-size: 17px;
@@ -70,7 +75,6 @@ box-shadow: 0 2px 20px 0 #9E9E9E;
   font-family: 'Montserrat', sans-serif;
   padding-bottom: 6%;
   font-size: 55px;
-
 }
 // .signup:hover {
 //  background-color: rgb(255, 120, 70);
@@ -118,8 +122,16 @@ box-shadow: 0 2px 20px 0 #9E9E9E;
   font-size: 21px;
   padding-bottom: 7px;
 }
+@media(min-width:500px)AND (max-width:767px){
+  .card .thumbnail{
+    width:70%;
+    margin-right: auto;
+    margin-left:auto;
+  }
+}
 @media(min-width:600px) AND (max-width:768px){
-  .login {
+  .login,
+  .signup {
     width: 60%;
     margin: 7rem auto;
   }
@@ -128,6 +140,25 @@ box-shadow: 0 2px 20px 0 #9E9E9E;
   .login{
     width:95%;
     margin: 5rem auto;
-
+  }
+  .signup{
+    width:80%;
+    margin: 5rem auto;
+  }
+  .signup_fields input:not([type="submit"]){
+    width:75%
+  }
+}
+@media(min-width:321px) AND (max-width:600px){
+  .signup{
+    width:60%;
+  }
+.signup_fields input:not([type="submit"]){
+  width:70%
+}
+}
+@media(min-width:1450px){
+  .signup{
+    width:30%;
   }
 }

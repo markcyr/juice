@@ -92,8 +92,8 @@ Unit.create(unit_name: 'mL')
 
 Recipe.create(name: 'AppleCarrotGinger',image: '5.jpg', user_id:1)
 Recipe.create(name: 'BeetSpinach',image: '2.jpg', user_id:2)
-Recipe.create(name: 'KaleCarrotAppleGinger',image: '3.jpg', user_id:3)
-Recipe.create(name: 'CeleryCucumberAppleGingerLemon',image: '1.jpg' ,user_id:4)
+Recipe.create(name: 'KaleCarrotApple',image: '3.jpg', user_id:3)
+Recipe.create(name: 'CeleryCucumber',image: '1.jpg' ,user_id:4)
 
 
 
