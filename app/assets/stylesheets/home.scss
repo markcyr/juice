@@ -108,9 +108,21 @@ border-radius: 60px;
    transition: all 0.5s ease-in-out;
 }
 .thumbnail_slider:hover .caption_slider {
-top: 80%;
+top: 75%;
 bottom: 0%;
    width: 100%;
+   @media(max-width:420px){
+     top:60%;
+   }
+   @media(min-width: 768px)AND (max-width: 991px){
+     top:70%;
+   }
+   @media(min-width: 992px)AND (max-width: 1232px){
+     top:65%;
+   }
+}
+.btn-default {
+  padding:0.3rem .8rem;
 }
 .circle-badge {
   height: 200px;
