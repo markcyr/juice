@@ -22,12 +22,12 @@
     </div>
     <div class="recipe_description">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-sm-6 col-md-6">
         <div class="recipe_img">
           <%= image_tag @recipe.image_url(:thumb)%>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-sm-6 col-md-6">
         <div class="ingredient_list">
         <h4>Ingredient List</h4>
         <ul class = "list">
@@ -55,64 +55,7 @@
 
   <div class="nutrition_review">
     <div class="row">
-      <div class="col-md-6">
-        <%if @recipe.user != current_user%>
-          <div class = "review_container">
-            <h4> How do you like the Juice</h4>
-            <%= form_for([@recipe, @review]) do |f| %>
-              <fieldset>
-                <span class="star-cb-group">
-                  <%= f.radio_button :rating, 5%>
-                  <label for = "review_rating_5">5</label>
-                  <%= f.radio_button :rating, 4%>
-                  <label for = "review_rating_4">4</label>
-                  <%= f.radio_button :rating, 3%>
-                  <label for = "review_rating_3">3</label>
-                  <%= f.radio_button :rating, 2%>
-                  <label for = "review_rating_2">2</label>
-                  <%= f.radio_button :rating, 1%>
-                  <label for = "review_rating_1">1</label>
-                </span>
-              </fieldset>
-              <div class = 'comment_box'>
-                <%= f.label :comment %><br />
-                <%= f.text_area :comment %>
-              </div>
-              <div class = "review_btn">
-              <%= f.submit "submit review"%>
-              </div>
-            <% end %>
-          </div>
-        <%end%>
-        <div class = "reviews_column" id = "list_of_reviews">
-          <h4>Reviews for <%= @recipe.name %></h4>
-          <ul class="reviews">
-            <% @recipe.reviews.each do |review| %>
-              <% if review.user != nil %>
-                <div class = "single_comment">
-                  <li id = 'rate' class = "star_rates">
-                    <% review.rating.times do %>
-                      &starf;
-                    <% end %>
-                  </li>
-                  <li class = "comment_info">
-                    By
-                    <span class = 'commenter'>
-                      <%=  link_to  review.user.user_name, user_path(review.user.id) %>
-                    </span>
-                    on <%= review.created_at.strftime('%b %e, %Y')%>
-                  </li>
-                  <li class = "comment_text">
-                    <%= review.comment %>
-                  </li>
-                </div>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
+      <div class="col-md-6 col-md-push-6">
         <div class = "table_border">
         <table class = "nutrition_facts">
           <thead>
@@ -211,6 +154,64 @@
           </tfoot>
         </table>
        </div>
+      </div>
+
+      <div class="col-md-6 col-md-pull-6">
+        <div class="review_box">
+        <%if @recipe.user != current_user%>
+          <div class = "review_container">
+            <h4> How do you like the Juice</h4>
+            <%= form_for([@recipe, @review]) do |f| %>
+              <fieldset>
+                <span class="star-cb-group">
+                  <%= f.radio_button :rating, 5%>
+                  <label for = "review_rating_5">5</label>
+                  <%= f.radio_button :rating, 4%>
+                  <label for = "review_rating_4">4</label>
+                  <%= f.radio_button :rating, 3%>
+                  <label for = "review_rating_3">3</label>
+                  <%= f.radio_button :rating, 2%>
+                  <label for = "review_rating_2">2</label>
+                  <%= f.radio_button :rating, 1%>
+                  <label for = "review_rating_1">1</label>
+                </span>
+              </fieldset>
+              <div class = 'comment_box'>
+                <%= f.label :comment %>
+                <%= f.text_area :comment %>
+              </div>
+              <div  id= "review_btn">
+              <%= f.submit "submit"%>
+              </div>
+            <% end %>
+          </div>
+        <%end%>
+        <div class = "reviews_column" id = "list_of_reviews">
+          <h4>Reviews for <%= @recipe.name %></h4>
+          <ul class="reviews">
+            <% @recipe.reviews.each do |review| %>
+              <% if review.user != nil %>
+                <div class = "single_comment">
+                  <li id = 'rate' class = "star_rates">
+                    <% review.rating.times do %>
+                      &starf;
+                    <% end %>
+                  </li>
+                  <li class = "comment_info">
+                    By
+                    <span class = 'commenter'>
+                      <%=  link_to  review.user.user_name, user_path(review.user.id) %>
+                    </span>
+                    on <%= review.created_at.strftime('%b %e, %Y')%>
+                  </li>
+                  <li class = "comment_text">
+                    <%= review.comment %>
+                  </li>
+                </div>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
     </div>

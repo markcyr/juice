@@ -60,8 +60,8 @@ border-color:#8cc63f;
 border-radius: 60px;
 }
 .text-center p{
-  font-size: 24px;
-  line-height: 3rem;
+  font-size: 1.7rem ;
+  line-height: 2;
 }
 .text-center h1{
   font-size: 2rem;
@@ -240,6 +240,9 @@ h1{
   .bg-overlay {
   height: 600px;
   background-position: center top;
+  }
+  .text-center h1{
+    font-size: 2.5rem;
   }
 }
 @media(min-width:992px) and (max-width:1340px){
