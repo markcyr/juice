@@ -7,8 +7,10 @@
   /* the hidden clearer */
 }
 .star-cb-group * {
-  // font-size: 3rem;
   font-size: 28px;
+  @media(max-width:320px){
+    font-size: 26px;
+  }
 }
 .star-cb-group > input {
   display: none;
@@ -54,12 +56,22 @@
 /*end of star rating styles*/
 
 .review_container {
-  padding: 20px 20px 20px 20px;
-  margin: 50px 50px 40px 60px;
-  width: 70%;
+  padding: 1rem;
+  margin: 3% 13%;
+  width: 80%;
   border: 1px solid rgba(128, 128, 128, 0.49);
   box-shadow: 0px 5px 20px #9E9E9E;
   background-color: white;
+  @media(min-width:768px) AND (max-width:992px){
+    width:65%;
+    margin:3% 19%;
+  }
+@media(min-width: 992px) AND (max-width:1171px){
+  width:90%;
+}
+@media(min-width: 1560px){
+  width:75%;
+}
 }
 .review_container h4{
   text-align: center;
@@ -67,27 +79,52 @@
 .new_review{
   margin: 25px;
 }
-
-.comment_box {
-    margin: 20px;
+fieldset{
+  margin:0 15%;
+  // width:85%;
+  @media(min-width:992px) AND (max-width:1381px){
+  margin: 0;
 }
-.reviews_column {
-    // width: 50%;
+}
+.comment_box label{
+  display:block;
+  margin-bottom:4%;
+  margin-left:4%;
+  @media(min-width: 1560px){
+    margin-left:10%;
+  }
+
+}
+textarea#review_comment {
+  margin: 2% 10%;
+  width: 75%;
+  height:50px;
+  @media(min-width:1560px){
+    width:70%;
+    height:60px;
+    margin-left:15%;
+  }
+}
+#review_btn input{
+  font-size:1.1rem;
+  margin-left:10%;
+  @media(max-width:767px){
+    font-size: 1.5rem;
+  }
+  @media(min-width: 1560px){
+    margin-left: 15%;
+  }
+}
+.nutrition_review {
+  padding-right: 3%;
 }
 .reviews_column h4{
   font-size: 20px;
   font-weight: 600;
   padding: 20px 10px 10px 0px;
   border-bottom: 1px solid green;
-  margin-left: 40px;
-  margin-right:50px;
+  margin: 0 50px 40px 40px;
   text-align: center;
-  line-height: 3rem;
-  margin-bottom: 40px;
-}
-.review_btn{
-  padding-left: 30px;
-  padding-top: 10px;
 }
 .single_comment {
   margin: 30px 0 40px 3px;
@@ -120,4 +157,16 @@
 }
 .comment_info, .comment_text{
   padding-left: 40px;
+}
+@media(max-width:991px){
+  .review_box{
+  border-top: 1px solid rgba(139, 195, 74, 0.38);
+  margin-right: -3%;
+  margin-top: 6%;
+  padding-top: 5%;
+  }
+.review_container{
+  margin-bottom:10%;
+
+}
 }

@@ -15,7 +15,7 @@
   <div class="container-fluid">
     <div class="row">
        <% @recipes.each do |recipe| %>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 card">
+        <div class="col-sm-6 col-md-6 col-lg-4 card">
           <div class="thumbnail">
           <br>
             <a href="/recipes/<%= recipe.id %>"> <%=image_tag recipe.image.url(:thumb) %>

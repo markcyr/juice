@@ -1,54 +1,103 @@
-
-nav.navbar.navbar-default {
+//
+ .navbar {
     border-bottom-color: rgb(140, 198, 63);
-    border-bottom-width: 0.25rem;
+    border-bottom-width: 0.2rem;
+    background-color: #f8f8f8;
+    margin-bottom: 0px;
+    // height: 75px;
+    font-size: 1.3rem;
 }
-div#bs-example-navbar-collapse-1 {
-      margin-top: 5px;
-}
-button.navbar-toggle {
-    background-color: rgb(140, 198, 63);
-}
-
-
-
-@media (max-width: 768px) {
-div#bs-example-navbar-collapse-1 {
-    z-index: 30;
-    position: sticky;
-    background-color: rgba(0, 0, 0, 0.83);
+// .navbar {
+//   margin-bottom: 0px;
+//   // height: 75px;
+//   font-size: 1rem;
+//   // padding-top: 10px;
+  // padding-bottom: 10px;
+//
+// @media (max-width: 768px) {
+// div#bs-example-navbar-collapse-1 {
+//   z-index: 30;
+//   position: sticky;
+//   background-color: rgba(0, 0, 0, 0.83);
+//   text-align: right;
+//   width: 120%;
+//   padding-left: 30px;
+//   margin-left: 60%;
+//   float: right;
+//   float: left;
+// }
+// a.navbar-brand {
+//   padding-left: 24.567%;
+// }
+//
+// div#bs-example-navbar-collapse-1 ul li a {
+// color: white;
+// text-align: center;
+// }
+//
+// }
+//
+// @media (max-width: 900px) {
+// div#bs-example-navbar-collapse-1 {
+//     z-index: 30;
+// }
+// a.navbar-brand {
+//   padding-left: 24.567%;
+// }
+// div#bs-example-navbar-collapse-1 ul li a {
+// color: white;
+// text-align: center;
+// }
+//
+// }
+@media(max-width: 767px){
+  #responsive_navbar li a{
     text-align: right;
-    width: 120%;
-    padding-left: 30px;
-    margin-left: 60%;
-    float: right;
-    float: left;
-}
-a.navbar-brand {
-  padding-left: 24.567%;
-}
-
-div#bs-example-navbar-collapse-1 ul li a {
-
-color: white;
-text-align: center;
-}
+    color:#3f4043;
+  }
+  #hey{
+    display: none;
+  }
+  .navbar-brand > img{
+    max-width: 100%;
+    width:80%;
+    padding:0.3rem;
+  }
 
 }
+@media(min-width:768px){
 
-@media (max-width: 900px) {
-div#bs-example-navbar-collapse-1 {
-    z-index: 30;
-
+  .navbar > .container-fluid{
+    padding-left: 0;
+    padding-right:0;
+  }
+  .navbar{
+    padding:0.7rem 1rem 0.7rem 0.7rem;
 }
-a.navbar-brand {
-  padding-left: 24.567%;
+.thumbnail_slider img{
+max-width:100%;
 }
-
-div#bs-example-navbar-collapse-1 ul li a {
-
-color: white;
-text-align: center;
+.team-member {
+  // border-bottom:1px solid rgba(128, 128, 128, 0.52);
+  margin-bottom: 2.5rem;
 }
-
+}
+@media(min-width:768px) and (max-width:847px){
+  .navbar-default .navbar-nav > li > a{
+    padding:0.7rem 0.7rem 0.7rem 0.3rem;
+    font-size:1.2rem;
+    margin-top:0.6rem;
+  }
+  #hey{
+    display:none;
+  }
+}
+@media(min-width:847px) and (max-width:935px){
+  .navbar-default .navbar-nav > li > a{
+    padding-right: 0.7rem;
+    padding-left: 0.3rem;
+  }
+  #hey{
+    display:none;
+  }
 }
